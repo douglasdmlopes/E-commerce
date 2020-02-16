@@ -38,9 +38,15 @@ export const Cabecalho = styled.header`
 
 export const Imagem = styled.img`
     width: 30px;
+    margin 5px;
+    
 `;
 
 export const Logo = styled.img`
     margin-top: -40px;
     width: 150px;
+`;
+
+export const UserMenu = styled.span`
+    text-align: center;
 `;

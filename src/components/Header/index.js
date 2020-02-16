@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Cabecalho, Imagem, Logo} from './style';
+import {Cabecalho, Imagem, Logo, UserMenu} from './style';
 import Headroom from 'react-headroom';
 
 import { Input, Row, Col, Layout } from 'antd';
@@ -17,19 +17,23 @@ export default function index() {
         <Headroom> 
             <Cabecalho>
                 <Row>
-                    <Col span={4}>
-                        <Logo src="./logo.png" alt="Tech Store"/>
+                    <Col xs={8} sm={7} md={6} lg={4} xl={4}>
+                        <Logo src="./logo.png" alt="Tech Store" draggable="false"/>
                         </Col>
-                    <Col span={17}>
+                    <Col xs={10} sm={12} md={13} lg={16} xl={16}>
                         <Search
                             placeholder="Faça uma busca"
                             onSearch={value => console.log(value)}
                             style={{ width: '90%'}}
                         />
                     </Col>
-                    <Col span={1}><Imagem src="./heart.png" alt="Tech Store" width="50px"/></Col>
-                    <Col span={1}><Imagem src="./cart.png" alt="Tech Store"/></Col>
-                    <Col span={1}><Imagem src="./user.png" alt="Tech Store"/></Col>
+                    <Col xs={6} sm={5} md={5} lg={4} xl={4}>
+                        <UserMenu>
+                            <Imagem src="./heart.png" alt="Tech Store" width="50px" draggable="false"/>
+                            <Imagem src="./cart.png" alt="Tech Store" draggable="false"/>
+                            <Imagem src="./user.png" alt="Tech Store" draggable="false"/>
+                        </UserMenu>
+                    </Col>
                 </Row>
             </Cabecalho>
         </Headroom>
