@@ -43,7 +43,7 @@ export const Imagem = styled.img`
 `;
 
 export const Logo = styled.img`
-    margin-top: -40px;
+    margin-top: -38px;
     width: 150px;
 `;
 

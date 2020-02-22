@@ -1,6 +1,7 @@
 import React from 'react'
 //import {Card} from 'antd';
 import {Cartao} from './Style';
+import { Link } from 'react-router-dom';
 
 import { Rate, Button } from 'antd';
 
@@ -20,9 +21,12 @@ export default function index() {
                 <ButtonGroup>
                     <Button type="ghost " icon="heart" >
                     </Button>
-                    <Button type="ghost " icon="shopping-cart" >
+                    <Link to={`/product/1`}>
+                        <Button type="ghost " icon="shopping-cart" >
                         Adicionar
-                    </Button>
+                            
+                        </Button>
+                    </Link>
                 </ButtonGroup>
             </Cartao>
         </>
