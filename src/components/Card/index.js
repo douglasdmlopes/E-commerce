@@ -12,6 +12,7 @@ const ButtonGroup = Button.Group;
 export default function index() {
     return (
         <>
+        <Link to={`/product/1`} >
             <Cartao
                 hoverable
                 cover={<img alt="example" src="./produto.png" />}
@@ -19,16 +20,17 @@ export default function index() {
                 <Meta title="Xiaomi" description="R$ 500,00" />
                 <Rate allowHalf defaultValue={2.5} disabled />
                 <ButtonGroup>
-                    <Button type="ghost " icon="heart" >
+                    <Button type="ghost " size="small" icon="heart" >
                     </Button>
-                    <Link to={`/product/1`}>
-                        <Button type="ghost " icon="shopping-cart" >
+                    
+                        <Button type="ghost" size="small" icon="shopping-cart" >
                         Adicionar
                             
                         </Button>
-                    </Link>
+                        
                 </ButtonGroup>
             </Cartao>
+        </Link>
         </>
     )
 }

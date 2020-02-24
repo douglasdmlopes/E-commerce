@@ -3,7 +3,7 @@ import Header from '../../components/Header';
 import Slide from '../../components/Slide';
 import Card from '../../components/Card';
 import {Sessao} from './style';
-
+import { Row, Col } from 'antd';
 
 export default function index() {
     return (
@@ -11,22 +11,88 @@ export default function index() {
         <Header/>
         <Slide/>
         <Sessao>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
-            <Card/>
+            <Row>
+            <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+                <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                    <Card/>
+                </Col>
+
+            </Row>
         </Sessao>
         </>
     )

@@ -1,4 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
+import styled from 'styled-components';
 
 export default createGlobalStyle`
     *{
@@ -26,4 +27,23 @@ export default createGlobalStyle`
     button{
         cursor: pointer;
     }
+    
+`;
+
+
+export const Sessao = styled.section`
+    
+    margin-top: 25px; 
+    margin-bottom: 25px;
+    box-shadow: 0px 0px 6px 0px #25252533;
+    background: #f1f1f1;
+    border-radius: 3px;
+    height: 900px;
+    
+    @media (min-width: 768px) {
+        
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
 `;

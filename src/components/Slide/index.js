@@ -1,10 +1,12 @@
 import React from 'react'
 import { Slider } from './style';
+//import Slider from "react-slick";
 
 export default function index() {
+
     return (
         <>
-            <Slider autoplay>
+            <Slider autoplay >
                 <div>
                 <img src="./slide01.png" alt="Tech Store" draggable="false"/>
                 </div>
