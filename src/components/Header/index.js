@@ -7,6 +7,7 @@ import User from '../User';
 
 import Headroom from 'react-headroom';
 import { IoIosMenu } from "react-icons/io";
+import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 
 
@@ -160,8 +161,8 @@ export default function Index() {
             <Menu.Item key="2">Endereços</Menu.Item>
             <Menu.Item key="3">Sair</Menu.Item>
           </SubMenu>
-          <Menu.Item><Icon type="favorite" /><span>Favoritos</span></Menu.Item>
-          <Menu.Item><ShoppingCartOutlined /><span>Carrinho</span></Menu.Item>
+          <Menu.Item><TiHeartOutline size={14} /><span>Favoritos</span></Menu.Item>
+          <Menu.Item><TiShoppingCart size={14} /><span>Carrinho</span></Menu.Item>
         </Menu>
         </Drawer>
         </>
