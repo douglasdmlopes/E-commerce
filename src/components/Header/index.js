@@ -148,6 +148,10 @@ export default function Index() {
           <Menu.Item>Motorola</Menu.Item>
           <Menu.Item>Lenovo</Menu.Item>
           <Menu.Item>Apple</Menu.Item>
+    
+          <Menu.Item><TiHeartOutline size={18} /><span>Favoritos</span></Menu.Item>
+          <Menu.Item><TiShoppingCart size={20} /><span>Carrinho</span></Menu.Item>
+
           <SubMenu
             key="sub2"
             title={
@@ -161,8 +165,6 @@ export default function Index() {
             <Menu.Item key="2">Endereços</Menu.Item>
             <Menu.Item key="3">Sair</Menu.Item>
           </SubMenu>
-          <Menu.Item><TiHeartOutline size={18} /><span>Favoritos</span></Menu.Item>
-          <Menu.Item><TiShoppingCart size={20} /><span>Carrinho</span></Menu.Item>
         </Menu>
         </Drawer>
         </>
