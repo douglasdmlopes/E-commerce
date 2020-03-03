@@ -160,6 +160,8 @@ export default function Index() {
             <Menu.Item key="2">Endereços</Menu.Item>
             <Menu.Item key="3">Sair</Menu.Item>
           </SubMenu>
+          <Menu.Item><Icon type="favorite" /><span>Favoritos</span></Menu.Item>
+          <Menu.Item><ShoppingCartOutlined /><span>Carrinho</span></Menu.Item>
         </Menu>
         </Drawer>
         </>
