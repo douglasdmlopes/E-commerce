@@ -2,7 +2,7 @@
   "name": "eco",
   "version": "0.1.0",
   "private": true,
-  "node": ">=12.13.0",
+  "engines" : { "node" : ">=0.12" },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",

@@ -92,7 +92,7 @@ export default function Index() {
                         
                         <li>
                             Apple
-                        </li>
+                        </li>z
 
                     </ul>
                     
@@ -125,7 +125,6 @@ export default function Index() {
         <Menu
           theme={theme}
           style={{ width: 300 }}
-          defaultOpenKeys={['sub1']}
           selectedKeys={[current]}
           mode="inline"
         >
@@ -148,6 +147,19 @@ export default function Index() {
           <Menu.Item>Motorola</Menu.Item>
           <Menu.Item>Lenovo</Menu.Item>
           <Menu.Item>Apple</Menu.Item>
+          <SubMenu
+            key="sub2"
+            title={
+              <span>
+                <Icon type="user" />
+                <span>Usuário</span>
+              </span>
+            }
+          >
+            <Menu.Item key="1">Ajustes</Menu.Item>
+            <Menu.Item key="2">Endereços</Menu.Item>
+            <Menu.Item key="3">Sair</Menu.Item>
+          </SubMenu>
         </Menu>
         </Drawer>
         </>
