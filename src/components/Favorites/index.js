@@ -1,7 +1,7 @@
 import React from 'react'
 import { Popover } from 'antd';
 import { TiHeartFullOutline} from "react-icons/ti";
-import { ListaPopOver } from '../../styles/global';
+import { ListaPopOver, BotaoPadrao } from '../../styles/global';
 
   const content = (<>
     <ListaPopOver style={{maxHeight: 350, overflowY: "auto", overflowX: "hidden", marginTop: -8, marginLeft: -16,marginButton: -8, marginRight: -16}}>     
