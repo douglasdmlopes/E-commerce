@@ -4,25 +4,36 @@ import Header from '../../components/Header';
 import Description from '../../components/Product/Description';
 import Info from '../../components/Product/Info';
 import Pictures from '../../components/Product/Pictures';
-import Product from '../../components/Product/Product';
 import Rating from '../../components/Product/Rating';
 import Specification from '../../components/Product/Specification';
 
 import {Sessao} from '../../styles/global';
+
+import { Row, Col } from 'antd';
 
 export default function index() {
     return (
         <>
             <Header/>
             <Sessao>
-                <Description/>
-                <Info/>
-                <Pictures/>
-                <Product/>
-                <Rating/>
-                <Specification/>
-            </Sessao>
-        
+                <Row>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Pictures/>
+                    </Col>
+                    <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                        <Info/>
+                    </Col>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                        <Description/>
+                    </Col>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                        <Specification/>
+                    </Col>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                        <Rating/>
+                    </Col>
+                </Row>
+            </Sessao>        
         </>
     )
 }

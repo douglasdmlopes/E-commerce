@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { AiOutlineFileText } from "react-icons/ai";
+import { TituloStessao } from '../../../styles/global';
 
 export default function index() {
     return (
-        <div>
-            DESCRICAO
-        </div>
+        <>
+            <TituloStessao><AiOutlineFileText/>Descrição</TituloStessao>
+        </>
     )
 }

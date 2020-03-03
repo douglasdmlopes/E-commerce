@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { AiOutlineStar } from "react-icons/ai";
+import { TituloStessao } from '../../../styles/global';
 
 export default function index() {
     return (
         <div>
-            Classificação
+            <TituloStessao><AiOutlineStar/>Avaliações</TituloStessao>
         </div>
     )
 }
