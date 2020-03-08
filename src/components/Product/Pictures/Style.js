@@ -11,7 +11,7 @@ export const Pictures = styled(Carousel)`
     
     .BrainhubCarousel__arrows {
         
-        padding: 18px;
+        
         border: none;
         overflow: hidden;
         outline: 0;

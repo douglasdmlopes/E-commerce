@@ -5,9 +5,8 @@ export default function index() {
     return (
         <div>
             <Header/>
-            Carrinho:
-            Possui botão realizar pedido que manda para a página "Pedido"
-            Na página de pedido (request) deve conter:
+            
+            Request:
 
             Listagem de produtos (com quantidade) selecionados
             Endereço (Não editavel)

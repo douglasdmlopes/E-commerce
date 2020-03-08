@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 import Description from '../../components/Product/Description';
 import Info from '../../components/Product/Info';
@@ -17,10 +18,10 @@ export default function index() {
             <Header/>
             <Sessao>
                 <Row>
-                    <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                    <Col xs={24} sm={11} md={16} lg={16} xl={16}>
                         <Pictures/>
                     </Col>
-                    <Col xs={16} sm={16} md={16} lg={16} xl={16}>
+                    <Col xs={24} sm={13} md={8} lg={8} xl={8}>
                         <Info/>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
@@ -33,7 +34,8 @@ export default function index() {
                         <Rating/>
                     </Col>
                 </Row>
-            </Sessao>        
+            </Sessao>
+            <Footer/>       
         </>
     )
 }

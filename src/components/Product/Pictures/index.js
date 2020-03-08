@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import { Pictures } from './Style';
 import {SubSessao} from '../../../styles/global';
-
-
   
 export default function Index() {
 
@@ -17,8 +15,9 @@ export default function Index() {
         <SubSessao>
             <Pictures
                 infinite
-                dots
-                autoplay>
+                autoPlay={5000}
+                animationSpeed={1500}
+                >
 
                 <div>
                     <h3><img src="/produto.png" alt="produto" draggable="false"/></h3>

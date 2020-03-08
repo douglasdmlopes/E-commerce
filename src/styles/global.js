@@ -33,23 +33,21 @@ export default createGlobalStyle`
 
 
 export const Sessao = styled.section`
-    
+    margin: auto;
     margin-top: 25px; 
     margin-bottom: 25px;
-
+    
     padding: 8px;
 
-    box-shadow: 0px 0px 6px 0px #25252533;
     background: #f1f1f1;
     border-radius: 3px;
     height: 900px;
-    
-    @media (min-width: 768px) {
-        
-        margin-left: 30px;
-        margin-right: 30px;
-    }
 
+    @media (min-width: 975px) {
+        max-width: 960px;
+        min-width: 960px;
+    }
+    
 `;
 
 export const SubSessao = styled.section`
@@ -62,7 +60,8 @@ export const TituloStessao = styled.h2`
 
     overflow: hidden;
     text-align: left;
-    
+    display: flex;
+    align-items: center;
     &:after {
         background-color: #373737;
         content: "";
@@ -119,8 +118,9 @@ export const ListaPopOver = styled.ul`
 `;
 
 export const BotaoPadrao = styled.button`
+
     background: #0b5c56;
-    border: 1px solid #0b5c56;
+    border: 1px solid #073532;
     width: 95%;
     height: 35px;
     transition: 0.15s;
@@ -131,12 +131,10 @@ export const BotaoPadrao = styled.button`
         transition: 0.25s;
         background: #0b5c56;
         border: 1px solid #0b5c56;
-        box-shadow: 0px 3px 12px 0px #828282;
-        filter: brightness(115%);
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        filter: brightness(110%);
     }
-    
-
-    
+       
 `;
 
 export const BotaoAzul = styled.button`
@@ -144,25 +142,85 @@ export const BotaoAzul = styled.button`
 `;
 
 export const BotaoComprar = styled(Button)`
+
     background: #0b5c56;
-    border: 1px solid #0b5c56;
-    width: 200px;
-    height: 45px;
+    border: 1px solid #073532;
+    border-radius: 0px;
     transition: 0.15s;
     color: #fff;
-
     display: flex;
-    align-items: center;
-    
+    align-items: center;    
+    margin-bottom: 10px;
+    width: 200px;
+
     &:hover {
-        
+        color: #fff;
         transition: 0.25s;
         background: #0b5c56;
-        border: 1px solid #0b5c56;
-        box-shadow: 0px 3px 12px 0px #828282;
+        border: 1px solid #073532;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(115%);
+        transform: scale(1.01);
     }
-    padding-left: 18px;
+    &:focus {
+        color: #fff;
+        transition: 0.25s;
+        background: #0b5c56;
+        border: 1px solid #073532;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        transform: scale(1.01);
+    }
+    &:active {
+        color: #fff;
+        transition: 0.25s;
+        background: #0b5c56;
+        border: 1px solid #073532;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        filter: brightness(90%);
+        transform: scale(1);
+    }
+    
+    
+`;
+
+export const BotaoFavoritar = styled(Button)`
+
+    background: #dadada;
+    border: 1px solid #cccaca;
+    border-radius: 0px;
+    transition: 0.15s;
+    color: #232323;
+    display: flex;
+    align-items: center;    
+    margin-bottom: 10px;
+    width: 200px;
+
+    &:hover {
+        color: #232323;
+        transition: 0.25s;
+        background: #dadada;
+        border: 1px solid #cccaca;
+        box-shadow: 0px 6px 10px -7px #828282;
+        transform: scale(1.01);
+    }
+    &:focus {
+        color: #232323;
+        transition: 0.25s;
+        background: #dadada;
+        border: 1px solid #cccaca;
+        box-shadow: 0px 6px 10px -7px #828282;
+        transform: scale(1.01);
+    }
+    &:active {
+        color: #232323;
+        transition: 0.25s;
+        background: #dadada;
+        border: 1px solid #cccaca;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        filter: brightness(90%);
+        transform: scale(1);
+    }
+    
     
 `;
 
