@@ -17,10 +17,10 @@ export default function index() {
             <Header/>
             <Sessao>
                 <Row>
-                    <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <Col xs={8} sm={8} md={8} lg={8} xl={8}>
                         <Pictures/>
                     </Col>
-                    <Col xs={12} sm={12} md={12} lg={12} xl={12}>
+                    <Col xs={16} sm={16} md={16} lg={16} xl={16}>
                         <Info/>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>

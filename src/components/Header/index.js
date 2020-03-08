@@ -93,12 +93,13 @@ export default function Index() {
                         
                         <li>
                             Apple
-                        </li>z
+                        </li>
 
                     </ul>
                     
             </Submenu>
             <MobileCabecalho>
+                <div>
                 <Row>
                     <Col xs={2} sm={1} md={1} lg={1} xl={1}>
                         <IoIosMenu size={36} color="#fff" onClick={showDrawer}/>
@@ -113,6 +114,7 @@ export default function Index() {
                         <Lupa size={32} color="#fff" />
                     </Col>
                 </Row>
+                </div>
             </MobileCabecalho>
         </Headroom>
         <Drawer

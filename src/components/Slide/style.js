@@ -1,17 +1,24 @@
 import styled from 'styled-components';
-import { Carousel } from 'antd';
+//import { Carousel } from 'antd';
+import Carousel from '@brainhubeu/react-carousel';
 
 export const Slider = styled(Carousel)`
     
-        text-align: center;
-        max-height: 450px;
-        width: 100%;
+        img{
+            width: 100%
+        }
+        .BrainhubCarousel__arrows {
         
-        background: #364d79;
-        padding-top: 0px;
-
-        .slick-list{            
-            width: 100%;
+            padding: 18px;
+            border: none;
+            overflow: hidden;
+            outline: 0;
+            font-size: 0;
+            line-height: 0;
+            background-color: #b9b9b9;
+            &:hover {
+                background-color: #0b5c56;
+            }
         }
 `;
 

@@ -6,7 +6,11 @@ export default function index() {
 
     return (
         <>
-            <Slider autoplay >
+            <Slider 
+            autoPlay={5000}
+            animationSpeed={1000}
+            infinite
+             >
                 <div>
                 <img src="./slide01.png" alt="Tech Store" draggable="false"/>
                 </div>

@@ -127,8 +127,8 @@ export const Imagem = styled.img`
 `;
 
 export const Logo = styled.img`
-    margin-top: -38px;
-    width: 150px;
+    margin-top: -1px;
+    height: 40px;
     cursor: pointer;
     
 `;

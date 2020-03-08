@@ -1,5 +1,6 @@
 import {createGlobalStyle} from 'styled-components';
 import styled from 'styled-components';
+import { Button } from 'antd';
 
 export default createGlobalStyle`
     *{
@@ -51,6 +52,12 @@ export const Sessao = styled.section`
 
 `;
 
+export const SubSessao = styled.section`
+    
+    padding: 15px;
+
+`;
+
 export const TituloStessao = styled.h2`
 
     overflow: hidden;
@@ -81,8 +88,7 @@ export const ListaPopOver = styled.ul`
     list-style: none;
     margin: -8px 0px;
     padding: 0px;
-    cursor: pointer;
-    
+    cursor: pointer;    
 
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -130,13 +136,52 @@ export const BotaoPadrao = styled.button`
     }
     
 
-    }
+    
 `;
 
 export const BotaoAzul = styled.button`
 
 `;
 
-export const BotaoAmarelo = styled.button`
+export const BotaoComprar = styled(Button)`
+    background: #0b5c56;
+    border: 1px solid #0b5c56;
+    width: 200px;
+    height: 45px;
+    transition: 0.15s;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    
+    &:hover {
+        
+        transition: 0.25s;
+        background: #0b5c56;
+        border: 1px solid #0b5c56;
+        box-shadow: 0px 3px 12px 0px #828282;
+        filter: brightness(115%);
+    }
+    padding-left: 18px;
+    
+`;
+
+export const BotaoRemover = styled.button`
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    transition: 0.15s;
+    color: #fff;
+    text-align: center;
+    padding-top: 17%;
+    &:hover {
+        
+        transition: 0.25s;
+        background: #c3c3c3;
+        border: none;
+        filter: brightness(115%);
+    }
+
 
 `;
