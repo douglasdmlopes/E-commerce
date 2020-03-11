@@ -29,6 +29,18 @@ export default createGlobalStyle`
         cursor: pointer;
     }
     
+    a {
+        color: #1d1d1d;
+    }
+    a:hover {
+        color: #1d1d1d;
+    }
+    a:active {
+        color: #1d1d1d;
+    }
+    a:focus {
+        color: #1d1d1d;
+    }
 `;
 
 
@@ -41,7 +53,6 @@ export const Sessao = styled.section`
 
     background: #f1f1f1;
     border-radius: 3px;
-    height: 900px;
 
     @media (min-width: 975px) {
         max-width: 960px;
@@ -50,10 +61,58 @@ export const Sessao = styled.section`
     
 `;
 
+export const SessaoListaProdutos = styled.section`
+    margin: auto;
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    padding: 10px;
+
+    border-radius: 3px;
+
+    @media (min-width: 975px) {
+        max-width: 960px;
+        min-width: 960px;
+    }
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    li{
+        list-style-type: none;
+        padding: 0px 0px 30px 0px;
+        margin-right: 5px;
+        
+    }
+
+    li:hover{
+        background: #c3c3c3;
+    }
+
+    li:active{
+        background: #b5b5b5;
+    }
+
+    img{
+            width: 40px;
+            border-radius: 3px;
+    }
+    span{
+        margin-left: 8px;
+        font-size: 15px;
+    }
+`;
+
 export const SubSessao = styled.section`
     
     padding: 15px;
 
+`;
+
+export const Titulo = styled.h1`
+    font-size: 38px;
+    cursor: default;   
 `;
 
 export const TituloStessao = styled.h2`
@@ -233,6 +292,27 @@ export const BotaoRemover = styled.button`
     color: #fff;
     text-align: center;
     padding-top: 17%;
+    &:hover {
+        
+        transition: 0.25s;
+        background: #c3c3c3;
+        border: none;
+        filter: brightness(115%);
+    }
+
+
+`;
+
+
+export const BotaoListagem = styled.button`
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    transition: 0.15s;
+    color: #fff;
+    text-align: center;
+    padding-top: 11%;
     &:hover {
         
         transition: 0.25s;
