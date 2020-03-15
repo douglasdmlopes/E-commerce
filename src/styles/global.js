@@ -242,6 +242,48 @@ export const BotaoComprar = styled(Button)`
     
 `;
 
+export const BotaoFinalizar = styled(Button)`
+
+    background: #0b5c56;
+    border: 1px solid #073532;
+    border-radius: 0px;
+    transition: 0.15s;
+    color: #fff;
+    display: flex;
+    align-items: center;    
+    margin-bottom: 10px;
+    width: 172px;
+
+    &:hover {
+        color: #fff;
+        transition: 0.25s;
+        background: #0b5c56;
+        border: 1px solid #073532;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        filter: brightness(115%);
+        transform: scale(1.01);
+    }
+    &:focus {
+        color: #fff;
+        transition: 0.25s;
+        background: #0b5c56;
+        border: 1px solid #073532;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        transform: scale(1.01);
+    }
+    &:active {
+        color: #fff;
+        transition: 0.25s;
+        background: #0b5c56;
+        border: 1px solid #073532;
+        box-shadow: 0px 6px 10px -7px #828282 !important;
+        filter: brightness(90%);
+        transform: scale(1);
+    }
+    
+    
+`;
+
 export const BotaoFavoritar = styled(Button)`
 
     background: #dadada;
@@ -322,4 +364,54 @@ export const BotaoListagem = styled.button`
     }
 
 
+`;
+
+
+export const FormControl = styled.div`
+.ant-select-selection--single {
+    position: relative;
+    height: 30px;
+    cursor: pointer;
+}
+.ant-select-selection {
+    background-color: #f2f2f2;
+    border: 1px solid #e6e6e6;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top-width: 1.02px;
+    border-radius: 0px;
+    outline: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ant-select-selection:hover {
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+}
+
+.ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active {
+    /* border-color: #ff0000; */
+    border-right-width: 1px !important;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dhVhBU .ant-select-selection {
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    
+}
+
+
+.ant-select-dropdown {
+    
+    border-radius: 0px !important;
+}
 `;
