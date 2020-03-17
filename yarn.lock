@@ -933,9 +933,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@brainhubeu/react-carousel@github:brainhubeu/react-carousel":
-  version "1.12.18"
-  resolved "https://codeload.github.com/brainhubeu/react-carousel/tar.gz/0dcdb492597e37b5860767dc7c422b77a9c8aaf4"
+"@brainhubeu/react-carousel@^1.12.21":
+  version "1.12.21"
+  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.12.21.tgz#1d753c56515320fa341bcbb6d26f9f6f9d149719"
+  integrity sha512-MR4/kugo1nTNR+VeTDktrhMnLCkIEMo3d4kHklVv4LzfWcQS212oYc+1dKRQmUe86FTArgP0XfKG0/eQGCu3dQ==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
@@ -1376,6 +1377,13 @@
   integrity sha512-yGeB2dHEdvxjP0y4UbRtQaSkXJ9649fYCmIdRoul5kfAoGCwxuCbMhag0k3RPfnuh9kPGm8x89btcfDEXdVWGw==
   dependencies:
     "@babel/types" "^7.3.0"
+
+"@types/brainhubeu__react-carousel@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@types/brainhubeu__react-carousel/-/brainhubeu__react-carousel-1.10.2.tgz#23417f9201f48d6b4924fe33a9927b507d4e6421"
+  integrity sha512-qdLoplCSYevbBFPFxhOBR/38NqoVlyM799JvURZgzAWruKHRPqPDnSzNBYrMm4dEjiBvDrOck4tl2GdfRwmugA==
+  dependencies:
+    "@types/react" "*"
 
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"

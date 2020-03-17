@@ -5,7 +5,7 @@ export const Cabecalho = styled.header`
 
     height: 55px;
     width: 100% auto;
-    background: #0b5c56;
+    background: #057A44;
     padding-top: 7px;
 
     -webkit-touch-callout: none;
@@ -141,7 +141,7 @@ export const MobileCabecalho = styled.header`
 
     height: 55px;
     width: 100% auto;
-    background: #0b5c56;
+    background: #057A44;
     padding: 7px 15px;
     box-shadow: 0px 3px 5px -1px #25252533;
 

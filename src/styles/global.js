@@ -61,6 +61,24 @@ export const Sessao = styled.section`
     
 `;
 
+export const SessaoPedido = styled.section`
+    margin: auto;
+    margin-top: 25px; 
+    margin-bottom: 25px;
+    
+    padding: 8px;
+
+    /*background: #f1f1f1;*/
+    background: red;
+    border-radius: 3px;
+
+    @media (min-width: 975px) {
+        max-width: 1250px;
+        min-width: 1250px;
+    }
+    
+`;
+
 export const SessaoListaProdutos = styled.section`
     margin: auto;
     margin-top: 5px; 
@@ -414,4 +432,8 @@ export const FormControl = styled.div`
     
     border-radius: 0px !important;
 }
+`;
+
+export const Direita = styled.div`
+    float: right;
 `;
