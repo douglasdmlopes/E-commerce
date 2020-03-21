@@ -7,6 +7,7 @@ import Cart from './pages/Cart';
 import Favorites from './pages/Favorites';
 import Buy from './pages/Buy';
 import Request from './pages/Request';
+import Finished from './pages/Finished';
 
 export default function Routes(){
     return (
@@ -18,6 +19,7 @@ export default function Routes(){
                 <Route path="/favorites" component={Favorites}/>
                 <Route path="/buy" component={Buy}/>
                 <Route path="/request" component={Request}/>
+                <Route path="/finished" component={Finished}/>
             </Switch>
         </BrowserRouter>
     );

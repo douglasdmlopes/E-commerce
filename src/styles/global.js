@@ -69,10 +69,10 @@ export const SessaoPedido = styled.section`
     padding: 8px;
 
     /*background: #f1f1f1;*/
-    background: red;
+    
     border-radius: 3px;
 
-    @media (min-width: 975px) {
+    @media (min-width: 1250px) {
         max-width: 1250px;
         min-width: 1250px;
     }
@@ -129,8 +129,15 @@ export const SubSessao = styled.section`
 `;
 
 export const Titulo = styled.h1`
-    font-size: 38px;
-    cursor: default;   
+    
+    cursor: default;
+
+    @media (min-width: 501px) {
+        font-size: 32px;
+    }
+    @media (max-width: 500px) {
+        font-size: 28px;
+    }
 `;
 
 export const TituloStessao = styled.h2`
@@ -196,7 +203,7 @@ export const ListaPopOver = styled.ul`
 
 export const BotaoPadrao = styled.button`
 
-    background: #0b5c56;
+    background: #057A44;
     border: 1px solid #073532;
     width: 95%;
     height: 35px;
@@ -206,8 +213,8 @@ export const BotaoPadrao = styled.button`
     &:hover {
         
         transition: 0.25s;
-        background: #0b5c56;
-        border: 1px solid #0b5c56;
+        background: #057A44;
+        border: 1px solid #057A44;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(110%);
     }
@@ -220,7 +227,7 @@ export const BotaoAzul = styled.button`
 
 export const BotaoComprar = styled(Button)`
 
-    background: #0b5c56;
+    background: #057A44;
     border: 1px solid #073532;
     border-radius: 0px;
     transition: 0.15s;
@@ -233,7 +240,7 @@ export const BotaoComprar = styled(Button)`
     &:hover {
         color: #fff;
         transition: 0.25s;
-        background: #0b5c56;
+        background: #057A44;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(115%);
@@ -242,7 +249,7 @@ export const BotaoComprar = styled(Button)`
     &:focus {
         color: #fff;
         transition: 0.25s;
-        background: #0b5c56;
+        background: #057A44;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         transform: scale(1.01);
@@ -250,7 +257,7 @@ export const BotaoComprar = styled(Button)`
     &:active {
         color: #fff;
         transition: 0.25s;
-        background: #0b5c56;
+        background: #057A44;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(90%);
@@ -262,7 +269,7 @@ export const BotaoComprar = styled(Button)`
 
 export const BotaoFinalizar = styled(Button)`
 
-    background: #0b5c56;
+    background: #057A44;
     border: 1px solid #073532;
     border-radius: 0px;
     transition: 0.15s;
@@ -275,7 +282,7 @@ export const BotaoFinalizar = styled(Button)`
     &:hover {
         color: #fff;
         transition: 0.25s;
-        background: #0b5c56;
+        background: #057A44;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(115%);
@@ -284,7 +291,7 @@ export const BotaoFinalizar = styled(Button)`
     &:focus {
         color: #fff;
         transition: 0.25s;
-        background: #0b5c56;
+        background: #057A44;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         transform: scale(1.01);
@@ -292,7 +299,7 @@ export const BotaoFinalizar = styled(Button)`
     &:active {
         color: #fff;
         transition: 0.25s;
-        background: #0b5c56;
+        background: #057A44;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(90%);
@@ -436,4 +443,74 @@ export const FormControl = styled.div`
 
 export const Direita = styled.div`
     float: right;
+`;
+
+export const ListagemProdutos = styled.section`
+    margin: auto;
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    padding: 5px;
+
+    border-radius: 3px;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    li{
+        list-style-type: none;
+        padding: 0px 0px 30px 0px;
+        margin-right: 5px;        
+    }
+
+    li:hover{
+        background: #c3c3c3;
+    }
+
+    li:active{
+        background: #b5b5b5;
+    }
+
+    img{
+            width: 40px;
+            border-radius: 3px;
+    }
+    span{
+        margin-left: 8px;
+        font-size: 15px;
+    }
+`;
+
+export const HorizontalPadding = styled.div`
+    margin: 0px;
+    padding: 0px 5px;
+`;
+
+export const LinhaDivisoria = styled.h2`
+
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    
+    &:after {
+        background-color: rgba(216, 216, 216, 0.85);
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &:before {
+    }
+`;
+
+export const Divisoria = styled.div`
+    margin-top: 15px;
+    margin-bottom: 15px;
 `;

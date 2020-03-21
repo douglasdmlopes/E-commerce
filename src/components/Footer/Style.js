@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Rodape = styled.footer`
     height: 100px;
-    background: #0b5c56;
+    background: #057A44;
     padding-top: 20px;
 `;
 

@@ -17,7 +17,7 @@ export const Slider = styled(Carousel)`
             line-height: 0;
             background-color: #b9b9b9;
             &:hover {
-                background-color: #0b5c56;
+                background-color: #057A44;
             }
         }
 `;
