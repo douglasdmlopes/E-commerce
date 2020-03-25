@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiX } from "react-icons/fi";
 
 export const Cabecalho = styled.header`
 
@@ -156,7 +156,40 @@ export const MobileCabecalho = styled.header`
     }
     @media (max-width: 720px) {
         padding: 9px 11px 9px 7px;
+        span{
+            margin-left: -8px;
+            width: 103%;
+        }
     }
+
+    @media (min-width: 721px) {
+        span{
+            margin-left: -15px;
+            width: 114%;
+        }
+    }
+
+    input, input:hover, input:focus, input:active{
+        background: #f1f1f1;
+        border-color: #f1f1f1 !important;
+        box-shadow: none;
+        outline: 0px;
+        border-radius: 0px;
+        transform: 0.5s;
+        height: 39px;
+        
+    }
+
+    input:hover{
+        background: #fff;
+        border-color: #fff;
+    }
+
+    input:focus{
+        background: #fff;
+        border-color: #fff;
+    }
+    
 
 `
 
@@ -169,3 +202,80 @@ export const Lupa = styled(FiSearch)`
 
     transform: rotate(90deg);
 `;
+
+export const Fechar = styled(FiX)`
+    margin-top: 2px;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+
+    transform: rotate(90deg);
+`;
+
+export const BuscaMobile = styled.input`
+    height: 55px;
+    width: 93%;
+    background: #e4e4e4;
+    border: none;
+    color: black;
+    font-size: 26px;
+    
+    padding: 10px;
+    
+    border-color: #f1f1f1 !important;
+    box-shadow: none;
+    outline: 0px;
+    border-radius: 0px;
+    transform: 0.5s;
+        
+`;
+
+
+export const MobileCabecalhoBusca = styled.header`
+
+    height: 55px;
+    width: 100% auto;
+    background: #e4e4e4;
+    padding: 0px 15px;*/
+    box-shadow: 0px 3px 5px -1px #25252533;
+    transition: 0.15s;
+    text-align: center;
+
+    svg{
+        margin-top: 9px;
+        cursor: pointer;
+        -webkit-filter: invert(70%);
+        filter: invert(70%);
+        transition: 0.2s;
+        
+        &:hover{
+            -webkit-filter: invert(85%);
+            -webkit-filter: invert(85%);
+            filter: invert(85%);
+            transition: 0.2s;
+        }
+    }
+
+    @media (min-width: 1021px) {
+        display: none;
+    }
+    @media (max-width: 720px) {
+        padding: 0px 11px 0px 7px;
+        span{
+            margin-left: -8px;
+            width: 103%;
+        }
+    }
+
+    @media (min-width: 721px) {
+        span{
+            margin-left: -15px;
+            width: 114%;
+        }
+    }
+
+    
+    
+
+`

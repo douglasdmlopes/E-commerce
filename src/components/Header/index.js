@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import {Cabecalho, MobileCabecalho, Submenu, Lupa, Logo, UserMenu} from './style';
+import {Cabecalho, MobileCabecalho, MobileCabecalhoBusca, Submenu, Lupa, Fechar, Logo, UserMenu, BuscaMobile} from './style';
 
 import Cart from '../Cart';
 import Favorites from '../Favorites';
 import User from '../User';
+import Categorias from '../Categorias';
 
 import Headroom from 'react-headroom';
 import { IoIosMenu } from "react-icons/io";
 import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
 import { Link } from 'react-router-dom';
+
 
 
 import { Drawer, Popover, Input, Row, Col, Menu, Icon, Switch  } from 'antd';
@@ -28,8 +30,10 @@ export default function Index() {
     const { Search } = Input;
     const content = (
         <div>
-          <p>Content</p>
-          <p>Content</p>
+          <p><Link to={`/product/1`} >Smartphones</Link></p>
+          <p><Link to={`/product/1`} >Computadores</Link></p>
+          <p><Link to={`/product/1`} >Notebooks</Link></p>
+          <p><Link to={`/product/1`} >Tables</Link></p>
         </div>
       );
     
@@ -73,11 +77,7 @@ export default function Index() {
             <Submenu>
                 
                     <ul>
-                        <Popover placement="bottom" content={content} title="Todas as categorias" trigger="hover">
-                            <li>
-                                <IoIosMenu size={18}/><span>&nbsp;Categorias</span>
-                            </li>
-                        </Popover>
+                        <Categorias/>
                         <li>
                             Samsung
                         </li>
@@ -101,21 +101,43 @@ export default function Index() {
             <MobileCabecalho>
                 <div>
                 <Row>
-                    <Col xs={2} sm={1} md={1} lg={1} xl={1}>
-                        <IoIosMenu size={36} color="#fff" onClick={showDrawer}/>
-                    </Col>
-                    <Col xs={20} sm={22} md={22} lg={22} xl={22}>
-                    <Link to={`/`} >
-                        <Logo src="/logo.png" alt="Tech Store" draggable="false"/>
-                    </Link>
-                    </Col> 
-                    <Col xs={2} sm={1} md={1} lg={1} xl={1}>
-                    
-                        <Lupa size={32} color="#fff" />
-                    </Col>
-                </Row>
+                        <Col xs={2} sm={1} md={1} lg={1} xl={1}>
+                            <IoIosMenu size={36} color="#fff" onClick={showDrawer}/>
+                        </Col>
+                        <Col xs={20} sm={22} md={22} lg={22} xl={22}>
+                        <Link to={`/`} >
+                            <Logo src="/logo.png" alt="Tech Store" draggable="false"/>
+                        </Link>
+                        </Col> 
+                        <Col xs={2} sm={1} md={1} lg={1} xl={1}>
+                        
+                            <Lupa size={32} color="#fff" />
+                        </Col>
+                        
+                    </Row>
                 </div>
+                
             </MobileCabecalho>
+            <MobileCabecalhoBusca>
+                <div>
+                    
+                    <Row>
+                        <Col xs={2} sm={1} md={1} lg={1} xl={1}>
+                            <Fechar size={36} color="#fff"/>
+                        </Col>
+                        <Col xs={20} sm={22} md={22} lg={22} xl={22}>
+                            
+                                <BuscaMobile type="text" placeholder="Search..." />
+                                
+                        </Col>
+                        <Col xs={2} sm={1} md={1} lg={1} xl={1}>
+                        
+                            <Lupa size={32} color="#fff" />
+                        </Col>
+                    </Row>
+                </div>
+                
+            </MobileCabecalhoBusca>
         </Headroom>
         <Drawer
             title="Menu"
