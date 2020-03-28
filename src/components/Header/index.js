@@ -5,7 +5,6 @@ import Cart from '../Cart';
 import Favorites from '../Favorites';
 import User from '../User';
 import Categorias from '../Categorias';
-
 import Headroom from 'react-headroom';
 import { IoIosMenu } from "react-icons/io";
 import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
@@ -26,7 +25,8 @@ export default function Index() {
     const [visible, setVisible] = useState(false);
     const [theme, setTheme] = useState("light");
     const [current, setCurrent] = useState(1);
-    
+    const [showSearch, setShowSearch] = useState(false);
+
     const { Search } = Input;
     const content = (
         <div>
@@ -45,7 +45,15 @@ export default function Index() {
         setVisible(false);
     };
 
-    
+    function showSearchBar() {
+        
+        setShowSearch(!showSearch);
+    };
+
+    function search(){
+        console.log("Redirecionar para a página de resultados e realizar busca na API");
+    }
+
     return (
         
         <>
@@ -98,6 +106,9 @@ export default function Index() {
                     </ul>
                     
             </Submenu>
+            {
+            
+            !showSearch &&
             <MobileCabecalho>
                 <div>
                 <Row>
@@ -111,19 +122,24 @@ export default function Index() {
                         </Col> 
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
                         
-                            <Lupa size={32} color="#fff" />
+                            <Lupa size={32} color="#fff" onClick={() => showSearchBar()} />
                         </Col>
                         
                     </Row>
                 </div>
                 
             </MobileCabecalho>
+            }
+            {
+            
+            showSearch && (
+            
             <MobileCabecalhoBusca>
                 <div>
                     
                     <Row>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
-                            <Fechar size={36} color="#fff"/>
+                            <Fechar size={36} color="#fff"  onClick={() => showSearchBar()}/>
                         </Col>
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                             
@@ -132,12 +148,13 @@ export default function Index() {
                         </Col>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
                         
-                            <Lupa size={32} color="#fff" />
+                            <Lupa size={32} color="#fff" onClick={() => search()}/>
                         </Col>
                     </Row>
                 </div>
                 
             </MobileCabecalhoBusca>
+            )}
         </Headroom>
         <Drawer
             title="Menu"
