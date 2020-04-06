@@ -514,3 +514,7 @@ export const Divisoria = styled.div`
     margin-top: 15px;
     margin-bottom: 15px;
 `;
+
+export const Centralizar = styled.div`
+    text-align: center;
+`;

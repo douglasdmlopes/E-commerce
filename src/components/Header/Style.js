@@ -204,7 +204,7 @@ export const Lupa = styled(FiSearch)`
 `;
 
 export const Fechar = styled(FiX)`
-    margin-top: 2px;
+    margin-top: 8px;
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
@@ -237,13 +237,13 @@ export const MobileCabecalhoBusca = styled.header`
     height: 55px;
     width: 100% auto;
     background: #e4e4e4;
-    padding: 0px 15px;*/
-    box-shadow: 0px 3px 5px -1px #25252533;
+    
+    box-shadow: 0px 3px 5px -1px #25252533 !important;
     transition: 0.15s;
     text-align: center;
 
     svg{
-        margin-top: 9px;
+        margin-top: 11px;
         cursor: pointer;
         -webkit-filter: invert(70%);
         filter: invert(70%);
@@ -260,6 +260,7 @@ export const MobileCabecalhoBusca = styled.header`
     @media (min-width: 1021px) {
         display: none;
     }
+
     @media (max-width: 720px) {
         padding: 0px 11px 0px 7px;
         span{
@@ -274,8 +275,4 @@ export const MobileCabecalhoBusca = styled.header`
             width: 114%;
         }
     }
-
-    
-    
-
 `

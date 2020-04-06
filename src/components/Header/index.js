@@ -10,13 +10,9 @@ import { IoIosMenu } from "react-icons/io";
 import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
 import { Link } from 'react-router-dom';
 
-
-
-import { Drawer, Popover, Input, Row, Col, Menu, Icon, Switch  } from 'antd';
+import { Drawer, Input, Row, Col, Menu, Icon } from 'antd';
 
 const { SubMenu } = Menu;
-
-
 
 export default function Index() {
 
@@ -135,7 +131,6 @@ export default function Index() {
             showSearch && (
             
             <MobileCabecalhoBusca>
-                <div>
                     
                     <Row>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
@@ -143,7 +138,7 @@ export default function Index() {
                         </Col>
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                             
-                                <BuscaMobile type="text" placeholder="Search..." />
+                                <BuscaMobile type="text" placeholder="Busca por produto..." />
                                 
                         </Col>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
@@ -151,8 +146,6 @@ export default function Index() {
                             <Lupa size={32} color="#fff" onClick={() => search()}/>
                         </Col>
                     </Row>
-                </div>
-                
             </MobileCabecalhoBusca>
             )}
         </Headroom>
