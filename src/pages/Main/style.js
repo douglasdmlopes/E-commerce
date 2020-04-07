@@ -13,3 +13,12 @@ export const Sessao = styled.section`
     }
 
 `;
+
+export const TitleHome = styled.h2`
+
+    margin: 10px 23px;
+    font-size: 34px;
+    color: #353535;
+
+    font-family: 'PT Sans', arial, sans-serif;
+`;
