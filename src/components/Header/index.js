@@ -66,6 +66,7 @@ export default function Index() {
                             placeholder="Faça uma busca"
                             onSearch={value => console.log(value)}
                             style={{ width: '90%'}}
+                            icon="user"
                         />
                     </Col>
                     <Col xs={6} sm={6} md={5} lg={4} xl={4}>
@@ -138,7 +139,7 @@ export default function Index() {
                         </Col>
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                             
-                                <BuscaMobile type="text" placeholder="Busca por produto..." />
+                                <BuscaMobile type="text" placeholder="Buscar por produto..." />
                                 
                         </Col>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>

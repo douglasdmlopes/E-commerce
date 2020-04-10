@@ -201,6 +201,62 @@ export const ListaPopOver = styled.ul`
   }
 `;
 
+
+export const ListaPopOverCart = styled.ul`
+
+    display: block;
+    list-style-type: disc;
+    list-style: none;
+    margin: -8px 0px;
+    padding: 0px;
+    cursor: pointer;    
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+  li{
+    padding: 6px 29px 6px 29px;
+    margin: 0px -16px 0px -16px;
+  }
+
+  li:hover{
+    background: #c3c3c3;
+  }
+
+  li:active{
+    background: #b5b5b5;
+  }
+
+  img{
+        width: 40px;
+        border-radius: 3px;
+  }
+  span{
+    margin-left: 8px;
+    font-size: 14px;
+  }
+
+  .div-img{
+    display: inline;
+  }
+
+  .div-content{
+    display: inline;
+  }
+  .total-card-pop{
+    padding: 15px 0px 8px 0px;
+    font-weight: bold;
+    
+    span{
+        margin-left: 0px;
+        font-size: 12px;
+        float: right;
+    }
+  }
+`;
+
 export const BotaoPadrao = styled.button`
 
     background: #057A44;
@@ -359,6 +415,7 @@ export const BotaoRemover = styled.button`
     color: #fff;
     text-align: center;
     padding-top: 17%;
+    border-radius: 0px;
     &:hover {
         
         transition: 0.25s;
@@ -391,6 +448,62 @@ export const BotaoListagem = styled.button`
 
 `;
 
+
+export const FormControlCartHeader = styled.div`
+.ant-select-selection--single {
+    position: relative;
+    height: 20px;    
+    font-size:12px;
+    padding: 0px;
+    cursor: pointer;
+}
+.ant-select-selection__rendered{
+    line-height: 20px !important;
+}
+
+.ant-select-selection {
+    width: 55px;
+    background-color: #f2f2f2;
+    border: 1px solid #e6e6e6;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top-width: 1.02px;
+    border-radius: 0px;
+    outline: none;
+    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.ant-select-selection:hover {
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+}
+
+.ant-select-focused .ant-select-selection, .ant-select-selection:focus, .ant-select-selection:active {
+    /* border-color: #ff0000; */
+    border-right-width: 1px !important;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.dhVhBU .ant-select-selection {
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    
+}
+
+
+.ant-select-dropdown {
+    
+    border-radius: 0px !important;
+}
+`;
 
 export const FormControl = styled.div`
 .ant-select-selection--single {

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 export const Sessao = styled.section`
     
-    padding-top: 25px; 
-    padding-bottom: 25px;
+    padding-top: 10px; 
+    padding-bottom: 20px;
 
     @media (min-width: 768px) {
         
@@ -21,4 +21,8 @@ export const TitleHome = styled.h2`
     color: #353535;
 
     font-family: 'PT Sans', arial, sans-serif;
+    @media (max-width: 767px) {
+        
+        margin: 10px 2px;
+    }
 `;

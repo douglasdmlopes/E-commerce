@@ -29,8 +29,14 @@ export const Cabecalho = styled.header`
         transform: 0.5s;
         height: 39px;
         
+        
     }
-
+    .ant-input-affix-wrapper .ant-input-suffix{
+        font-size: 30px !important;
+        svg, i{
+            font-size: 30px !important;
+        }
+    }
     input:hover{
         background: #fff;
         border-color: #fff;
