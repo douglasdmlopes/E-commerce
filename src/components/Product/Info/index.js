@@ -1,12 +1,11 @@
 import React from 'react'
-import {SubSessao, BotaoComprar, BotaoFavoritar} from '../../../styles/global';
-import {NomeProduto, NomeEmpresa, Estrelas, Frete} from './Style';
+import {SubSessao, BotaoNormal, BotaoPadraoVerde, BotaoPadraoCinza} from '../../../styles/global';
+import {NomeProduto, NomeEmpresa, Estrelas, Frete, FreteCalc, Divisoria} from './Style';
 import { FaTruck } from "react-icons/fa";
 import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
-
+import { Icon } from 'semantic-ui-react';
 import { Row, Col, Input } from 'antd';
 
-const { Search } = Frete;
 
 export default function index() {
     return (
@@ -24,19 +23,27 @@ export default function index() {
                         <NomeProduto>R$ 11.000,00</NomeProduto>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <BotaoComprar><TiShoppingCart size={20}/>Adicionar ao Carrinho</BotaoComprar>
+                    <Divisoria/>
+                        <FreteCalc size='mini' action='Calcular' placeholder='Informe seu CEP' />
+                        <Divisoria/>
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <BotaoPadraoVerde size='medium' class="ui active button" style={{width: '100%'}}>
+                                <Icon name='cart'  style={{fontSize: 16}}/>
+                                <span style={{fontSize: 12}}>COMPRAR</span>
+                            </BotaoPadraoVerde>
+                            <Divisoria/>
+                        </Col>
+                        
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                            <BotaoPadraoCinza size='medium' class="ui active button" style={{width : '100%'}}>
+                                <Icon name={'heart outline'}  style={{fontSize: 16}}/>
+                                <span style={{fontSize: 12}}>FAVORITAR</span>
+                            </BotaoPadraoCinza>
+                            <Divisoria/>
+                        </Col>
+                        
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <BotaoFavoritar><TiHeartOutline size={20}/>Adicionar aos Favoritos</BotaoFavoritar>
-                    </Col>
-                    <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <Search 
-                        placeholder="Calcular Frete" 
-                        prefix={<FaTruck />}
-                        size="default"
-                        style={{ width: 200 }}
-                        loading={false}
-                        enterButton />
                     </Col>
                 </Row>
             </SubSessao>

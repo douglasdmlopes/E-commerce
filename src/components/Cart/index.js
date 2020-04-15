@@ -1,6 +1,6 @@
 import React from 'react';
 import { Popover } from 'antd';
-import { ListaPopOverCart, BotaoPadrao, BotaoRemover, FormControlCartHeader } from '../../styles/global';
+import { ListaPopOverCart, BotaoPadraoVerde, BotaoRemover, FormControlCartHeader } from '../../styles/global';
 import { TiShoppingCart } from "react-icons/ti";
 import { MdClose} from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -199,7 +199,9 @@ export default function index() {
             <Total><span className="total">TOTAL:</span><span>R$ 11.000,00</span></Total>
         </div>
         <div style={{marginTop: 20, textAlign: "center"}}>
-            <Link to={`/cart`} ><BotaoPadrao>Abrir Carrinho</BotaoPadrao></Link>
+            <Link to={`/cart`} >
+                <BotaoPadraoVerde style={{width : '100%'}}>Abrir Carrinho</BotaoPadraoVerde>
+            </Link>
         </div>
         </>);
 

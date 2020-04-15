@@ -3,6 +3,7 @@ import { Result, Button } from 'antd';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import { Link } from 'react-router-dom';
+import { BotaoPadraoVerde} from '../../styles/global';
 
 export default function index() {
     return (
@@ -14,7 +15,7 @@ export default function index() {
                 subTitle="Processo em andamento."
                 extra={[
                 <Link to={'/'}>
-                <Button key="buy">Voltar para a página principal</Button>
+                    <BotaoPadraoVerde>Voltar para a página principal</BotaoPadraoVerde>
                 </Link>,
                 ]}
             />,

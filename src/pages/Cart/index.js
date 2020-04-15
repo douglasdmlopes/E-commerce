@@ -1,12 +1,13 @@
 import React from 'react';
 import Header from '../../components/Header';
-import {SessaoListaProdutos, BotaoListagem, Titulo, FormControl, BotaoFinalizar} from '../../styles/global';
+import {SessaoListaProdutos, BotaoListagem, Titulo, FormControl, BotaoPadraoVerde} from '../../styles/global';
 import { Row, Col, Tooltip, Select  } from 'antd';
 import { Link } from 'react-router-dom';
 import { MdClose} from "react-icons/md";
 import { TiShoppingCart} from "react-icons/ti";
 import Footer from '../../components/Footer';
 import {FloatRight} from './Style';
+import { Icon } from 'semantic-ui-react';
 
 function handleChange(value) {
     console.log(`Selected: ${value}`);
@@ -248,7 +249,9 @@ export default function index() {
             <Row>
                 <FloatRight>
                     <Link to={`/request`} >
-                        <BotaoFinalizar><TiShoppingCart size={20}/>Finalizar Pedido</BotaoFinalizar>
+                        <BotaoPadraoVerde size='medium' class="ui active button">
+                                <span style={{fontSize: 12}}>Finalizar Pedido</span>
+                        </BotaoPadraoVerde>
                     </Link>
                 </FloatRight>
             </Row>

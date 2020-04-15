@@ -4,6 +4,7 @@ import { SessaoPedido, Direita, FormControl, ListagemProdutos, HorizontalPadding
 import { Row, Col, Tooltip, Select  } from 'antd';
 import { Button, Checkbox, Form, Input } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
+import { BotaoPadraoVerde} from '../../styles/global';
 
 function handleChange(value) {
     console.log(`Selected: ${value}`);
@@ -158,7 +159,7 @@ export default function index() {
                 <Row>
                     <Direita>
                     <Link to={`/finished`} >
-                        <Button type='submit' style={{background: "#057A44", color: "#fff"}}>Finalizar</Button>
+                        <BotaoPadraoVerde>Finalizar</BotaoPadraoVerde>
                     </Link>
                     </Direita>
                 </Row>

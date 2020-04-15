@@ -1,7 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 import styled from 'styled-components';
-import { Button } from 'antd';
-
+//import { Button } from 'antd';
+import { Button } from 'semantic-ui-react'
 export default createGlobalStyle`
     *{
         margin: 0px;
@@ -277,8 +277,53 @@ export const BotaoPadrao = styled.button`
        
 `;
 
-export const BotaoAzul = styled.button`
+export const BotaoPadraoVerde = styled(Button)`
+    font-weight: bold;
+    background: #057A44 none !important;
+    color: rgb(245, 245, 245) !important;
+    box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
+    border: 1px solid #037944 !important;
+    transition: 0.15s;
 
+    &:hover{
+        transition: 0.2s;
+        background: #079c57 none !important;
+        color: rgb(245, 245, 245) !important;
+        box-shadow: 0px 3px 5px -2px #6f6f6fba !important;
+    }
+    &:active{
+        transition: 0.2s;
+        background: #096339 none !important;
+        color: rgb(245,245,245) !important;
+        box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
+    }
+    &:focus{
+        transition: 0.2s;
+        box-shadow: 0px 3px 5px -2px #6f6f6fba !important;
+        color: rgb(245,245,245) !important;
+    }
+`;
+
+export const BotaoPadraoCinza = styled(Button)`
+    font-weight: bold;
+    box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
+    border: 1px solid #bdbdbd !important;
+    transition: 0.15s;
+
+    &:hover{
+        transition: 0.2s;
+        box-shadow: 0px 3px 5px -2px #6f6f6fba !important;
+    }
+    &:active{
+        transition: 0.2s;
+        border: 1px solid #a2a2a2 !important;
+        box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
+    }
+    &:focus{
+        transition: 0.2s;
+        box-shadow: 0px 3px 5px -2px #6f6f6fba !important;
+    }
+    
 `;
 
 export const BotaoComprar = styled(Button)`

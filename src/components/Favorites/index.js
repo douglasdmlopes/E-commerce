@@ -1,7 +1,7 @@
 import React from 'react'
 import { Popover } from 'antd';
 import { TiHeartFullOutline} from "react-icons/ti";
-import { ListaPopOver, BotaoPadrao, BotaoRemover } from '../../styles/global';
+import { ListaPopOver, BotaoPadraoVerde, BotaoRemover } from '../../styles/global';
 import { MdClose} from "react-icons/md";
 import { Row, Col  } from 'antd';
 import { Link } from 'react-router-dom';
@@ -146,7 +146,9 @@ import { Link } from 'react-router-dom';
         </li>  
     </ListaPopOver>
     <div style={{marginTop: 20, textAlign: "center"}}>
-        <Link to={`/favorites`} ><BotaoPadrao>Todos os Favoritos</BotaoPadrao></Link>
+        <Link to={`/favorites`} >
+            <BotaoPadraoVerde style={{width : '100%'}}>Todos os Favoritos</BotaoPadraoVerde>
+        </Link>
     </div>
     </>);
 export default function index() {
