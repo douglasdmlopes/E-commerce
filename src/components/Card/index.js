@@ -15,7 +15,7 @@ export default function index() {
             <Link to={`/favorites`} >
                <FavCard size="28" title="Favoritar"/>
             </Link>
-            <img src='./produto.png'  />            
+            <img src='./produto.png' alt="Produto" />            
             <Cartao.Content>
             <Cartao.Header>Xiaomi MI MIX AUPHA</Cartao.Header>
             <Cartao.Meta>

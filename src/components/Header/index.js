@@ -19,7 +19,6 @@ export default function Index() {
     //const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset);
     //const [visible, setVisible] = useState(true);
     const [visible, setVisible] = useState(false);
-    const [theme, setTheme] = useState("light");
     const [current, setCurrent] = useState(1);
     const [showSearch, setShowSearch] = useState(false);
 
@@ -159,7 +158,7 @@ export default function Index() {
             placement="left"
         >
         <Menu
-          theme={theme}
+          theme={"light"}
           style={{ width: 300 }}
           selectedKeys={[current]}
           mode="inline"

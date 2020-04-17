@@ -14,7 +14,7 @@ export default function Index() {
         }else if(screen >= 501 && screen <= 700){
             setColunas(4);
         }
-    });
+    },[screen]);
     return (
         <>
             <Slider             
