@@ -183,8 +183,8 @@ export default function Index() {
           <Menu.Item>Lenovo</Menu.Item>
           <Menu.Item>Apple</Menu.Item>
     
-          <Menu.Item><TiHeartOutline size={18} /><span>Favoritos</span></Menu.Item>
-          <Menu.Item><TiShoppingCart size={20} /><span>Carrinho</span></Menu.Item>
+          <Link to={`/favorites`} ><Menu.Item><TiHeartOutline size={18} /><span>Favoritos</span></Menu.Item></Link>
+          <Link to={`/cart`} ><Menu.Item><TiShoppingCart size={20} /><span>Carrinho</span></Menu.Item></Link>
 
           <SubMenu
             key="sub2"
