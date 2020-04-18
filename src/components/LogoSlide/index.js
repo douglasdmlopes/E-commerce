@@ -7,10 +7,12 @@ export default function Index() {
 
     const [colunas, setColunas] = useState(6);
     const [screen, setScreen] = useState(window.innerWidth);
+    const [ botoes, setBotoes] = useState(true);
 
     useEffect(() => {
         if(screen <= 500){
             setColunas(3);
+            setBotoes(false);
         }else if(screen >= 501 && screen <= 700){
             setColunas(4);
         }
@@ -21,7 +23,7 @@ export default function Index() {
             autoPlay={5000}
             animationSpeed={1000}
             slidesPerPage={colunas}
-            arrows
+            arrows={botoes}
             infinite
              >
                 <div>

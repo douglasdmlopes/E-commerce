@@ -5,7 +5,7 @@ export default function index() {
     return (
         <>
             <Rodape>
-                <LogoFooter src="/logo.png" alt="Tech Store" draggable="false"/>
+                <LogoFooter src="/logo.svg" alt="Tech Store" draggable="false"/>
             </Rodape>
         </>
     )

@@ -7,7 +7,7 @@ export default function index() {
     return (
         <>
             <SubSessao>
-                <TituloStessao><AiOutlineStar/>AVALIAÇÕES</TituloStessao>
+                <TituloStessao>AVALIAÇÕES</TituloStessao>
             </SubSessao>
         </>
     )

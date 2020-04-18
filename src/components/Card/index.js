@@ -3,7 +3,7 @@ import React from 'react'
 import {Cartao, FavCard, CarrinhoCard} from './Style';
 import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
-import { Rate/*, Button */} from 'antd';
+import { Rate, Tooltip} from 'antd';
 
 export default function index() {
     return (
@@ -13,7 +13,9 @@ export default function index() {
 
         <Cartao>
             <Link to={`/favorites`} >
-               <FavCard size="28" title="Favoritar"/>
+                <Tooltip placement="top" title={"Favoritar"}>
+                <FavCard size="26" title="Favoritar"/>
+                </Tooltip>
             </Link>
             <img src='./produto.png' alt="Produto" />            
             <Cartao.Content>
@@ -26,9 +28,11 @@ export default function index() {
             </Cartao.Description>
             </Cartao.Content>
             <Cartao.Content extra >
-                <CarrinhoCard size='mini' icon labelPosition='left'>
-                    <Icon name='cart'  style={{fontSize: 12}}/><span style={{fontSize: 12}}>Adicionar</span>
-                </CarrinhoCard>
+                <Tooltip placement="top" title={"Adicionar ao carrinho"}>
+                    <CarrinhoCard size='mini' icon labelPosition='left'>
+                        <Icon name='cart'  style={{fontSize: 12}}/><span style={{fontSize: 12}}>Adicionar</span>
+                    </CarrinhoCard>
+                </Tooltip>
             </Cartao.Content>
         </Cartao>
         </Link>

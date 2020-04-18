@@ -4,9 +4,11 @@ import { Input } from 'semantic-ui-react'
 
 export const NomeProduto = styled.h1`
 
-    color: #2b2b2b;
-    font-size: 28px;
+    color: #353535;
+    font-size: 25px;
     margin: 0px;
+    font-family: 'PT Sans', arial, sans-serif;
+    
     
 `;
 

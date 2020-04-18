@@ -5,7 +5,7 @@ export const Cabecalho = styled.header`
 
     height: 55px;
     width: 100% auto;
-    background: #057A44;
+    background: rgb(190, 15, 52);;
     padding-top: 7px;
 
     -webkit-touch-callout: none;
@@ -133,8 +133,8 @@ export const Imagem = styled.img`
 `;
 
 export const Logo = styled.img`
-    margin-top: -1px;
-    height: 40px;
+    width: 173px;
+    margin-top: 4px;
     cursor: pointer;
     
 `;
@@ -147,7 +147,7 @@ export const MobileCabecalho = styled.header`
 
     height: 55px;
     width: 100% auto;
-    background: #057A44;
+    background: rgb(190, 15, 52);;
     padding: 7px 15px;
     box-shadow: 0px 3px 5px -1px #25252533;
 
@@ -225,8 +225,8 @@ export const BuscaMobile = styled.input`
     background: #e4e4e4;
     border: none;
     color: black;
-    font-size: 26px;
-    
+    font-size: 18px;
+    font-family: 'PT Sans', arial, sans-serif;
     padding: 10px;
     
     border-color: #f1f1f1 !important;

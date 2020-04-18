@@ -7,7 +7,7 @@ export default function index() {
     return (
         <>
             <SubSessao>
-                <TituloStessao><AiOutlineProfile/>ESPECIFICAÇÕES</TituloStessao>
+                <TituloStessao>ESPECIFICAÇÕES</TituloStessao>
             </SubSessao>
         </>
     )

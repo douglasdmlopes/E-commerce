@@ -146,8 +146,14 @@ export const TituloStessao = styled.h2`
     text-align: left;
     display: flex;
     align-items: center;
+
+    color: #353535;
+    font-size: 20px;
+    font-family: 'PT Sans', arial, sans-serif;
+
+
     &:after {
-        background-color: #373737;
+        background-color: #353535;
         content: "";
         display: inline-block;
         height: 2px;
@@ -259,7 +265,7 @@ export const ListaPopOverCart = styled.ul`
 
 export const BotaoPadrao = styled.button`
 
-    background: #057A44;
+    background: rgb(190, 15, 52);;
     border: 1px solid #073532;
     width: 95%;
     height: 35px;
@@ -269,8 +275,8 @@ export const BotaoPadrao = styled.button`
     &:hover {
         
         transition: 0.25s;
-        background: #057A44;
-        border: 1px solid #057A44;
+        background: rgb(190, 15, 52);;
+        border: 1px solid rgb(190, 15, 52);;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(110%);
     }
@@ -279,21 +285,21 @@ export const BotaoPadrao = styled.button`
 
 export const BotaoPadraoVerde = styled(Button)`
     font-weight: bold;
-    background: #057A44 none !important;
+    background: rgb(190,15,52) !important;
     color: rgb(245, 245, 245) !important;
     box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
-    border: 1px solid #037944 !important;
+    border: 1px solid #7d0a22 !important;
     transition: 0.15s;
 
     &:hover{
         transition: 0.2s;
-        background: #079c57 none !important;
+        background: #de123d !important;
         color: rgb(245, 245, 245) !important;
         box-shadow: 0px 3px 5px -2px #6f6f6fba !important;
     }
     &:active{
         transition: 0.2s;
-        background: #096339 none !important;
+        background: #a70a2b !important;
         color: rgb(245,245,245) !important;
         box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
     }
@@ -328,7 +334,7 @@ export const BotaoPadraoCinza = styled(Button)`
 
 export const BotaoComprar = styled(Button)`
 
-    background: #057A44;
+    background: rgb(190, 15, 52);;
     border: 1px solid #073532;
     border-radius: 0px;
     transition: 0.15s;
@@ -341,7 +347,7 @@ export const BotaoComprar = styled(Button)`
     &:hover {
         color: #fff;
         transition: 0.25s;
-        background: #057A44;
+        background: rgb(190, 15, 52);;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(115%);
@@ -350,7 +356,7 @@ export const BotaoComprar = styled(Button)`
     &:focus {
         color: #fff;
         transition: 0.25s;
-        background: #057A44;
+        background: rgb(190, 15, 52);;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         transform: scale(1.01);
@@ -358,7 +364,7 @@ export const BotaoComprar = styled(Button)`
     &:active {
         color: #fff;
         transition: 0.25s;
-        background: #057A44;
+        background: rgb(190, 15, 52);;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(90%);
@@ -370,7 +376,7 @@ export const BotaoComprar = styled(Button)`
 
 export const BotaoFinalizar = styled(Button)`
 
-    background: #057A44;
+    background: rgb(190, 15, 52);;
     border: 1px solid #073532;
     border-radius: 0px;
     transition: 0.15s;
@@ -383,7 +389,7 @@ export const BotaoFinalizar = styled(Button)`
     &:hover {
         color: #fff;
         transition: 0.25s;
-        background: #057A44;
+        background: rgb(190, 15, 52);;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(115%);
@@ -392,7 +398,7 @@ export const BotaoFinalizar = styled(Button)`
     &:focus {
         color: #fff;
         transition: 0.25s;
-        background: #057A44;
+        background: rgb(190, 15, 52);;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         transform: scale(1.01);
@@ -400,7 +406,7 @@ export const BotaoFinalizar = styled(Button)`
     &:active {
         color: #fff;
         transition: 0.25s;
-        background: #057A44;
+        background: rgb(190, 15, 52);;
         border: 1px solid #073532;
         box-shadow: 0px 6px 10px -7px #828282 !important;
         filter: brightness(90%);

@@ -57,7 +57,7 @@ export default function Index() {
                 <Row>
                     <Col xs={8} sm={6} md={6} lg={4} xl={4}>
                         <Link to={`/`} >
-                            <Logo src="/logo.png" alt="Tech Store" draggable="false"/>
+                            <Logo src="/logo.svg" alt="Tech Store" draggable="false"/>
                         </Link>
                         </Col>
                     <Col xs={10} sm={12} md={13} lg={16} xl={16}>
@@ -113,7 +113,7 @@ export default function Index() {
                         </Col>
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                         <Link to={`/`} >
-                            <Logo src="/logo.png" alt="Tech Store" draggable="false"/>
+                            <Logo src="/logo.svg" alt="Tech Store" draggable="false"/>
                         </Link>
                         </Col> 
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>

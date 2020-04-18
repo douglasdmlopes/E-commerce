@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Card } from 'semantic-ui-react';
 import { Button } from 'semantic-ui-react';
-import { AiOutlineStar } from "react-icons/ai";
+import { FiHeart } from "react-icons/fi";
 
 export const Cartao = styled(Card)`
     width: 95% !important;
@@ -30,9 +30,9 @@ export const Cartao = styled(Card)`
     }
 `;
 
-export const FavCard = styled(AiOutlineStar)`
+export const FavCard = styled(FiHeart)`
     position: absolute;
-    color: #f0c800;
+    color: #848484;
     margin: 5px;
 `;
 
