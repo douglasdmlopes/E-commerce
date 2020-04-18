@@ -22,16 +22,15 @@ export const Slider = styled(Carousel)`
             }
         }
         button{
-            background-color: #e6e6e6 !important;
-            border: 1px solid #d0d0d0 !important;
-            border-color: #c1c1c1 !important;            
-            padding: 22px !important;
+            background-color: #fafafa !important;
+            border: 1px solid #ff0000 !important;
+            border-color: #dbdbdb !important;
             border-radius: 50px !important;
             margin: 5px !important;
         }
         button:hover{
             box-shadow: 0px 2px 4px 0px #9a9a9a !important;
-            background-color: #e6e6e6d1 !important;
+            background-color: #ffffff !important;
             border-color: #c1c1c1b5 !important;
             transition: 0.15s;
         }

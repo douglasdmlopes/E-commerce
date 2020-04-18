@@ -105,11 +105,12 @@ export const SessaoListaProdutos = styled.section`
     }
 
     li:hover{
-        background: #c3c3c3;
+        transition: 0.15s;
+        background: #f3f3f3;
     }
 
     li:active{
-        background: #b5b5b5;
+        background: #e2e2e2;
     }
 
     img{
@@ -190,11 +191,12 @@ export const ListaPopOver = styled.ul`
   }
 
   li:hover{
-    background: #c3c3c3;
+    transition: 0.15s;
+    background: #f3f3f3;
   }
 
   li:active{
-    background: #b5b5b5;
+    background: #e2e2e2;
   }
 
   img{
@@ -228,11 +230,12 @@ export const ListaPopOverCart = styled.ul`
   }
 
   li:hover{
-    background: #c3c3c3;
+    transition: 0.15s;  
+    background: #f3f3f3;
   }
 
   li:active{
-    background: #b5b5b5;
+    background: #e2e2e2;
   }
 
   img{
@@ -470,7 +473,7 @@ export const BotaoRemover = styled.button`
     &:hover {
         
         transition: 0.25s;
-        background: #c3c3c3;
+        background: #f3f3f3;
         border: none;
         filter: brightness(115%);
     }
@@ -491,7 +494,7 @@ export const BotaoListagem = styled.button`
     &:hover {
         
         transition: 0.25s;
-        background: #c3c3c3;
+        background: #f3f3f3;
         border: none;
         filter: brightness(115%);
     }
@@ -629,11 +632,12 @@ export const ListagemProdutos = styled.section`
     }
 
     li:hover{
-        background: #c3c3c3;
+        transition: 0.15s;
+        background: #f3f3f3;
     }
 
     li:active{
-        background: #b5b5b5;
+        background: #e2e2e2;
     }
 
     img{
@@ -681,4 +685,20 @@ export const Divisoria = styled.div`
 
 export const Centralizar = styled.div`
     text-align: center;
+`;
+
+export const SelectPadrao = styled.select`
+    width: 42px !important;
+    height: 20px !important;
+    background: #ececec;
+    border: 1px solid #d4d4d4;
+    border-radius: 0px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover{
+        background: #f7f7f7 !important;
+        border: 1px solid #e8e8e8 !important;  
+        transition: 0.2s;
+    }
 `;

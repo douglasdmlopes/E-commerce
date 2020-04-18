@@ -1,6 +1,6 @@
 import React from 'react';
 import { Popover } from 'antd';
-import { ListaPopOverCart, BotaoPadraoVerde, BotaoRemover, FormControlCartHeader } from '../../styles/global';
+import { ListaPopOverCart, BotaoPadraoVerde, BotaoRemover, FormControlCartHeader, SelectPadrao } from '../../styles/global';
 import { TiShoppingCart } from "react-icons/ti";
 import { MdClose} from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -26,16 +26,14 @@ export default function index() {
                         <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
                         <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
                         <div className="total-card-pop">
-                            <FormControlCartHeader style={{ display: 'inline' }}>
-                                <Select  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
+                                <SelectPadrao  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
                                 
-                                    <Option value="1">01</Option>
-                                    <Option value="2">02</Option>
-                                    <Option value="3">03</Option>
-                                    <Option value="4">04</Option>
+                                    <option value="1">01</option>
+                                    <option value="2">02</option>
+                                    <option value="3">03</option>
+                                    <option value="4">04</option>
                                 
-                                </Select>
-                            </FormControlCartHeader>
+                                </SelectPadrao>
                             <span>R$ 11.000,00</span>
                         </div>
                         
