@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { FiSearch, FiX } from "react-icons/fi";
+import {Menu } from 'antd';
 
 export const Cabecalho = styled.header`
 
@@ -282,3 +283,11 @@ export const MobileCabecalhoBusca = styled.header`
         }
     }
 `
+
+
+export const Listagem = styled(Menu)`
+
+li:hover{
+    color: red !important;
+}
+`;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Cabecalho, MobileCabecalho, MobileCabecalhoBusca, Submenu, Lupa, Fechar, Logo, UserMenu, BuscaMobile} from './style';
+import {Cabecalho, MobileCabecalho, MobileCabecalhoBusca, Submenu, Lupa, Fechar, Logo, UserMenu, BuscaMobile, Listagem} from './style';
 
 import Cart from '../Cart';
 import Favorites from '../Favorites';
@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 import { Drawer, Input, Row, Col, Menu, Icon } from 'antd';
 
-const { SubMenu } = Menu;
+const { SubMenu } = Listagem;
 
 export default function Index() {
 
