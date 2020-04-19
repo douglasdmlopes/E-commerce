@@ -287,7 +287,7 @@ export const MobileCabecalhoBusca = styled.header`
 
 export const Listagem = styled(Menu)`
 
-li:hover{
-    color: red !important;
-}
+    .ant-menu-item:active, .ant-menu-submenu-title:active {
+        background: #d6123c !important;
+    }
 `;

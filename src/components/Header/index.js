@@ -28,7 +28,7 @@ export default function Index() {
           <p><Link to={`/product/1`} >Smartphones</Link></p>
           <p><Link to={`/product/1`} >Computadores</Link></p>
           <p><Link to={`/product/1`} >Notebooks</Link></p>
-          <p><Link to={`/product/1`} >Tables</Link></p>
+          <p><Link to={`/product/1`} >Tablets</Link></p>
         </div>
       );
     
@@ -172,19 +172,20 @@ export default function Index() {
               </span>
             }
           >
-            <Menu.Item key="1">Option 1</Menu.Item>
-            <Menu.Item key="2">Option 2</Menu.Item>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
+            <Menu.Item key="1">Smartphones</Menu.Item>
+            <Menu.Item key="2">Computadores</Menu.Item>
+            <Menu.Item key="3">Notebooks</Menu.Item>
+            <Menu.Item key="4">Tablets</Menu.Item>
+            <Menu.Item key="4">Hardware</Menu.Item>
           </SubMenu>
-          <Menu.Item>Samsung</Menu.Item>
-          <Menu.Item>Xiaomi</Menu.Item>
-          <Menu.Item>Motorola</Menu.Item>
-          <Menu.Item>Lenovo</Menu.Item>
-          <Menu.Item>Apple</Menu.Item>
+          <Menu.Item><Link to={`/favorites`} >Samsung</Link></Menu.Item>
+          <Menu.Item><Link to={`/favorites`} >Xiaomi</Link></Menu.Item>
+          <Menu.Item><Link to={`/favorites`} >Motorola</Link></Menu.Item>
+          <Menu.Item><Link to={`/favorites`} >Lenovo</Link></Menu.Item>
+          <Menu.Item><Link to={`/favorites`} >Apple</Link></Menu.Item>
     
-          <Link to={`/favorites`} ><Menu.Item><TiHeartOutline size={18} /><span>Favoritos</span></Menu.Item></Link>
-          <Link to={`/cart`} ><Menu.Item><TiShoppingCart size={20} /><span>Carrinho</span></Menu.Item></Link>
+          <Menu.Item><Link to={`/favorites`} ><Icon type="heart" /><span>Favoritos</span></Link></Menu.Item>
+          <Menu.Item><Link to={`/cart`} ><span><TiShoppingCart size={17} />   Carrinho</span></Link></Menu.Item>
 
           <SubMenu
             key="sub2"
