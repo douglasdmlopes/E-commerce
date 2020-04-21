@@ -55,12 +55,12 @@ export default function Index() {
         <Headroom> 
             <Cabecalho>
                 <Row>
-                    <Col xs={8} sm={6} md={6} lg={4} xl={4}>
+                    <Col xs={8} sm={6} md={6} lg={6} xl={5}>
                         <Link to={`/`} >
                             <Logo src="/logo.svg" alt="Tech Store" draggable="false"/>
                         </Link>
                         </Col>
-                    <Col xs={10} sm={12} md={13} lg={16} xl={16}>
+                    <Col xs={10} sm={12} md={13} lg={14} xl={16}>
                         <Search
                             placeholder="Faça uma busca"
                             onSearch={value => console.log(value)}
@@ -68,7 +68,7 @@ export default function Index() {
                             icon="user"
                         />
                     </Col>
-                    <Col xs={6} sm={6} md={5} lg={4} xl={4}>
+                    <Col xs={6} sm={6} md={5} lg={4} xl={3} style={{textAlign: 'right'}}>
                         <UserMenu>
                             <Favorites/>
                             <Cart/>

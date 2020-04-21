@@ -702,3 +702,18 @@ export const SelectPadrao = styled.select`
         transition: 0.2s;
     }
 `;
+
+
+export const SessaoSearch = styled.section`
+    margin: auto;
+    margin-top: 5px; 
+    margin-bottom: 5px;
+    padding: 10px;
+
+    border-radius: 3px;
+    @media (min-width: 975px) {
+        max-width: 98%;
+        min-width: 960px;
+    }
+
+`;

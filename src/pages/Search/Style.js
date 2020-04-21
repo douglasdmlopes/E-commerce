@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
-export const FloatRight = styled.div`
-
-    float:right;
+export const FormFiltros = styled.div`
+    width: 100%;
+    height: 100px;
     padding-right: 5px;
-    margin-top: 20px
+    
+    @media (max-width: 767px) {
+        display: none;
+    }
 `;

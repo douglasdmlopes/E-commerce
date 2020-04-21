@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoIosMenu} from "react-icons/io";
 import { Popover } from 'antd';
+import { PopOverEcommerce } from './Style';
 import { ListaPopOver } from '../../styles/global';
 import { Link } from 'react-router-dom';
 
@@ -17,11 +18,11 @@ const content = (
 export default function index() {
     return (
         <>
-            <Popover placement="bottom" content={content} title="Todas as categorias" trigger="hover">
+            <PopOverEcommerce placement="bottom" content={content} title="Todas as categorias" trigger="hover">
                 <li>
                     <IoIosMenu size={18}/><span>&nbsp;Categorias</span>
                 </li>
-            </Popover>
+            </PopOverEcommerce>
         </>
     )
 }
