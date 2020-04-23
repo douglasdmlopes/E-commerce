@@ -9,3 +9,13 @@ export const FormFiltros = styled.div`
         display: none;
     }
 `;
+
+export const FormFiltrosMobile = styled.div`
+    width: 100%;
+    margin: 10px 0px 15px 0px;
+    text-align: right;
+    
+    @media (min-width: 767px) {
+        display: none;
+    }
+`;

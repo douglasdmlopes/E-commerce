@@ -1,7 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 import styled from 'styled-components';
-//import { Button } from 'antd';
 import { Button } from 'semantic-ui-react'
+
 export default createGlobalStyle`
     *{
         margin: 0px;
@@ -716,4 +716,26 @@ export const SessaoSearch = styled.section`
         min-width: 960px;
     }
 
+`;
+
+export const DefaultSelect = styled.select`
+    margin: 10px 0px;
+    text-align: center;
+    width: 98%;
+    height: 30px;
+    border-radius: 5px;
+    border-color: #bfbfbf;
+    background: #efefef;
+    color: #191919;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased !important;
+    font-family: 'PT Sans', arial, sans-serif;
+    padding-left: 5px;
+    transition: 0.2s;
+    &:hover{
+        background: #f7f7f7;
+        cursor: pointer;
+        box-shadow: 0px 2px 5px -1px #2525252e;
+        transition: 0.25s;
+    }
 `;
