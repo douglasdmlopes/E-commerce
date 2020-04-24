@@ -19,3 +19,8 @@ export const FormFiltrosMobile = styled.div`
         display: none;
     }
 `;
+
+export const Rotulo = styled.label`
+    color: #373737;
+    font-size: 16px;
+`;
