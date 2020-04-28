@@ -719,10 +719,10 @@ export const SessaoSearch = styled.section`
 `;
 
 export const DefaultSelect = styled.select`
-    margin: 10px 0px;
+    margin-bottom: 15px;
     text-align: center;
     width: 98%;
-    height: 30px;
+    height: 38px;
     border-radius: 5px;
     border-color: #bfbfbf;
     background: #efefef;
@@ -731,6 +731,30 @@ export const DefaultSelect = styled.select`
     -webkit-font-smoothing: antialiased !important;
     font-family: 'PT Sans', arial, sans-serif;
     padding-left: 5px;
+    transition: 0.2s;
+    &:hover{
+        background: #f7f7f7;
+        cursor: pointer;
+        box-shadow: 0px 2px 5px -1px #2525252e;
+        transition: 0.25s;
+    }
+`;
+
+export const DefaultInput = styled.input`  
+    text-align: left !important;
+    border: 1px solid #bfbfbf;
+    margin-bottom: 15px;
+    text-align: center;
+    width: 98%;
+    height: 38px;
+    border-radius: 5px;
+    border-color: #bfbfbf;
+    background: #efefef;
+    color: #191919;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased !important;
+    font-family: 'PT Sans', arial, sans-serif;
+    padding-left: 10px;
     transition: 0.2s;
     &:hover{
         background: #f7f7f7;
