@@ -5,26 +5,27 @@ import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 import { Rate, Tooltip} from 'antd';
 
-export default function index() {
+export default function index({produto}) {
+    
     return (
         <>
-        <Link to={`/product/1`} >
+        <Link to={`/product/` + produto.id} >
             
 
         <Cartao>
-            <Link to={`/favorites`} >
+            
                 <Tooltip placement="top" title={"Favoritar"}>
                 <FavCard size="26" title="Favoritar"/>
                 </Tooltip>
-            </Link>
+
             <img src='./produto.png' alt="Produto" />            
             <Cartao.Content>
-            <Cartao.Header>Xiaomi MI MIX AUPHA</Cartao.Header>
+            <Cartao.Header>{produto.name}</Cartao.Header>
             <Cartao.Meta>
-                <Rate size='small' allowHalf defaultValue={2.5} disabled />
+                <Rate size='small' allowHalf defaultValue={produto.rate} disabled />
             </Cartao.Meta>
             <Cartao.Description>
-                R$ 500,00
+                R$ {produto.value.toLocaleString('pt-BR')}
             </Cartao.Description>
             </Cartao.Content>
             <Cartao.Content extra >

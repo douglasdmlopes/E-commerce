@@ -27,7 +27,7 @@ export default function index() {
                         <FreteCalc size='mini' action='Calcular' placeholder='Informe seu CEP' />
                         <Divisoria/>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                            <BotaoPadraoVerde size='medium' class="ui active button" style={{width: '100%'}}>
+                            <BotaoPadraoVerde size='medium' className="ui active button" style={{width: '100%'}}>
                                 <Icon name='cart'  style={{fontSize: 16}}/>
                                 <span style={{fontSize: 12}}>COMPRAR</span>
                             </BotaoPadraoVerde>
@@ -35,7 +35,7 @@ export default function index() {
                         </Col>
                         
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                            <BotaoPadraoCinza size='medium' class="ui active button" style={{width : '100%'}}>
+                            <BotaoPadraoCinza size='medium' className="ui  button" style={{width : '100%'}}>
                                 <Icon name={'heart outline'}  style={{fontSize: 16}}/>
                                 <span style={{fontSize: 12}}>FAVORITAR</span>
                             </BotaoPadraoCinza>

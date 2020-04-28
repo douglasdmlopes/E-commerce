@@ -8,6 +8,13 @@ import {Sessao, TitleHome} from './style';
 import { Row, Col } from 'antd';
 
 export default function index() {
+    const produto = {
+        id: 1,
+        name: "Xiaomi",
+        rate: 5,
+        value: '500,00',
+        img: 'produto'
+    };
     return (
         <>
         <Header/>
@@ -19,83 +26,83 @@ export default function index() {
         <Sessao>
             <Row>
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
                 <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                    <Card/>
+                    <Card produto={produto}/>
                 </Col>
 
             </Row>
