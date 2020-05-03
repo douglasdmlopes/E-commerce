@@ -28,32 +28,27 @@ export default function Index() {
              >
                 <div>
                 <Link to={`/product/1`} >
-                    <img src="./empresas/empresa_01.png" alt="Tech Store" draggable="false"/>
+                    <img src="./empresas/empresa_03.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
                 <Link to={`/product/1`} >
-                <img src="./empresas/empresa_02.png" alt="Tech Store" draggable="false"/>
+                <img src="./empresas/empresa_01.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
                 <Link to={`/product/1`} >
-                <img src="./empresas/empresa_03.png" alt="Tech Store" draggable="false"/>
+                <img src="./empresas/empresa_04.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
                 <Link to={`/product/1`} >
-                    <img src="./empresas/empresa_01.png" alt="Tech Store" draggable="false"/>
+                    <img src="./empresas/empresa_02.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
                 <Link to={`/product/1`} >
-                <img src="./empresas/empresa_02.png" alt="Tech Store" draggable="false"/>
-                </Link>
-                </div>
-                <div>
-                <Link to={`/product/1`} >
-                <img src="./empresas/empresa_03.png" alt="Tech Store" draggable="false"/>
+                <img src="./empresas/empresa_05.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 

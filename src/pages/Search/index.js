@@ -8,6 +8,7 @@ import { FormFiltros, FormFiltrosMobile, Rotulo } from './Style';
 import { Icon } from 'semantic-ui-react';
 
 export default function Index() {
+
     const [visible, setVisible] = useState(false);
 
     function showDrawer() {
@@ -118,32 +119,7 @@ export default function Index() {
                             </BotaoPadraoVerde>
                         </FormFiltros>
                     </Col>
-                    <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 20 }} lg={{ span: 20 }} xl={{ span: 20 }}>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
-                            <Card/>
-                        </Col>
-                    </Col>
+                    
                     
                 </Row>
             </SessaoSearch>
@@ -151,3 +127,30 @@ export default function Index() {
         </>
     )
 }
+
+/* <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 20 }} lg={{ span: 20 }} xl={{ span: 20 }}>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                           <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                        <Col xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                            <Card/>
+                        </Col>
+                    </Col>*/

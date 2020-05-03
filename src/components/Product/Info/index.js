@@ -7,20 +7,22 @@ import { Icon } from 'semantic-ui-react';
 import { Row, Col, Input } from 'antd';
 
 
-export default function index() {
+export default function index({produto}) {
     return (
         <>
             <SubSessao>
                 <Row>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <NomeProduto>Xiaomi MI MIX ALPHA</NomeProduto>
-                        <NomeEmpresa><span>Marca: </span>Xiaomi</NomeEmpresa>
+                        <NomeProduto>{produto.nome}</NomeProduto>
+                        <NomeEmpresa><span>Marca: </span>{produto.marca}</NomeEmpresa>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <Estrelas allowHalf defaultValue={2.5}  size={10} disabled />
+                        <Estrelas allowHalf defaultValue={
+                            produto.avaliacao != null ? produto.avaliacao : 0
+                        }  size={10} disabled />
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <NomeProduto>R$ 11.000,00</NomeProduto>
+                        <NomeProduto>R$ {produto.preco}</NomeProduto>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                     <Divisoria/>

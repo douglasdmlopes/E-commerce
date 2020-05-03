@@ -6,7 +6,8 @@ import { Icon } from 'semantic-ui-react';
 import { Rate, Tooltip} from 'antd';
 
 export default function index({produto}) {
-    
+    console.log(produto);
+   // return false;
     return (
         <>
         <Link to={`/product/` + produto.id} >
@@ -20,12 +21,12 @@ export default function index({produto}) {
 
             <img src='./produto.png' alt="Produto" />            
             <Cartao.Content>
-            <Cartao.Header>{produto.name}</Cartao.Header>
+            <Cartao.Header>{produto.nome}</Cartao.Header>
             <Cartao.Meta>
-                <Rate size='small' allowHalf defaultValue={produto.rate} disabled />
+                <Rate size='small' allowHalf defaultValue={produto.avaliacao == null ? 0 : produto.avaliacao} disabled />
             </Cartao.Meta>
             <Cartao.Description>
-                R$ {produto.value.toLocaleString('pt-BR')}
+                R$ {produto.preco.toLocaleString('pt-BR')}
             </Cartao.Description>
             </Cartao.Content>
             <Cartao.Content extra >
