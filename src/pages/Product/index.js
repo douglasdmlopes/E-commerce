@@ -92,7 +92,13 @@ export default function Index() {
             </Row>
         }
         </Sessao>
-            <Footer/>       
+        {
+            loading ? 
+                ""
+            :
+                <Footer/> 
+        }
+                  
         </>
     )
 }

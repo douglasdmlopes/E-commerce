@@ -8,6 +8,7 @@ import { Row, Col, Input } from 'antd';
 
 
 export default function index({produto}) {
+
     return (
         <>
             <SubSessao>
@@ -22,7 +23,7 @@ export default function index({produto}) {
                         }  size={10} disabled />
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                        <NomeProduto>R$ {produto.preco}</NomeProduto>
+                        <NomeProduto>R$ {produto.preco_formatado}</NomeProduto>
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                     <Divisoria/>

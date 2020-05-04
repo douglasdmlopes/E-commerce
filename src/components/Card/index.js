@@ -26,7 +26,7 @@ export default function index({produto}) {
                 <Rate size='small' allowHalf defaultValue={produto.avaliacao == null ? 0 : produto.avaliacao} disabled />
             </Cartao.Meta>
             <Cartao.Description>
-                R$ {produto.preco.toLocaleString('pt-BR')}
+                R$ {produto.preco_formatado}
             </Cartao.Description>
             </Cartao.Content>
             <Cartao.Content extra >
