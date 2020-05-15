@@ -20,6 +20,9 @@ export const Cartao = styled(Card)`
         box-shadow: 0px 2px 5px 3px #bfbfbfad !important;
         transition: 0.35s !important;
     }
+    .header {
+        height: 70px !important;
+    }
     @media (max-width: 768px) {
         ${props => props.content && `
         padding-left: 0px !important;

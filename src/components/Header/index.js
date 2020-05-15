@@ -45,8 +45,8 @@ export default function Index() {
         setShowSearch(!showSearch);
     };
 
-    function search(){
-        console.log("Redirecionar para a página de resultados e realizar busca na API");
+    function search(termo){
+        console.log(termo);
     }
 
     return (
@@ -63,7 +63,7 @@ export default function Index() {
                     <Col xs={10} sm={12} md={13} lg={14} xl={16}>
                         <Search
                             placeholder="Faça uma busca"
-                            onSearch={value => console.log(value)}
+                            onSearch={value => search(value)}
                             style={{ width: '90%'}}
                             icon="user"
                         />
@@ -138,12 +138,12 @@ export default function Index() {
                         </Col>
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                             
-                                <BuscaMobile type="text" placeholder="Buscar por produto..." />
+                                <BuscaMobile type="text" placeholder="Buscar por produto..." onKeyDown={value => search(value)} />
                                 
                         </Col>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
                         
-                            <Lupa size={32} color="#fff" onClick={() => search()}/>
+                            <Lupa size={32} color="#fff" onClick={() => search('value')}/>
                         </Col>
                     </Row>
             </MobileCabecalhoBusca>

@@ -19,7 +19,7 @@ export default function index({produto}) {
                 <FavCard size="26" title="Favoritar"/>
                 </Tooltip>
 
-            <img src='./produto.png' alt="Produto" />            
+            <img src={`/produtos/${produto.id_img_01}.png`} alt="Produto" />            
             <Cartao.Content>
             <Cartao.Header>{produto.nome}</Cartao.Header>
             <Cartao.Meta>
