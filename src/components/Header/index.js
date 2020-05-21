@@ -158,6 +158,7 @@ export default function Index() {
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                             
                                 <BuscaMobile type="text" placeholder="Buscar por produto..." value={termoBusca} 
+                                autoFocus
                                 onChange={updateInputValue} 
                                 onKeyPress={event => {
                                     if (event.key === 'Enter') {
