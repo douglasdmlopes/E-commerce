@@ -92,31 +92,31 @@ export default function Index() {
                 
                     <ul>
                         <Categorias/>
-                        <Link to={`/search/marca=samsung`} >
+                        <a href="/search/marca=Samsung">
                             <li>
                                 Samsung
                             </li>
-                        </Link>
-                        <Link to={`/search/marca=xiaomi`} >
+                        </a>
+                        <a href="/search/marca=Xiaomi" >
                             <li>
                                 Xiaomi
                             </li>
-                        </Link>
-                        <Link to={`/search/marca=motorola`} >
+                        </a>
+                        <a href="/search/marca=Motorola" >
                             <li>
                                 Motorola
                             </li>
-                        </Link>
-                        <Link to={`/search/marca=lenovo`} >
+                        </a>
+                        <a href="/search/marca=Lenovo" >
                             <li>
                                 Lenovo
                             </li>
-                        </Link>
-                        <Link to={`/search/marca=apple`} >
+                        </a>
+                        <a href="/search/marca=Apple" >
                             <li>
                                 Apple
                             </li>
-                        </Link>
+                        </a>
 
                     </ul>
                     
@@ -202,17 +202,16 @@ export default function Index() {
                 <span>Categorias</span>
               </span>
             }
-          >
-            <Link to={`/search/categoria=hardware`} ><Menu.Item key="1">Smartphones</Menu.Item></Link>
-            <Link to={`/search/categoria=computadores`} ><Menu.Item key="2">Computadores</Menu.Item></Link>
-            <Link to={`/search/categoria=notebook`} ><Menu.Item key="3">Notebooks</Menu.Item></Link>
-            <Link to={`/search/categoria=hardware`} ><Menu.Item key="4">Hardware</Menu.Item></Link>
+          ><Menu.Item key="1"><a href="/search/categoria=smartphone">Smartphones</a></Menu.Item>
+            <Menu.Item key="2"><a href="/search/categoria=computadores">Computadores</a></Menu.Item>
+            <Menu.Item key="3"><a href="/search/categoria=notebook">Notebooks</a></Menu.Item>
+            <Menu.Item key="4"><a href="/search/categoria=hardware">Hardware</a></Menu.Item>
           </SubMenu>
-          <Menu.Item><Link to={`/search/marca=samsung`} >Samsung</Link></Menu.Item>
-          <Menu.Item><Link to={`/search/marca=xiaomi`} >Xiaomi</Link></Menu.Item>
-          <Menu.Item><Link to={`/search/marca=motorola`} >Motorola</Link></Menu.Item>
-          <Menu.Item><Link to={`/search/marca=lenovo`} >Lenovo</Link></Menu.Item>
-          <Menu.Item><Link to={`/search/marca=apple`} >Apple</Link></Menu.Item>
+          <Menu.Item><a href="/search/marca=Samsung" >Samsung</a></Menu.Item>
+          <Menu.Item><a href="/search/marca=Xiaomi" >Xiaomi</a></Menu.Item>
+          <Menu.Item><a href="/search/marca=Motorola" >Motorola</a></Menu.Item>
+          <Menu.Item><a href="/search/marca=Lenovo" >Lenovo</a></Menu.Item>
+          <Menu.Item><a href="/search/marca=Apple" >Apple</a></Menu.Item>
     
           <Menu.Item><Link to={`/favorites`} ><Icon type="heart" /><span>Favoritos</span></Link></Menu.Item>
           <Menu.Item><Link to={`/cart`} ><span><TiShoppingCart size={17} />   Carrinho</span></Link></Menu.Item>
