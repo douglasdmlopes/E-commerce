@@ -24,3 +24,17 @@ export const Rotulo = styled.label`
     color: #373737;
     font-size: 16px;
 `;
+
+export const NotFound = styled.div`
+    text-align: center;
+    color: #929292;
+    svg{
+        margin-top: 50px;
+        margin-bottom: -20px;
+        transform: rotate(90deg);
+    }
+    h1{
+        font-size: 40px;
+        color: #929292;
+    }
+`;

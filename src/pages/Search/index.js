@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import {SessaoSearch,  Titulo, BotaoPadraoVerde, DefaultSelect, DefaultInput} from '../../styles/global';
 import { Row, Col, Drawer, notification} from 'antd';
-import Footer from '../../components/Footer';
 import api from '../../services/api';
-import { FormFiltros, FormFiltrosMobile, Rotulo } from './Style';
+import { FormFiltros, FormFiltrosMobile, Rotulo, NotFound } from './Style';
 import { Icon } from 'semantic-ui-react';
 import { useParams } from "react-router-dom";
 import Card from '../../components/Card';
+import { BsSearch } from "react-icons/bs";
+
 import { Loader } from 'semantic-ui-react';
 
 export default function Index() {
@@ -17,15 +18,37 @@ export default function Index() {
     let { termo } = useParams();
     const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(false)
+    const [termoBusca, setTermoBusca] = useState('')
 
     useEffect(() => {
         
         async function fetchData() {
-            console.log(termo);
+            
+            let separador = termo.indexOf("=") + 1;
+            let tipo = termo.substring(0,termo.indexOf("="))
+            termo = termo.substr(separador);
+            let busca = {};
+
+            if(tipo == 'marca'){
+                busca = {
+                    marcas : termo
+                }
+                setTermoBusca(termo);
+            }else if(tipo == 'termo'){
+                busca = {
+                    nome : termo
+                }
+                setTermoBusca(termo);
+            }else if(tipo == 'categoria'){
+                busca = {
+                    tipo : termo
+                }
+            }
+
             setLoading(true);
 
             if(termo != undefined){
-                await api.post(`/api`, {nome : termo})
+                await api.post(`/api`, busca)
                 .then(response => {
 
                     const dados = response.data;
@@ -71,7 +94,7 @@ export default function Index() {
         <>
             <Header/>
             <SessaoSearch>
-                <Titulo>Busca</Titulo>
+                <Titulo>{termoBusca}</Titulo>
                 
                     <FormFiltrosMobile>
                         <BotaoPadraoVerde onClick={showDrawer}>
@@ -179,11 +202,19 @@ export default function Index() {
                             
                             <Loader active inline='centered' size='large'/>
                             :
+                            (produtos.length > 0 ?
                             produtos.map(produto => (
                                 <Col key={produto.id} xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
                                     <Card produto={produto}/>
                                 </Col>
-                            ))                            
+                            ))
+                            :
+                            <NotFound>
+                                <BsSearch size="120"/>
+                                <h1>Nenhum registro encontrado</h1>
+                            </NotFound>
+                            
+                            )                   
                         }
                     </Col>
                     

@@ -9,7 +9,7 @@ const content = (
     <ListaPopOver style={{maxHeight: 200, overflowY: "auto", overflowX: "hidden", marginTop: -8, marginLeft: -16,marginButton: -8, marginRight: -16}}>
       <Link to={`/search/categoria=smartphone`} ><li>Smartphones</li></Link>
       <Link to={`/search/categoria=computadores`} ><li>Computadores</li></Link>
-      <Link to={`/search/categoria=notebooks`} ><li>Notebooks</li></Link>
+      <Link to={`/search/categoria=notebook`} ><li>Notebooks</li></Link>
       <Link to={`/search/categoria=hardware`} ><li>Hardware</li></Link>
     </ListaPopOver>
   );

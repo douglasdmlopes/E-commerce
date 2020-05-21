@@ -24,15 +24,7 @@ export default function Index() {
     const [termoBusca, setTermoBusca] = useState('');
 
     const { Search } = Input;
-    const content = (
-        <div>
-          <p><Link to={`/product/1`} >Smartphones</Link></p>
-          <p><Link to={`/product/1`} >Computadores</Link></p>
-          <p><Link to={`/product/1`} >Notebooks</Link></p>
-          <p><Link to={`/product/1`} >Tablets</Link></p>
-        </div>
-      );
-    
+        
     function showDrawer() {
         setVisible(true);
     };
@@ -49,7 +41,7 @@ export default function Index() {
     function search(termo){
         console.log(termoBusca);
         if(termoBusca != "" && termoBusca != null){
-            var busca = '/search/' + termoBusca;
+            var busca = '/search/termo=' + termoBusca;
             window.location.replace(busca);
         }
         
@@ -213,7 +205,7 @@ export default function Index() {
           >
             <Link to={`/search/categoria=hardware`} ><Menu.Item key="1">Smartphones</Menu.Item></Link>
             <Link to={`/search/categoria=computadores`} ><Menu.Item key="2">Computadores</Menu.Item></Link>
-            <Link to={`/search/categoria=notebooks`} ><Menu.Item key="3">Notebooks</Menu.Item></Link>
+            <Link to={`/search/categoria=notebook`} ><Menu.Item key="3">Notebooks</Menu.Item></Link>
             <Link to={`/search/categoria=hardware`} ><Menu.Item key="4">Hardware</Menu.Item></Link>
           </SubMenu>
           <Menu.Item><Link to={`/search/marca=samsung`} >Samsung</Link></Menu.Item>
