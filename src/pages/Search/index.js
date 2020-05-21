@@ -97,6 +97,8 @@ export default function Index() {
 
     async function filtrarDados() {
         
+        setVisible(false);
+        
         let busca = {
             marcas : filtroMarca,
             tipo: filtroTipo,
@@ -125,11 +127,11 @@ export default function Index() {
             busca.tipo = termo;
             setTermoBusca("");
         }
-        console.log(busca);
-
 
         
+        
         setLoading(true);
+        
 
         await api.post(`/api`, busca)
         .then(response => {
@@ -154,6 +156,7 @@ export default function Index() {
             });
             
         });
+        
         setLoading(false);
 
     }  
