@@ -1,15 +1,63 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import {SessaoSearch,  Titulo, BotaoPadraoVerde, DefaultSelect, DefaultInput} from '../../styles/global';
-import { Row, Col, Drawer} from 'antd';
+import { Row, Col, Drawer, notification} from 'antd';
 import Footer from '../../components/Footer';
-import Card from '../../components/Card';
+import api from '../../services/api';
 import { FormFiltros, FormFiltrosMobile, Rotulo } from './Style';
 import { Icon } from 'semantic-ui-react';
+import { useParams } from "react-router-dom";
+import Card from '../../components/Card';
+import { Loader } from 'semantic-ui-react';
 
 export default function Index() {
 
     const [visible, setVisible] = useState(false);
+
+    let { termo } = useParams();
+    const [produtos, setProdutos] = useState([]);
+    const [loading, setLoading] = useState(false)
+
+    useEffect(() => {
+        
+        async function fetchData() {
+            console.log(termo);
+            setLoading(true);
+
+            if(termo != undefined){
+                await api.post(`/api`, {nome : termo})
+                .then(response => {
+
+                    const dados = response.data;
+
+                    console.log(dados.data);
+                    if(dados.error == 0){
+                        setProdutos(dados.data);
+                    }else{
+                        setProdutos([]);
+                    }
+                    
+                })
+                .catch(e => {
+                    console.error(e);
+                    
+                    notification['error']({
+                        message: 'Desculpe',
+                        description:
+                        'Ocorreu um erro ao tentar se conectar ao servidor, tente novamente mais tarde.',
+                        placement: 'bottomRight'
+                    });
+                    
+                });
+                setLoading(false);
+            }else{
+                setLoading(false);
+            }            
+            
+        }
+        fetchData();
+        
+    }, []);
 
     function showDrawer() {
         setVisible(true);
@@ -42,6 +90,7 @@ export default function Index() {
                             <div style={{paddingLeft: '5px', paddingTop: '10px'}}>
                                 <Rotulo>Marca</Rotulo>
                                 <DefaultSelect placeholder='Marca' >
+                                    <option value="">Selecione</option>
                                     <option value="Apple">Apple</option>
                                     <option value="Samsung">Samsung</option>
                                     <option value="Xiaomi">Xiaomi</option>
@@ -55,6 +104,7 @@ export default function Index() {
                                 </DefaultSelect>
                                 <Rotulo>Tipo</Rotulo>
                                 <DefaultSelect placeholder='Tipo' >
+                                    <option value="">Selecione</option>
                                     <option value="Notebook">Notebook</option>
                                     <option value="Smartphone">Smartphone</option>
                                     <option value="Computadores">Computadores</option>
@@ -63,11 +113,12 @@ export default function Index() {
                                 </DefaultSelect>
                                 <Rotulo>Avaliação</Rotulo>
                                 <DefaultSelect placeholder='Avaliação' >
-                                    <option>1 Estrela</option>
-                                    <option>2 Estrelas</option>
-                                    <option>3 Estrelas</option>
-                                    <option>4 Estrelas</option>
-                                    <option>5 Estrelas</option>
+                                    <option value="">Selecione</option>
+                                    <option value="1">1 Estrela</option>
+                                    <option value="2">2 Estrelas</option>
+                                    <option value="3">3 Estrelas</option>
+                                    <option value="4">4 Estrelas</option>
+                                    <option value="5">5 Estrelas</option>
                                 </DefaultSelect>
                                 <Rotulo>Faixa de preço</Rotulo>
                                 <DefaultInput type="number" placeholder="Preço minimo"/>
@@ -84,6 +135,7 @@ export default function Index() {
                         <FormFiltros>
                             <Rotulo>Marca</Rotulo>
                             <DefaultSelect placeholder='Marca' >
+                                <option value="">Selecione</option>
                                 <option value="Apple">Apple</option>
                                 <option value="Samsung">Samsung</option>
                                 <option value="Xiaomi">Xiaomi</option>
@@ -97,6 +149,7 @@ export default function Index() {
                             </DefaultSelect>
                             <Rotulo>Tipo</Rotulo>
                             <DefaultSelect placeholder='Tipo' >
+                                <option value="">Selecione</option>
                                 <option value="Notebook">Notebook</option>
                                 <option value="Smartphone">Smartphone</option>
                                 <option value="Computadores">Computadores</option>
@@ -105,11 +158,12 @@ export default function Index() {
                             </DefaultSelect>
                             <Rotulo>Avaliação</Rotulo>
                             <DefaultSelect placeholder='Avaliação' >
-                                <option>1 Estrela</option>
-                                <option>2 Estrelas</option>
-                                <option>3 Estrelas</option>
-                                <option>4 Estrelas</option>
-                                <option>5 Estrelas</option>
+                                <option value="">Selecione</option>
+                                <option value="1">1 Estrela</option>
+                                <option value="2">2 Estrelas</option>
+                                <option value="3">3 Estrelas</option>
+                                <option value="4">4 Estrelas</option>
+                                <option value="5">5 Estrelas</option>
                             </DefaultSelect>
                             <Rotulo>Faixa de preço</Rotulo>
                             <DefaultInput type="number" placeholder="Preço minimo"/>
@@ -119,11 +173,22 @@ export default function Index() {
                             </BotaoPadraoVerde>
                         </FormFiltros>
                     </Col>
-                    
+                    <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 20 }} lg={{ span: 20 }} xl={{ span: 20 }}>
+                        {
+                            loading ? 
+                            
+                            <Loader active inline='centered' size='large'/>
+                            :
+                            produtos.map(produto => (
+                                <Col key={produto.id} xs={{ span: 12 }} sm={{ span: 6 }} md={{ span: 6 }} lg={{ span: 4 }} xl={{ span: 4 }}>
+                                    <Card produto={produto}/>
+                                </Col>
+                            ))                            
+                        }
+                    </Col>
                     
                 </Row>
             </SessaoSearch>
-            <Footer/>
         </>
     )
 }

@@ -21,7 +21,7 @@ export default function Routes(){
                 <Route path="/buy" component={Buy}/>
                 <Route path="/request" component={Request}/>
                 <Route path="/finished" component={Finished}/>
-                <Route path="/search" component={Search}/>
+                <Route path="/search/:termo" component={Search}/>
             </Switch>
         </BrowserRouter>
     );

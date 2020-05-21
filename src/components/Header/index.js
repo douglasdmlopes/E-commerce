@@ -8,7 +8,7 @@ import Categorias from '../Categorias';
 import Headroom from 'react-headroom';
 import { IoIosMenu } from "react-icons/io";
 import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import { Drawer, Input, Row, Col, Menu, Icon } from 'antd';
 
@@ -21,6 +21,7 @@ export default function Index() {
     const [visible, setVisible] = useState(false);
     const [current, setCurrent] = useState(1);
     const [showSearch, setShowSearch] = useState(false);
+    const [termoBusca, setTermoBusca] = useState('');
 
     const { Search } = Input;
     const content = (
@@ -46,7 +47,17 @@ export default function Index() {
     };
 
     function search(termo){
-        console.log(termo);
+        console.log(termoBusca);
+        if(termoBusca != "" && termoBusca != null){
+            var busca = '/search/' + termoBusca;
+            window.location.replace(busca);
+        }
+        
+    }
+
+    function updateInputValue(evt){
+        setTermoBusca(evt.target.value);
+        
     }
 
     return (
@@ -63,7 +74,14 @@ export default function Index() {
                     <Col xs={10} sm={12} md={13} lg={14} xl={16}>
                         <Search
                             placeholder="Faça uma busca"
-                            onSearch={value => search(value)}
+                            
+                            value={termoBusca} 
+                                onChange={updateInputValue} 
+                                onKeyPress={event => {
+                                    if (event.key === 'Enter') {
+                                        search(termoBusca)
+                                    }
+                                  }}
                             style={{ width: '90%'}}
                             icon="user"
                         />
@@ -82,22 +100,31 @@ export default function Index() {
                 
                     <ul>
                         <Categorias/>
-                        <li>
-                            Samsung
-                        </li>
-                        <li>
-                            Xiaomi
-                        </li>
-                        <li>
-                            Motorola
-                        </li>
-                        <li>
-                            Lenovo
-                        </li>
-                        
-                        <li>
-                            Apple
-                        </li>
+                        <Link to={`/search/marca=samsung`} >
+                            <li>
+                                Samsung
+                            </li>
+                        </Link>
+                        <Link to={`/search/marca=xiaomi`} >
+                            <li>
+                                Xiaomi
+                            </li>
+                        </Link>
+                        <Link to={`/search/marca=motorola`} >
+                            <li>
+                                Motorola
+                            </li>
+                        </Link>
+                        <Link to={`/search/marca=lenovo`} >
+                            <li>
+                                Lenovo
+                            </li>
+                        </Link>
+                        <Link to={`/search/marca=apple`} >
+                            <li>
+                                Apple
+                            </li>
+                        </Link>
 
                     </ul>
                     
@@ -138,12 +165,24 @@ export default function Index() {
                         </Col>
                         <Col xs={20} sm={22} md={22} lg={22} xl={22}>
                             
-                                <BuscaMobile type="text" placeholder="Buscar por produto..." onKeyDown={value => search(value)} />
+                                <BuscaMobile type="text" placeholder="Buscar por produto..." value={termoBusca} 
+                                onChange={updateInputValue} 
+                                onKeyPress={event => {
+                                    if (event.key === 'Enter') {
+                                        search(termoBusca)
+                                    }
+                                  }}/>
+                                
                                 
                         </Col>
                         <Col xs={2} sm={1} md={1} lg={1} xl={1}>
                         
-                            <Lupa size={32} color="#fff" onClick={() => search('value')}/>
+                            <Lupa size={32} color="#fff" onClick={() => {
+                                if(showSearch == true){
+                                    search('value')
+                                }                                
+                            }}/>
+
                         </Col>
                     </Row>
             </MobileCabecalhoBusca>
@@ -172,17 +211,16 @@ export default function Index() {
               </span>
             }
           >
-            <Menu.Item key="1">Smartphones</Menu.Item>
-            <Menu.Item key="2">Computadores</Menu.Item>
-            <Menu.Item key="3">Notebooks</Menu.Item>
-            <Menu.Item key="4">Tablets</Menu.Item>
-            <Menu.Item key="4">Hardware</Menu.Item>
+            <Link to={`/search/categoria=hardware`} ><Menu.Item key="1">Smartphones</Menu.Item></Link>
+            <Link to={`/search/categoria=computadores`} ><Menu.Item key="2">Computadores</Menu.Item></Link>
+            <Link to={`/search/categoria=notebooks`} ><Menu.Item key="3">Notebooks</Menu.Item></Link>
+            <Link to={`/search/categoria=hardware`} ><Menu.Item key="4">Hardware</Menu.Item></Link>
           </SubMenu>
-          <Menu.Item><Link to={`/favorites`} >Samsung</Link></Menu.Item>
-          <Menu.Item><Link to={`/favorites`} >Xiaomi</Link></Menu.Item>
-          <Menu.Item><Link to={`/favorites`} >Motorola</Link></Menu.Item>
-          <Menu.Item><Link to={`/favorites`} >Lenovo</Link></Menu.Item>
-          <Menu.Item><Link to={`/favorites`} >Apple</Link></Menu.Item>
+          <Menu.Item><Link to={`/search/marca=samsung`} >Samsung</Link></Menu.Item>
+          <Menu.Item><Link to={`/search/marca=xiaomi`} >Xiaomi</Link></Menu.Item>
+          <Menu.Item><Link to={`/search/marca=motorola`} >Motorola</Link></Menu.Item>
+          <Menu.Item><Link to={`/search/marca=lenovo`} >Lenovo</Link></Menu.Item>
+          <Menu.Item><Link to={`/search/marca=apple`} >Apple</Link></Menu.Item>
     
           <Menu.Item><Link to={`/favorites`} ><Icon type="heart" /><span>Favoritos</span></Link></Menu.Item>
           <Menu.Item><Link to={`/cart`} ><span><TiShoppingCart size={17} />   Carrinho</span></Link></Menu.Item>
