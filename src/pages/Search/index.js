@@ -20,6 +20,12 @@ export default function Index() {
     const [loading, setLoading] = useState(false)
     const [termoBusca, setTermoBusca] = useState('')
 
+    const [filtroMarca, setFiltroMarca] = useState('');
+    const [filtroTipo, setFiltroTipo] = useState('');
+    const [filtroAvaliacao, setFiltroAvaliacao] = useState('');
+    const [filtroPrecoInicial, setFiltroPrecoInicial] = useState('');
+    const [filtroPrecoFinal, setFiltroPrecoFinal] = useState('');
+
     useEffect(() => {
         
         async function fetchData() {
@@ -53,7 +59,6 @@ export default function Index() {
 
                     const dados = response.data;
 
-                    console.log(dados.data);
                     if(dados.error == 0){
                         setProdutos(dados.data);
                     }else{
@@ -90,6 +95,69 @@ export default function Index() {
         setVisible(false);
     };
 
+    async function filtrarDados() {
+        
+        let busca = {
+            marcas : filtroMarca,
+            tipo: filtroTipo,
+            avaliacao: filtroAvaliacao,
+            preco_min: filtroPrecoInicial,
+            preco_max: filtroPrecoFinal,
+        }
+
+
+
+        let separador = termo.indexOf("=") + 1;
+        let tipo = termo.substring(0,termo.indexOf("="))
+        termo = termo.substr(separador);
+        
+        if(filtroMarca != ''){
+            setTermoBusca(filtroMarca);
+        }
+
+        if(tipo == 'marca' && filtroMarca == ''){
+            busca.marcas = termo;
+            setTermoBusca(termo);
+        }else if(tipo == 'termo' && filtroTipo == ''){
+            busca.nome = termo;
+            setTermoBusca(termo);
+        }else if(tipo == 'categoria' && filtroTipo == ''){
+            busca.tipo = termo;
+            setTermoBusca("");
+        }
+        console.log(busca);
+
+
+        
+        setLoading(true);
+
+        await api.post(`/api`, busca)
+        .then(response => {
+            
+            const dados = response.data;
+            
+            if(dados.error == 0){
+                setProdutos(dados.data);
+            }else{
+                setProdutos([]);
+            }
+            
+        })
+        .catch(e => {
+            console.error(e);
+            
+            notification['error']({
+                message: 'Desculpe',
+                description:
+                'Ocorreu um erro ao tentar se conectar ao servidor, tente novamente mais tarde.',
+                placement: 'bottomRight'
+            });
+            
+        });
+        setLoading(false);
+
+    }  
+
     return (
         <>
             <Header/>
@@ -112,7 +180,11 @@ export default function Index() {
                         >
                             <div style={{paddingLeft: '5px', paddingTop: '10px'}}>
                                 <Rotulo>Marca</Rotulo>
-                                <DefaultSelect placeholder='Marca' >
+                                <DefaultSelect placeholder='Marca' value={filtroMarca} onChange={
+                                    (event) =>{
+                                        setFiltroMarca(event.target.value)
+                                    }
+                                }>
                                     <option value="">Selecione</option>
                                     <option value="Apple">Apple</option>
                                     <option value="Samsung">Samsung</option>
@@ -126,7 +198,11 @@ export default function Index() {
                                     <option value="Multilaser">Multilaser</option>
                                 </DefaultSelect>
                                 <Rotulo>Tipo</Rotulo>
-                                <DefaultSelect placeholder='Tipo' >
+                                <DefaultSelect placeholder='Tipo' value={filtroTipo} onChange={
+                                (event) =>{
+                                    setFiltroTipo(event.target.value)
+                                }
+                            }>
                                     <option value="">Selecione</option>
                                     <option value="Notebook">Notebook</option>
                                     <option value="Smartphone">Smartphone</option>
@@ -135,7 +211,11 @@ export default function Index() {
                                     <option value="Tablet">Tablet</option>
                                 </DefaultSelect>
                                 <Rotulo>Avaliação</Rotulo>
-                                <DefaultSelect placeholder='Avaliação' >
+                                <DefaultSelect placeholder='Avaliação' value={filtroAvaliacao} onChange={
+                                (event) =>{
+                                    setFiltroAvaliacao(event.target.value)
+                                }
+                            }>
                                     <option value="">Selecione</option>
                                     <option value="1">1 Estrela</option>
                                     <option value="2">2 Estrelas</option>
@@ -144,9 +224,21 @@ export default function Index() {
                                     <option value="5">5 Estrelas</option>
                                 </DefaultSelect>
                                 <Rotulo>Faixa de preço</Rotulo>
-                                <DefaultInput type="number" placeholder="Preço minimo"/>
-                                <DefaultInput type="number" placeholder="Preço máximo"/>
-                                <BotaoPadraoVerde onClick={showDrawer} style={{width: '98%'}}>
+                                <DefaultInput type="number" placeholder="Preço minimo" 
+                                value={filtroPrecoInicial}
+                                onChange={
+                                    (event) =>{
+                                        setFiltroPrecoInicial(event.target.value)
+                                    }
+                                }/>
+                                <DefaultInput type="number" placeholder="Preço máximo" 
+                                value={filtroPrecoFinal}
+                                onChange={
+                                    (event) =>{
+                                        setFiltroPrecoFinal(event.target.value)
+                                    }
+                                }/>
+                                <BotaoPadraoVerde onClick={filtrarDados} style={{width: '98%'}}>
                                     <span style={{fontSize: 16}}>Buscar</span>
                                 </BotaoPadraoVerde>
                             </div>
@@ -157,7 +249,11 @@ export default function Index() {
                     <Col xs={{ span: 0 }} sm={{ span: 0 }} md={{ span: 4 }} lg={{ span: 4 }} xl={{ span: 4 }}>
                         <FormFiltros>
                             <Rotulo>Marca</Rotulo>
-                            <DefaultSelect placeholder='Marca' >
+                            <DefaultSelect placeholder='Marca' value={filtroMarca} onChange={
+                                (event) =>{
+                                    setFiltroMarca(event.target.value)
+                                }
+                            } >
                                 <option value="">Selecione</option>
                                 <option value="Apple">Apple</option>
                                 <option value="Samsung">Samsung</option>
@@ -171,7 +267,11 @@ export default function Index() {
                                 <option value="Multilaser">Multilaser</option>
                             </DefaultSelect>
                             <Rotulo>Tipo</Rotulo>
-                            <DefaultSelect placeholder='Tipo' >
+                            <DefaultSelect placeholder='Tipo' value={filtroTipo} onChange={
+                                (event) =>{
+                                    setFiltroTipo(event.target.value)
+                                }
+                            }>
                                 <option value="">Selecione</option>
                                 <option value="Notebook">Notebook</option>
                                 <option value="Smartphone">Smartphone</option>
@@ -180,7 +280,11 @@ export default function Index() {
                                 <option value="Tablet">Tablet</option>
                             </DefaultSelect>
                             <Rotulo>Avaliação</Rotulo>
-                            <DefaultSelect placeholder='Avaliação' >
+                            <DefaultSelect placeholder='Avaliação' value={filtroAvaliacao} onChange={
+                                (event) =>{
+                                    setFiltroAvaliacao(event.target.value)
+                                }
+                            }>
                                 <option value="">Selecione</option>
                                 <option value="1">1 Estrela</option>
                                 <option value="2">2 Estrelas</option>
@@ -189,9 +293,27 @@ export default function Index() {
                                 <option value="5">5 Estrelas</option>
                             </DefaultSelect>
                             <Rotulo>Faixa de preço</Rotulo>
-                            <DefaultInput type="number" placeholder="Preço minimo"/>
-                            <DefaultInput type="number" placeholder="Preço máximo"/>
-                            <BotaoPadraoVerde onClick={showDrawer} style={{width: '98%'}}>
+                            <DefaultInput 
+                                type="number" 
+                                placeholder="Preço minimo"
+                                value={filtroPrecoInicial}
+                                onChange={
+                                    (event) =>{
+                                        setFiltroPrecoInicial(event.target.value)
+                                    }
+                                }
+                            />
+                            <DefaultInput 
+                                type="number"
+                                placeholder="Preço máximo"
+                                value={filtroPrecoFinal}
+                                onChange={
+                                    (event) =>{
+                                        setFiltroPrecoFinal(event.target.value)
+                                    }
+                                }    
+                            />
+                            <BotaoPadraoVerde onClick={filtrarDados} style={{width: '98%'}}>
                                 <span style={{fontSize: 16}}>Buscar</span>
                             </BotaoPadraoVerde>
                         </FormFiltros>

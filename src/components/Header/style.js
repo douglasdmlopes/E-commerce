@@ -268,7 +268,7 @@ export const MobileCabecalhoBusca = styled.header`
         display: none;
     }
 
-    @media (max-width: 720px) {
+    @media (max-width: 1020px) {
         padding: 0px 11px 0px 7px;
         span{
             margin-left: -8px;
@@ -276,7 +276,7 @@ export const MobileCabecalhoBusca = styled.header`
         }
     }
 
-    @media (min-width: 721px) {
+    @media (min-width: 1021px) {
         span{
             margin-left: -15px;
             width: 114%;

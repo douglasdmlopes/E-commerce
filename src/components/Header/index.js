@@ -39,7 +39,7 @@ export default function Index() {
     };
 
     function search(termo){
-        console.log(termoBusca);
+        
         if(termoBusca != "" && termoBusca != null){
             var busca = '/search/termo=' + termoBusca;
             window.location.replace(busca);
