@@ -64,9 +64,9 @@ export default function Index() {
                     });
                     
                 });*/
-                setLoading(false);
+                window.setTimeout(() => {setLoading(false)}, 300);
             }else{
-                setLoading(false);
+                window.setTimeout(() => {setLoading(false)}, 300);
             }
             
             

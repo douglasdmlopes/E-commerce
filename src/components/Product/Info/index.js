@@ -8,7 +8,7 @@ import { Row, Col, Input, message } from 'antd';
 
 
 export default function Index({produto}) {
-    
+    console.log(produto);
     const [fav, setFav] = useState('favoritar');//favoritar - favoritando - desfavoritar
     
     message.config({
@@ -41,7 +41,7 @@ export default function Index({produto}) {
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                         <Estrelas allowHalf defaultValue={
-                            produto.avaliacao != null ? produto.avaliacao : 0
+                            produto.avaliacao == null ? 0 : produto.avaliacao
                         }  size={10} disabled />
                     </Col>
                     <Col xs={24} sm={24} md={24} lg={24} xl={24}>

@@ -777,7 +777,7 @@ export default function Index() {
         localStorage.setItem("produtos", JSON.stringify(produtos));
         console.log(JSON.parse(localStorage.getItem("produtos")));
         setProdutos(produtos);
-        setLoading(false);
+        window.setTimeout(() => {setLoading(false)}, 300);
         /*
         async function fetchData() {
             setLoading(true);

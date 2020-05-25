@@ -27,7 +27,66 @@ export default function Index() {
     const [filtroPrecoFinal, setFiltroPrecoFinal] = useState('');
 
     useEffect(() => {
+
+        setLoading(true);
+
+        let produtos = JSON.parse(localStorage.getItem("produtos"));
+
+        let separador = termo.indexOf("=") + 1;
+
+        let tipo = termo.substring(0,termo.indexOf("="));
+
+        termo = termo.substr(separador);
+
+        let busca = {};
+
+        if(tipo == 'marca'){
+            let dados_temp = [];
+            produtos.forEach(function(produto) {
+                if (produto.marca == termo) {
+                    dados_temp.push(produto);
+                }
+            });
+            setProdutos(dados_temp);
+            setTermoBusca(termo);
+        }else if(tipo == 'termo'){
+            let dados_temp = [];
+            produtos.forEach(function(produto) {
+                if (produto.nome.toUpperCase().indexOf(termo.toUpperCase()) != -1) {
+                    dados_temp.push(produto);
+                }
+            });
+            setProdutos(dados_temp);
+            setTermoBusca(termo);
+        }else if(tipo == 'categoria'){
+            let dados_temp = [];
+            produtos.forEach(function(produto) {
+                if (produto.tipo.toUpperCase().indexOf(termo.toUpperCase()) != -1) {
+                    dados_temp.push(produto);
+                }
+            });
+            setProdutos(dados_temp);
+            setTermoBusca(termo);
+        }
+
+        window.setTimeout(() => {setLoading(false)}, 300);
         
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
         async function fetchData() {
             
             let separador = termo.indexOf("=") + 1;
@@ -83,7 +142,7 @@ export default function Index() {
             }            
             
         }
-        fetchData();
+        fetchData();*/
         
     }, []);
 
@@ -100,13 +159,12 @@ export default function Index() {
         setVisible(false);
         
         let busca = {
-            marcas : filtroMarca,
-            tipo: filtroTipo,
+            marcas : filtroMarca,//
+            tipo: filtroTipo,//
             avaliacao: filtroAvaliacao,
             preco_min: filtroPrecoInicial,
             preco_max: filtroPrecoFinal,
         }
-
 
 
         let separador = termo.indexOf("=") + 1;
@@ -117,48 +175,115 @@ export default function Index() {
             setTermoBusca(filtroMarca);
         }
 
-        if(tipo == 'marca' && filtroMarca == ''){
-            busca.marcas = termo;
-            setTermoBusca(termo);
-        }else if(tipo == 'termo' && filtroTipo == ''){
-            busca.nome = termo;
-            setTermoBusca(termo);
-        }else if(tipo == 'categoria' && filtroTipo == ''){
-            busca.tipo = termo;
-            setTermoBusca("");
-        }
-
-        
         
         setLoading(true);
-        
 
-        await api.post(`/api`, busca)
-        .then(response => {
+        let produtos = JSON.parse(localStorage.getItem("produtos"));
+
+        let dados_temp = [];
+
+        if(tipo == 'marca' && filtroMarca == ''){            
             
-            const dados = response.data;
+            produtos.forEach(function(produto) {
+                if (produto.marca == termo) {
+                    dados_temp.push(produto);
+                }
+            });
+            setTermoBusca(termo);
             
-            if(dados.error == 0){
-                setProdutos(dados.data);
-            }else{
-                setProdutos([]);
+        }else if(tipo == 'termo' && filtroTipo == ''){
+            
+            produtos.forEach(function(produto) {
+                if (produto.nome.toUpperCase().indexOf(termo.toUpperCase()) != -1) {
+                    dados_temp.push(produto);
+                }
+            });
+            setTermoBusca(termo);
+        }else if(tipo == 'categoria' && filtroTipo == ''){
+            produtos.forEach(function(produto) {
+                if (produto.tipo.toUpperCase().indexOf(termo.toUpperCase()) != -1) {
+                    dados_temp.push(produto);
+                }
+            });
+            setTermoBusca(termo);
+        }else{
+            dados_temp = produtos;
+        }
+
+        let dados_temp_prod = [];
+
+        /*
+        let busca = {
+            marcas : filtroMarca,//
+            tipo: filtroTipo,//
+            avaliacao: filtroAvaliacao,
+            preco_min: filtroPrecoInicial,
+            preco_max: filtroPrecoFinal,
+        }
+        */
+
+        dados_temp.forEach(function(produto) {
+            
+            let adicionar = false;
+            let ignorar = false;
+            if (busca.marcas != "" && busca.marcas != null) {console.log(1)
+                if (produto.marca.toUpperCase().indexOf(busca.marcas.toUpperCase()) != -1) {
+                    adicionar = true;
+                }else{
+                    adicionar = false;
+                    ignorar = true;
+                }
+            }
+
+            if (busca.tipo != "" && busca.tipo != null && !ignorar) {console.log(2)
+                if (produto.tipo.toUpperCase().indexOf(busca.tipo.toUpperCase()) != -1) {
+                    adicionar = true;
+                }else{
+                    adicionar = false
+                    ignorar = true;
+                }
+            }
+
+            if (busca.avaliacao != "" && busca.avaliacao != null && !ignorar) {console.log(3)
+                
+                if (parseInt(produto.avaliacao) == parseInt(busca.avaliacao) ) {
+                    adicionar = true;
+                }else{
+                    adicionar = false;
+                    ignorar = true;
+                }
             }
             
-        })
-        .catch(e => {
-            console.error(e);
+            if (busca.preco_min != "" && busca.preco_min != null && !ignorar) {
+                
+                if (parseFloat(produto.preco) >= parseFloat(busca.preco_min) ) {
+                    adicionar = true;
+                }else{
+                    adicionar = false;
+                    ignorar = true;
+                }
+            }
+
+            if (busca.preco_max != "" && busca.preco_max != null && !ignorar) {
+                
+                if (parseFloat(produto.preco) <= parseFloat(busca.preco_max) ) {
+                    adicionar = true;
+                }else{
+                    adicionar = false;
+                    ignorar = true;
+                }
+            }
             
-            notification['error']({
-                message: 'Desculpe',
-                description:
-                'Ocorreu um erro ao tentar se conectar ao servidor, tente novamente mais tarde.',
-                placement: 'bottomRight'
-            });
+            if(adicionar == true || (busca.avaliacao == "" && busca.tipo == ""  && busca.marcas == "" && busca.preco_min == "" && busca.preco_max == "")){
+                dados_temp_prod.push(produto);
+            }
             
         });
         
-        setLoading(false);
-
+        setProdutos(dados_temp_prod);
+        window.setTimeout(() => {setLoading(false)}, 300);
+        
+        
     }  
 
     return (

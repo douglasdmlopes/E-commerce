@@ -13,22 +13,24 @@ export default function index() {
             infinite
              >
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/product/30`} >
                     <img src="./slide01.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/product/27`} >
                 <img src="./slide02.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/product/19`} >
                 <img src="./slide03.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <img src="./slide04.png" alt="Tech Store" draggable="false"/>
+                    <Link to={`/product/29`} >
+                        <img src="./slide04.png" alt="Tech Store" draggable="false"/>
+                    </Link>
                 </div>
             </Slider>
         </>

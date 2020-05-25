@@ -56,14 +56,22 @@ export default function Index({produto}) {
                 
         localStorage.setItem("cart", JSON.stringify(carrinho));*/
         
-        setBotao('remover');
-        message.success('Item adicionado ao carrinho', 0.9);
+        setBotao('carregando');
+        window.setTimeout(() => {
+            setBotao('remover');
+            message.success('Item adicionado ao carrinho', 0.9);
+        }, 950);
+                
     }
 
     function removerItemCarrinho(){
         
-        setBotao('adicionar');
-        message.success('Item removido do carrinho', 0.9);
+        setBotao('carregando');
+        window.setTimeout(() => {
+            setBotao('adicionar');
+            message.success('Item removido do carrinho', 0.9);
+        }, 950);
+        
     }
 
     return (

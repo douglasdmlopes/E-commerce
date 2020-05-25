@@ -27,27 +27,27 @@ export default function Index() {
             infinite
              >
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/search/marca=Samsung`} >
                     <img src="./empresas/empresa_03.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/search/marca=Xiaomi`} >
                 <img src="./empresas/empresa_01.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/search/marca=Lenovo`} >
                 <img src="./empresas/empresa_04.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/search/marca=Apple`} >
                     <img src="./empresas/empresa_02.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
                 <div>
-                <Link to={`/product/1`} >
+                <Link to={`/search/marca=Huawei`} >
                 <img src="./empresas/empresa_05.png" alt="Tech Store" draggable="false"/>
                 </Link>
                 </div>
