@@ -15,6 +15,13 @@ export default function Index({produto}) {
     });
 
     useEffect(() => {
+
+        let cart = JSON.parse(localStorage.getItem("cart"));
+
+        if(cart == null){
+            localStorage.setItem("cart", JSON.stringify({}));
+        }
+
         /*let carrinho = {};
         carrinho.nome = 'teste prod car';
         
@@ -40,6 +47,14 @@ export default function Index({produto}) {
     }
 
     function adicionarItemCarrinho() {
+       /* let carrinho = {};
+        carrinho.push(produto);
+        
+        carrinho = JSON.parse(localStorage.getItem("cart"));
+        console.log('carrinho');
+        console.log(carrinho);
+                
+        localStorage.setItem("cart", JSON.stringify(carrinho));*/
         
         setBotao('remover');
         message.success('Item adicionado ao carrinho', 0.9);

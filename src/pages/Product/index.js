@@ -28,11 +28,22 @@ export default function Index() {
             setLoading(true);
 
             if(id_produto != undefined){
+                
+                let produtos = JSON.parse(localStorage.getItem("produtos"));
+
+                produtos.forEach(function(produto) {
+                    if (produto.id == id_produto) {
+                        setProduto(produto);
+                        return false;
+                    }
+                })
+               
+                /*
                 await api.post(`/api`, {id : id_produto})
                 .then(response => {
 
                     const dados = response.data;
-                    console.log(dados.data);
+                    //console.log(dados.data);
                     if(dados.error == 0){
                         dados.data.map(produto => (
                             setProduto(produto)
@@ -52,7 +63,7 @@ export default function Index() {
                         placement: 'bottomRight'
                     });
                     
-                });
+                });*/
                 setLoading(false);
             }else{
                 setLoading(false);
