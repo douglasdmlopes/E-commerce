@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {SubSessao, BotaoNormal, BotaoPadraoVerde, BotaoPadraoCinza} from '../../../styles/global';
 import {NomeProduto, NomeEmpresa, Estrelas, Frete, FreteCalc, Divisoria} from './Style';
 import { FaTruck } from "react-icons/fa";
@@ -8,27 +8,123 @@ import { Row, Col, Input, message } from 'antd';
 
 
 export default function Index({produto}) {
-    console.log(produto);
+    
+    const [botao, setBotao] = useState('comprar');//comprar - carregando - remover
     const [fav, setFav] = useState('favoritar');//favoritar - favoritando - desfavoritar
     
     message.config({
         maxCount: 3,
     });
 
+    useEffect(() => {
+
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        let favorites = JSON.parse(localStorage.getItem("favorites"));
+
+        if(cart == null){
+            localStorage.setItem("cart", JSON.stringify([]));
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+
+        if(favorites == null){
+            localStorage.setItem("favorites", JSON.stringify([]));
+            favorites = JSON.parse(localStorage.getItem("favorites"));
+        }
+        
+        cart.forEach(function(item) {
+            if (produto.id == item.id) {
+                setBotao('remover');
+            }
+        });
+
+        favorites.forEach(function(item) {
+            if (produto.id == item.id) {
+                setFav('desfavoritar');
+            }
+        });
+
+    }, []);
+
+
     function favoritarItem() {
+
+        let favoritos = {};
+                
+        favoritos = JSON.parse(localStorage.getItem("favorites"));
+
+        favoritos.push(produto);
+                
+        localStorage.setItem("favorites", JSON.stringify(favoritos));
         
         setFav('desfavoritar');
         message.success('Item adicionado aos favoritos', 0.9);
     }
 
     function desfavoritarItem(){
+
+        let favoritos =[];        
+        
+        favoritos = JSON.parse(localStorage.getItem("favorites"));
+
+        let favoritos_temp = [];
+
+        favoritos.forEach(function(item) {
+            if (produto.id != item.id) {
+                favoritos_temp.push(item);
+            }
+        });
+
+        localStorage.setItem("favorites", JSON.stringify(favoritos_temp));
         
         setFav('favoritar');
         message.success('Item removido dos favoritos', 0.9);
     }
 
     function adicionarItemCarrinho() {
-        console.log("Adicionar item ao carrinho e redirecionar usuario para o carrinho");
+
+        let carrinho = {};
+                
+        carrinho = JSON.parse(localStorage.getItem("cart"));
+
+        carrinho.push(produto);
+                
+        localStorage.setItem("cart", JSON.stringify(carrinho));
+        
+        setBotao('carregando');
+
+        window.setTimeout(() => {
+            setBotao('remover');
+            message.success('Item adicionado ao carrinho', 0.9);
+        }, 10);
+
+        window.setTimeout(() => {
+            window.location.replace('/cart');
+        }, 200);
+
+        
+    }
+
+    function removerItemCarrinho(){
+        let carrinho =[];        
+        
+        carrinho = JSON.parse(localStorage.getItem("cart"));
+
+        let carrinho_temp = [];
+
+        carrinho.forEach(function(item) {
+            if (produto.id != item.id) {
+                carrinho_temp.push(item);
+            }
+        });
+
+        localStorage.setItem("cart", JSON.stringify(carrinho_temp));
+
+        setBotao('carregando');
+
+        window.setTimeout(() => {
+            setBotao('comprar');
+            message.success('Item removido do carrinho', 0.9);
+        }, 10);
     }
     
     return (
@@ -52,14 +148,31 @@ export default function Index({produto}) {
                         <FreteCalc size='mini' action='Calcular' placeholder='Calcular Frete' disabled />
                         <Divisoria/>
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                            <BotaoPadraoVerde size='medium' className="ui active button" style={{width: '100%'}}
-                            onClick={(event) => {
-                                event.stopPropagation();
-                                adicionarItemCarrinho()
-                            }}>
-                                <Icon name='cart'  style={{fontSize: 16}}/>
-                                <span style={{fontSize: 12}}>COMPRAR</span>
-                            </BotaoPadraoVerde>
+                            {
+                                botao == 'comprar' ?
+
+                                <BotaoPadraoVerde size='medium' className="ui active button" style={{width: '100%'}}
+                                    onClick={(event) => {
+                                        event.stopPropagation();
+                                        adicionarItemCarrinho()
+                                    }}>
+                                    <Icon name='cart'  style={{fontSize: 16}}/>
+                                    <span style={{fontSize: 12}}>COMPRAR</span>
+                                </BotaoPadraoVerde>
+
+                                :
+
+                                <BotaoPadraoVerde size='medium' className="ui active button" style={{width: '100%'}}
+                                onClick={(event) => {
+                                    event.stopPropagation();
+                                    removerItemCarrinho()
+                                }}>
+                                    <Icon name='cart'  style={{fontSize: 16}}/>
+                                    <span style={{fontSize: 12}}>REMOVER DO CARRINHO</span>
+                                </BotaoPadraoVerde>
+
+                            }
+                            
                             <Divisoria/>
                         </Col>
                         

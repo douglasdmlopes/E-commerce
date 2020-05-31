@@ -36,34 +36,8 @@ export default function Index() {
                         setProduto(produto);
                         return false;
                     }
-                })
+                });
                
-                /*
-                await api.post(`/api`, {id : id_produto})
-                .then(response => {
-
-                    const dados = response.data;
-                    //console.log(dados.data);
-                    if(dados.error == 0){
-                        dados.data.map(produto => (
-                            setProduto(produto)
-                        ));
-                    }else{
-                        setProduto([]);
-                    }
-                    
-                })
-                .catch(e => {
-                    console.error(e);
-                    
-                    notification['error']({
-                        message: 'Desculpe',
-                        description:
-                        'Ocorreu um erro ao tentar se conectar ao servidor, tente novamente mais tarde.',
-                        placement: 'bottomRight'
-                    });
-                    
-                });*/
                 window.setTimeout(() => {setLoading(false)}, 300);
             }else{
                 window.setTimeout(() => {setLoading(false)}, 300);

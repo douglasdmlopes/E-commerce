@@ -778,36 +778,7 @@ export default function Index() {
         console.log(JSON.parse(localStorage.getItem("produtos")));
         setProdutos(produtos);
         window.setTimeout(() => {setLoading(false)}, 300);
-        /*
-        async function fetchData() {
-            setLoading(true);
-
-            await api.post(`/api`)
-            .then(response => {
-                const dados = response.data;z
-                if(dados.error == 0){
-                    setProdutos(dados.data);                
-                }else{
-                    setProdutos([]);
-                }
-
-            })
-            .catch(e => {
-                console.error(e);
-                console.log("Erro ao tentar se conectar com o servidor");
-                notification['error']({
-                    message: 'Desculpe',
-                    description:
-                      'Ocorreu um erro ao tentar se conectar ao servidor, tente novamente mais tarde.',
-                    placement: 'bottomRight'
-                  });
                 
-            });
-            
-            setLoading(false);
-        }
-        fetchData();*/
-        
     }, []);
     
     return (

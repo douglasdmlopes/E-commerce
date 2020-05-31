@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-//import {Card} from 'antd';
+import React, {useState, useEffect} from 'react';
 import {Cartao, FavCard, FavoritadoCard, CarrinhoCard} from './Style';
 import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
@@ -17,46 +16,83 @@ export default function Index({produto}) {
     useEffect(() => {
 
         let cart = JSON.parse(localStorage.getItem("cart"));
+        let favorites = JSON.parse(localStorage.getItem("favorites"));
 
         if(cart == null){
-            localStorage.setItem("cart", JSON.stringify({}));
+            localStorage.setItem("cart", JSON.stringify([]));
+            cart = JSON.parse(localStorage.getItem("cart"));
         }
 
-        /*let carrinho = {};
-        carrinho.nome = 'teste prod car';
+        if(favorites == null){
+            localStorage.setItem("favorites", JSON.stringify([]));
+            favorites = JSON.parse(localStorage.getItem("favorites"));
+        }
         
-        localStorage.setItem("carrinho", JSON.stringify(carrinho));
-        var filtros = JSON.parse(localStorage.getItem("carrinho"));
-        console.log("Inicio da criacao do componente");
-        console.log(filtros);*/
-        
+        cart.forEach(function(item) {
+            if (produto.id == item.id) {
+                setBotao('remover');
+            }
+        });
+
+        favorites.forEach(function(item) {
+            if (produto.id == item.id) {
+                setFav('desfavoritar');
+            }
+        });
 
     }, []);
 
 
     function favoritarItem() {
         
+        let favoritos = {};
+                
+        favoritos = JSON.parse(localStorage.getItem("favorites"));
+
+        favoritos.push(produto);
+                
+        localStorage.setItem("favorites", JSON.stringify(favoritos));
+        
         setFav('desfavoritar');
+
         message.success('Item adicionado aos favoritos', 0.9);
+
     }
 
     function desfavoritarItem(){
+
+        let favoritos =[];        
+        
+        favoritos = JSON.parse(localStorage.getItem("favorites"));
+
+        let favoritos_temp = [];
+
+        favoritos.forEach(function(item) {
+            if (produto.id != item.id) {
+                favoritos_temp.push(item);
+            }
+        });
+
+        localStorage.setItem("favorites", JSON.stringify(favoritos_temp));
         
         setFav('favoritar');
+
         message.success('Item removido dos favoritos', 0.9);
+
     }
 
     function adicionarItemCarrinho() {
-       /* let carrinho = {};
-        carrinho.push(produto);
-        
-        carrinho = JSON.parse(localStorage.getItem("cart"));
-        console.log('carrinho');
-        console.log(carrinho);
+
+        let carrinho = {};
                 
-        localStorage.setItem("cart", JSON.stringify(carrinho));*/
+        carrinho = JSON.parse(localStorage.getItem("cart"));
+
+        carrinho.push(produto);
+                
+        localStorage.setItem("cart", JSON.stringify(carrinho));
         
         setBotao('carregando');
+
         window.setTimeout(() => {
             setBotao('remover');
             message.success('Item adicionado ao carrinho', 0.9);
@@ -66,7 +102,22 @@ export default function Index({produto}) {
 
     function removerItemCarrinho(){
         
+        let carrinho =[];        
+        
+        carrinho = JSON.parse(localStorage.getItem("cart"));
+
+        let carrinho_temp = [];
+
+        carrinho.forEach(function(item) {
+            if (produto.id != item.id) {
+                carrinho_temp.push(item);
+            }
+        });
+
+        localStorage.setItem("cart", JSON.stringify(carrinho_temp));
+
         setBotao('carregando');
+
         window.setTimeout(() => {
             setBotao('adicionar');
             message.success('Item removido do carrinho', 0.9);
@@ -110,8 +161,6 @@ export default function Index({produto}) {
                 }
             </a>
 
-
-
             <img src={`/produtos/${produto.id_img_01}.png`} alt="Produto" />            
             <Cartao.Content>
             <Cartao.Header>{produto.nome}</Cartao.Header>
@@ -141,7 +190,7 @@ export default function Index({produto}) {
                             <CarrinhoCard size='mini' disabled icon labelPosition='left' onClick={(event) => {
                                 event.stopPropagation();
                             } }>
-                                <Icon loading name='spinner' style={{fontSize: 12}}/><span style={{fontSize: 12}}>Adicionando</span>
+                                <Icon loading name='spinner' style={{fontSize: 12}}/><span style={{fontSize: 12}}>Aguarde</span>
                                 
                             </CarrinhoCard>
                         :
