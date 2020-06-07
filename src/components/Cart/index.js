@@ -74,7 +74,7 @@ export default function Index({acao}) {
                 carrinho.length == 0 ?
                 ""
                 :
-                <Link to={`/favorites`} style={{marginLeft : '5px'}} >
+                <Link to={`/cart`} style={{marginLeft : '5px'}} >
                     <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', }}>Ir para o Carrinho</BotaoPadraoVerde>
                 </Link>
             }

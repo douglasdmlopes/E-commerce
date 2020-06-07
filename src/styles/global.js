@@ -86,12 +86,21 @@ export const SessaoListaProdutos = styled.section`
     padding: 10px;
 
     border-radius: 3px;
-
+    min-height: calc(100vh - 165px);
     @media (min-width: 975px) {
+        
         max-width: 960px;
         min-width: 960px;
     }
     
+    @media (max-width: 1020px) {
+        min-height: calc(100vh - 165px);
+    }
+
+    @media (min-width: 1020px) {
+        min-height: calc(100vh - 200px);
+    }
+        
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

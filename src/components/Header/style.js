@@ -141,7 +141,13 @@ export const Logo = styled.img`
 `;
 
 export const UserMenu = styled.span`
-    text-align: center;    
+    text-align: center;
+    svg{
+        &:active{
+            color: rgb(234, 234, 234) !important;
+            transform: 0.5s !important;
+        }
+    }
 `;
 
 export const MobileCabecalho = styled.header`
