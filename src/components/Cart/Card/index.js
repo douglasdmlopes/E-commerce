@@ -19,7 +19,7 @@ export default class Index extends Component {
         let carrinho_temp = [];
         let that = this;
         carrinho.forEach(function(item) {
-            if (that.props.produto.id != item.id) {
+            if (that.props.produto.id !== item.id) {
                 carrinho_temp.push(item);
             }
         });
@@ -41,10 +41,10 @@ export default class Index extends Component {
         let carrinho_temp = [];
         let that = this;
         carrinho.forEach(function(item) {
-            if (that.props.produto.id == item.id) {
-                if(acao == 'add'){
+            if (that.props.produto.id === item.id) {
+                if(acao === 'add'){
                     item.qtde += 1; 
-                }else if(acao == 'sub'){
+                }else if(acao === 'sub'){
                     let qtde = item.qtde;
                     if((qtde - 1) > 0){
                         item.qtde -= 1; 

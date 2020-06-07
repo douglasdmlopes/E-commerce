@@ -14,7 +14,7 @@ const content = (
 export default function index() {
     return (
         <>
-            <Popover placement="bottom" content={content} title="Minha Conta" trigger="click">
+            <Popover placement="bottom" content={content} title="Minha Conta" trigger="hover">
                 <TiUser size={40} color="#fff" cursor="pointer"/>
             </Popover>
         </>
