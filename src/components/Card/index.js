@@ -86,9 +86,11 @@ export default function Index({produto}) {
         let carrinho = {};
                 
         carrinho = JSON.parse(localStorage.getItem("cart"));
+        
+        produto.qtde = 1;
 
         carrinho.push(produto);
-                
+
         localStorage.setItem("cart", JSON.stringify(carrinho));
         
         setBotao('carregando');

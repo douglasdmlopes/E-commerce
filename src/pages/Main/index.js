@@ -486,7 +486,7 @@ export default function Index() {
             },
             {
                 "id": 30,
-                "nome": "Apple SE (2020)",
+                "nome": "Apple iPhone SE (2020)",
                 "marca": "Apple",
                 "tipo": "Smartphone",
                 "preco": "3699.99",
@@ -775,7 +775,6 @@ export default function Index() {
         ];
         
         localStorage.setItem("produtos", JSON.stringify(produtos));
-        console.log(JSON.parse(localStorage.getItem("produtos")));
         setProdutos(produtos);
         window.setTimeout(() => {setLoading(false)}, 300);
                 

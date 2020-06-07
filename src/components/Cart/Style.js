@@ -11,3 +11,16 @@ export const Total = styled.div`
         font-weight: bold;
     }
 `;
+
+export const CarrinhoVazio = styled.div`
+    margin-top: 100px;
+    text-align: center;
+    svg{
+        margin-left: -26px;
+        color: #3c3c3c;
+    }
+    h2{
+        font-size: 40px;
+        color: #3c3c3c;
+    }
+`;

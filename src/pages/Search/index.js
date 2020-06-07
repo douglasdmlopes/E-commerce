@@ -226,7 +226,7 @@ export default function Index() {
             
             let adicionar = false;
             let ignorar = false;
-            if (busca.marcas != "" && busca.marcas != null) {console.log(1)
+            if (busca.marcas != "" && busca.marcas != null) {
                 if (produto.marca.toUpperCase().indexOf(busca.marcas.toUpperCase()) != -1) {
                     adicionar = true;
                 }else{
@@ -235,7 +235,7 @@ export default function Index() {
                 }
             }
 
-            if (busca.tipo != "" && busca.tipo != null && !ignorar) {console.log(2)
+            if (busca.tipo != "" && busca.tipo != null && !ignorar) {
                 if (produto.tipo.toUpperCase().indexOf(busca.tipo.toUpperCase()) != -1) {
                     adicionar = true;
                 }else{
@@ -244,7 +244,7 @@ export default function Index() {
                 }
             }
 
-            if (busca.avaliacao != "" && busca.avaliacao != null && !ignorar) {console.log(3)
+            if (busca.avaliacao != "" && busca.avaliacao != null && !ignorar) {
                 
                 if (parseInt(produto.avaliacao) == parseInt(busca.avaliacao) ) {
                     adicionar = true;

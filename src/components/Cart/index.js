@@ -1,214 +1,85 @@
-import React from 'react';
-import { Popover } from 'antd';
-import { ListaPopOverCart, BotaoPadraoVerde, BotaoRemover, FormControlCartHeader, SelectPadrao } from '../../styles/global';
+import React, { useState, useEffect } from 'react';
 import { TiShoppingCart } from "react-icons/ti";
-import { MdClose} from "react-icons/md";
+import Card from './Card';
+import { Drawer, Menu, Icon, Select } from 'antd';
+import { BotaoPadraoVerde } from '../../styles/global';
 import { Link } from 'react-router-dom';
-import { InputNumber } from 'antd';
-import {Total} from './Style';
+import { FiShoppingCart } from "react-icons/fi";
+import { CarrinhoVazio } from "./Style";
 
-import { Row, Col, Tooltip, Select  } from 'antd';
+const { SubMenu } = Menu;
 
-function handleChange(value) {
-    console.log(`Selected: ${value}`);
-  }
+export default function Index({acao}) {
 
-const { Option } = Select;
+    const [carrinho, setCarrinho] = useState([]);
 
-export default function index() {
+    useEffect(() => {
 
-    const content = (<>
-        <ListaPopOverCart style={{maxHeight: 350, overflowY: "auto", overflowX: "hidden", marginTop: -8, marginLeft: -16,marginButton: -8, marginRight: -16}}>     
-            <Link to={`/product/1`} >
-            <li>
-                <Row>
-                    <Col xs={22} sm={22} md={22} lg={22} xl={22}>
-                        <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
-                        <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
-                        <div className="total-card-pop">
-                                <SelectPadrao  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
-                                
-                                    <option value="1">01</option>
-                                    <option value="2">02</option>
-                                    <option value="3">03</option>
-                                    <option value="4">04</option>
-                                
-                                </SelectPadrao>
-                            <span>R$ 11.000,00</span>
-                        </div>
-                        
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <BotaoRemover>
-                            <MdClose size={22} color="#515151" cursor="pointer"/>
-                        </BotaoRemover>
-                    </Col>
-                </Row>
-            </li>
-            </Link>
-            <Link to={`/product/1`} >
-            <li>
-                <Row>
-                    <Col xs={22} sm={22} md={22} lg={22} xl={22}>
-                        <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
-                        <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
-                        <div className="total-card-pop">
-                            <FormControlCartHeader style={{ display: 'inline' }}>
-                                <Select  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
-                                
-                                    <Option value="1">01</Option>
-                                    <Option value="2">02</Option>
-                                    <Option value="3">03</Option>
-                                    <Option value="4">04</Option>
-                                
-                                </Select>
-                            </FormControlCartHeader>
-                            <span>R$ 11.000,00</span>
-                        </div>
-                        
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <BotaoRemover>
-                            <MdClose size={22} color="#515151" cursor="pointer"/>
-                        </BotaoRemover>
-                    </Col>
-                </Row>
-            </li>
-            </Link>
-            <Link to={`/product/1`} >
-            <li>
-                <Row>
-                    <Col xs={22} sm={22} md={22} lg={22} xl={22}>
-                        <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
-                        <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
-                        <div className="total-card-pop">
-                            <FormControlCartHeader style={{ display: 'inline' }}>
-                                <Select  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
-                                
-                                    <Option value="1">01</Option>
-                                    <Option value="2">02</Option>
-                                    <Option value="3">03</Option>
-                                    <Option value="4">04</Option>
-                                
-                                </Select>
-                            </FormControlCartHeader>
-                            <span>R$ 11.000,00</span>
-                        </div>
-                        
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <BotaoRemover>
-                            <MdClose size={22} color="#515151" cursor="pointer"/>
-                        </BotaoRemover>
-                    </Col>
-                </Row>
-            </li>
-            </Link>
-            <Link to={`/product/1`} >
-            <li>
-                <Row>
-                    <Col xs={22} sm={22} md={22} lg={22} xl={22}>
-                        <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
-                        <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
-                        <div className="total-card-pop">
-                            <FormControlCartHeader style={{ display: 'inline' }}>
-                                <Select  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
-                                
-                                    <Option value="1">01</Option>
-                                    <Option value="2">02</Option>
-                                    <Option value="3">03</Option>
-                                    <Option value="4">04</Option>
-                                
-                                </Select>
-                            </FormControlCartHeader>
-                            <span>R$ 11.000,00</span>
-                        </div>
-                        
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <BotaoRemover>
-                            <MdClose size={22} color="#515151" cursor="pointer"/>
-                        </BotaoRemover>
-                    </Col>
-                </Row>
-            </li>
-            </Link>
-            <Link to={`/product/1`} >
-            <li>
-                <Row>
-                    <Col xs={22} sm={22} md={22} lg={22} xl={22}>
-                        <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
-                        <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
-                        <div className="total-card-pop">
-                            <FormControlCartHeader style={{ display: 'inline' }}>
-                                <Select  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
-                                
-                                    <Option value="1">01</Option>
-                                    <Option value="2">02</Option>
-                                    <Option value="3">03</Option>
-                                    <Option value="4">04</Option>
-                                
-                                </Select>
-                            </FormControlCartHeader>
-                            <span>R$ 11.000,00</span>
-                        </div>
-                        
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <BotaoRemover>
-                            <MdClose size={22} color="#515151" cursor="pointer"/>
-                        </BotaoRemover>
-                    </Col>
-                </Row>
-            </li>
-            </Link>
-            <Link to={`/product/1`} >
-            <li>
-                <Row>
-                    <Col xs={22} sm={22} md={22} lg={22} xl={22}>
-                        <div className="div-img"><img src="/produto.png" alt="produto" draggable="false"/></div>
-                        <div className="div-content"><span>Xiaomi Mi mix Aupha 2020</span></div>
-                        <div className="total-card-pop">
-                            <FormControlCartHeader style={{ display: 'inline' }}>
-                                <Select  defaultValue="01" onChange={handleChange} style={{ width: 60, height: 20}}>
-                                
-                                    <Option value="1">01</Option>
-                                    <Option value="2">02</Option>
-                                    <Option value="3">03</Option>
-                                    <Option value="4">04</Option>
-                                
-                                </Select>
-                            </FormControlCartHeader>
-                            <span>R$ 11.000,00</span>
-                        </div>
-                        
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <BotaoRemover>
-                            <MdClose size={22} color="#515151" cursor="pointer"/>
-                        </BotaoRemover>
-                    </Col>
-                </Row>
-            </li>
-            </Link>
-            
-        </ListaPopOverCart>
-        <div style={{marginTop: 20, textAlign: "center"}}>
-            <Total><span className="total">TOTAL:</span><span>R$ 11.000,00</span></Total>
-        </div>
-        <div style={{marginTop: 20, textAlign: "center"}}>
-            <Link to={`/cart`} >
-                <BotaoPadraoVerde style={{width : '100%'}}>Abrir Carrinho</BotaoPadraoVerde>
-            </Link>
-        </div>
-        </>);
+        handleUpdate();
 
+    }, []);
+
+    const [visible, setVisible] = useState(false);
+    const [current, setCurrent] = useState(1);
+
+    function showDrawer() {
+        
+        handleUpdate();        
+        setVisible(true);
+
+    };
+
+    function onClose() {
+        setVisible(false);
+    };
+
+    function handleUpdate(){
+
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        
+        if(cart == null){
+            localStorage.setItem("cart", JSON.stringify([]));
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+        setCarrinho(cart);
+
+    }
 
     return (
         <>
-            <Popover placement="bottom" content={content} title="Carrinho" style="max-height: 200px !important;" trigger="click">
-                <TiShoppingCart size={40} color="#fff" cursor="pointer"/>
-            </Popover>
+            <TiShoppingCart size={40} color="#fff" onClick={showDrawer} cursor="pointer"/>
+            <Drawer
+                title="Carrinho"
+                width={400}
+                onClose={onClose}
+                visible={visible}
+                bodyStyle={{ padding: 0}}
+                placement="right"
+            >
+            <div>
+                {   
+                    carrinho.length == 0 ?
+                    <CarrinhoVazio>
+                        <FiShoppingCart size={150}/>
+                        <h2>Carrinho Vazio</h2>
+                    </CarrinhoVazio>
+                    
+                    :
+                    carrinho.map(produto => (
+                        <Card key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
+                    ))
+                }
+            </div>
+            {
+                carrinho.length == 0 ?
+                ""
+                :
+                <Link to={`/favorites`} style={{marginLeft : '5px'}} >
+                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', }}>Ir para o Carrinho</BotaoPadraoVerde>
+                </Link>
+            }
+            
+            </Drawer>            
         </>
     )
 }
