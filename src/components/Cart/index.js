@@ -75,7 +75,7 @@ export default function Index({acao}) {
                 ""
                 :
                 <Link to={`/cart`} style={{marginLeft : '5px'}} >
-                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', }}>Ir para o Carrinho</BotaoPadraoVerde>
+                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px' }}>Ir para o Carrinho</BotaoPadraoVerde>
                 </Link>
             }
             

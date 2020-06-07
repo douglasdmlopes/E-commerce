@@ -13,6 +13,7 @@ export default function index() {
                 status="success"
                 title="Pedido realizado com sucesso!"
                 subTitle="Processo em andamento."
+                style={{minHeight : 'calc(100vh - 174px)'}}
                 extra={[
                 <Link to={'/'}>
                     <BotaoPadraoVerde>Voltar para a página principal</BotaoPadraoVerde>
