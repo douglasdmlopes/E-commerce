@@ -163,7 +163,7 @@ export const TituloStessao = styled.h2`
 
 
     &:after {
-        background-color: #353535;
+        background-color: #777777;
         content: "";
         display: inline-block;
         height: 2px;
