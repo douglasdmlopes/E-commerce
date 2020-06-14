@@ -1,29 +1,95 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import { SessaoPedido, Direita, FormControl, ListagemProdutos, HorizontalPadding, LinhaDivisoria, Divisoria, Titulo } from '../../styles/global';
 import { Row, Col, Tooltip, Select  } from 'antd';
 import { Button, Checkbox, Form, Input } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import { BotaoPadraoVerde} from '../../styles/global';
+import Card from './Card';
+import {  TotalCarrinho} from "./Style";
 
 function handleChange(value) {
     console.log(`Selected: ${value}`);
-  }
+}
   
-  const { Option } = Select;
+const { Option } = Select;
 
-   
+export default function Index() {
 
-export default function index() {
+    const [carrinho, setCarrinho] = useState([]);
+
+    useEffect(() => {
+
+        handleUpdate();
+
+    }, []);
+
+    const [visible, setVisible] = useState(false);
+    const [current, setCurrent] = useState(1);
+    const [total, setTotal] = useState(0);
+
+    function showDrawer() {
+        
+        handleUpdate();        
+        setVisible(true);
+
+    };
+
+    function onClose() {
+        setVisible(false);
+    };
+
+    function handleUpdate(){
+
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        
+        if(cart == null){
+            localStorage.setItem("cart", JSON.stringify([]));
+            cart = JSON.parse(localStorage.getItem("cart"));
+        }
+
+        setCarrinho(cart);
+
+        let total = 0;
+
+        cart.map(produto => (
+            total += (parseFloat(produto.qtde) * parseFloat(produto.preco))
+        ));
+
+        setTotal(total);
+
+        if(total == 0){
+            window.location.replace('/');
+        }
+
+    }
+
     return (
         <div>
             <Header/>
             <SessaoPedido>
-            <Titulo>Confira e finalize seu pedido</Titulo>
-                <Row>
+            <Titulo>Confirme seu pedido</Titulo>
+                <Row style={{minHeight: 'calc(100vh - 280px)'}}>
+                <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
+                    <Divisoria>
+                        <h2>Produtos</h2>
+                        
+                        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
+                            {carrinho.map(produto => (
+                                <Card key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
+                            ))}
+                        </Col>
+
+                        <TotalCarrinho>
+                            <h2><span>TOTAL: R$</span>{total.toLocaleString('pt-br', {minimumFractionDigits: 2})}</h2>
+                        </TotalCarrinho>
+                            
+                            
+                        </Divisoria>
+                    </Col>
                     <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
                     <Divisoria>
-                        <h2>Endereço</h2>
+                        <h2>Entrega</h2>
                         <Form size={"mini"}>
                             <Col  xs={24} sm={24} md={8} lg={8} xl={8}>
                                 <HorizontalPadding>
@@ -68,38 +134,6 @@ export default function index() {
                             </Col>
                             </HorizontalPadding>
                         </Form>
-                        </Divisoria>
-                    </Col>
-                    <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
-                    <Divisoria>
-                        <h2>Produtos</h2>
-                        <ListagemProdutos>
-                        <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-                                <li>
-                                    <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                                        <Link to={`/product/1`} >
-                                            <img src="/produto.png" alt="produto" draggable="false"/>
-                                            <span>Xiaomi Mi mix Aupha 2020</span>
-                                        </Link>
-                                    </Col>
-                                    <Col xs={4} sm={4} md={4} lg={4} xl={4}>
-                                        <Tooltip placement="top" title={"Quantidade"}>
-                                        <FormControl>
-                                            <Select  defaultValue="01" onChange={handleChange} style={{ width: 60 }} disabled>
-                                                
-                                            <Option value="1">01</Option>
-                                            <Option value="2">02</Option>
-                                            <Option value="3">03</Option>
-                                            <Option value="4">04</Option>
-                                            
-                                            </Select>
-                                            </FormControl>
-                                        </Tooltip>
-                                    </Col>
-                                </li>
-                            </Col>
-                            
-                        </ListagemProdutos>
                         </Divisoria>
                     </Col>
                     <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
