@@ -5,7 +5,7 @@ import { Drawer, Menu, Icon, Select } from 'antd';
 import { BotaoPadraoVerde } from '../../styles/global';
 import { Link } from 'react-router-dom';
 import { FiShoppingCart } from "react-icons/fi";
-import { CarrinhoVazio } from "./Style";
+import { CarrinhoVazio, TotalCarrinho, ListagemItens} from "./Style";
 
 const { SubMenu } = Menu;
 
@@ -21,6 +21,7 @@ export default function Index({acao}) {
 
     const [visible, setVisible] = useState(false);
     const [current, setCurrent] = useState(1);
+    const [total, setTotal] = useState(0);
 
     function showDrawer() {
         
@@ -41,7 +42,16 @@ export default function Index({acao}) {
             localStorage.setItem("cart", JSON.stringify([]));
             cart = JSON.parse(localStorage.getItem("cart"));
         }
+
         setCarrinho(cart);
+
+        let total = 0;
+
+        cart.map(produto => (
+            total += (parseFloat(produto.qtde) * parseFloat(produto.preco))
+        ));
+
+        setTotal(total);
 
     }
 
@@ -65,18 +75,28 @@ export default function Index({acao}) {
                     </CarrinhoVazio>
                     
                     :
-                    carrinho.map(produto => (
+                    <ListagemItens>
+                    {carrinho.map(produto => (
                         <Card key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
-                    ))
+                    ))}
+                    </ListagemItens>
                 }
             </div>
             {
                 carrinho.length == 0 ?
                 ""
                 :
-                <Link to={`/cart`} style={{marginLeft : '5px'}} >
-                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px' }}>Ir para o Carrinho</BotaoPadraoVerde>
-                </Link>
+
+                <div>
+                    <TotalCarrinho>
+                        <h2><span>TOTAL: R$</span>{total.toLocaleString('pt-br', {minimumFractionDigits: 2})}</h2>
+                    </TotalCarrinho>
+                    <Link to={`/request`} style={{marginLeft : '5px'}} >
+                        <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px' }}>Fechar Pedido</BotaoPadraoVerde>
+                    </Link>
+                </div>
+                
+                
             }
             
             </Drawer>            

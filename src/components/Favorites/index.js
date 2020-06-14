@@ -40,6 +40,14 @@ export default function Index() {
 
     }
 
+    function cleanFavorites(){
+        
+        localStorage.setItem("favorites", JSON.stringify([]));
+        let favorites = JSON.parse(localStorage.getItem("favorites"));
+        
+        setFavoritos(favorites);
+    }
+
     function showDrawer() {
         
         handleUpdate();        
@@ -76,9 +84,11 @@ export default function Index() {
                     favoritos.length == 0 ?
                     ""
                     :
-                    <Link to={`/favorites`} style={{marginLeft : '5px'}} >
-                        <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px' }}>Ir para Favoritos</BotaoPadraoVerde>
-                    </Link>
+                    
+                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px', marginLeft : '5px' }}
+                    onClick={ () => {cleanFavorites()}}
+                    >Limpar Favoritos</BotaoPadraoVerde>
+                    
                 }
             
             </Drawer> 
