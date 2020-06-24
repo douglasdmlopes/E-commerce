@@ -99,7 +99,7 @@ export const SessaoListaProdutos = styled.section`
 
     @media (min-width: 1020px) {
         min-height: calc(100vh - 200px);
-    }
+    }/*
         
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -122,14 +122,10 @@ export const SessaoListaProdutos = styled.section`
         background: #e2e2e2;
     }
 
-    img{
-            width: 40px;
-            border-radius: 3px;
-    }
     span{
         margin-left: 8px;
         font-size: 15px;
-    }
+    }*/
 `;
 
 export const SubSessao = styled.section`
