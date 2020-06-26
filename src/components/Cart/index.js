@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TiShoppingCart } from "react-icons/ti";
-import Card from './Card';
+import CardMobile from '../././CardMobile';
 import { Drawer, Menu, Icon, Select } from 'antd';
 import { BotaoPadraoVerde } from '../../styles/global';
 import { Link } from 'react-router-dom';
@@ -60,10 +60,10 @@ export default function Index({acao}) {
             <TiShoppingCart size={40} color="#fff" onClick={showDrawer} cursor="pointer"/>
             <Drawer
                 title="Carrinho"
-                width={400}
+                width={450}
                 onClose={onClose}
                 visible={visible}
-                bodyStyle={{ padding: 0}}
+                bodyStyle={{ padding: 0, paddingRight : 4}}
                 placement="right"
             >
             <div>
@@ -77,7 +77,7 @@ export default function Index({acao}) {
                     :
                     <ListagemItens>
                     {carrinho.map(produto => (
-                        <Card key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
+                        <CardMobile key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
                     ))}
                     </ListagemItens>
                 }
