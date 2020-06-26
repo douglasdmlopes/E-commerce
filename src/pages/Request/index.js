@@ -5,7 +5,7 @@ import { Row, Col, Tooltip, Select  } from 'antd';
 import { Button, Checkbox, Form, Input } from 'semantic-ui-react'
 import { Link } from 'react-router-dom';
 import { BotaoPadraoVerde} from '../../styles/global';
-import Card from './Card';
+import CardMobile from '../../components/CardMobile';
 import {  TotalCarrinho} from "./Style";
 
 function handleChange(value) {
@@ -76,7 +76,7 @@ export default function Index() {
                         
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
                             {carrinho.map(produto => (
-                                <Card key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
+                                <CardMobile key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
                             ))}
                         </Col>
 
