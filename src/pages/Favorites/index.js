@@ -1,169 +1,89 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
-import {SessaoListaProdutos, BotaoListagem, Titulo} from '../../styles/global';
+import {SessaoListaProdutos, BotaoPadraoVerde, Titulo} from '../../styles/global';
 import { Row, Col, Tooltip  } from 'antd';
 import { Link } from 'react-router-dom';
 import { MdClose} from "react-icons/md";
 import { TiShoppingCart} from "react-icons/ti";
 import Footer from '../../components/Footer';
+import CardFavoriteMobile from '../../components/CardFavoriteMobile';
+import { CarrinhoVazio } from "./Style";
+import { FiHeart } from "react-icons/fi";
 
-export default function index() {
+export default function Index() {
+
+    const [favoritos, setFavoritos] = useState([]);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+
+        handleUpdate();
+
+    }, []);
+
+    function onClose() {
+        setVisible(false);
+    };
+
+    function handleUpdate(){
+
+        let favorites = JSON.parse(localStorage.getItem("favorites"));
+        
+        if(favorites == null){
+            localStorage.setItem("favorites", JSON.stringify([]));
+            favorites = JSON.parse(localStorage.getItem("favorites"));
+        }
+        
+        setFavoritos(favorites);
+
+    }
+
+    function cleanFavorites(){
+        
+        localStorage.setItem("favorites", JSON.stringify([]));
+        let favorites = JSON.parse(localStorage.getItem("favorites"));
+        
+        setFavoritos(favorites);
+    }
+
+    function showDrawer() {
+        
+        handleUpdate();        
+        setVisible(true);
+
+    };
+
     return (
         <>
             <Header/>
             <SessaoListaProdutos>
             <Titulo>Favoritos</Titulo>
             <Row>
-            
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <li>
-                        <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <Link to={`/product/1`} >
-                            <img src="/produto.png" alt="produto" draggable="false"/>
-                            <span>Xiaomi Mi mix Aupha 2020</span>
-                            </Link>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="top" title={"Adicionar ao Carrinho"}>
-                                <BotaoListagem>
-                                    <TiShoppingCart size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="topRight" title={"Remover dos favoristos"}>
-                                <BotaoListagem>
-                                    <MdClose size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                    </li>
-                </Col>
+                <div>
+                    {   
+                        favoritos.length == 0 ?
+                        <CarrinhoVazio>
+                            <FiHeart size={150}/>
+                            <h2>Não há favoritos</h2>
+                        </CarrinhoVazio>
+                        
+                        :
+                        favoritos.map(produto => (
+                            <CardFavoriteMobile key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
+                        ))
+                    }
+                </div>
+                {
+                    favoritos.length == 0 ?
+                    ""
+                    :
+                    
+                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px', marginLeft : '5px' }}
+                    onClick={ () => {cleanFavorites()}}
+                    >Limpar Favoritos</BotaoPadraoVerde>
+                    
+                }
                 
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <li>
-                        <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <Link to={`/product/1`} >
-                            <img src="/produto.png" alt="produto" draggable="false"/>
-                            <span>Xiaomi Mi mix Aupha 2020</span>
-                            </Link>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="top" title={"Adicionar ao Carrinho"}>
-                                <BotaoListagem>
-                                    <TiShoppingCart size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="topRight" title={"Remover dos favoristos"}>
-                                <BotaoListagem>
-                                    <MdClose size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                    </li>
-                </Col>
-
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <li>
-                        <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <Link to={`/product/1`} >
-                            <img src="/produto.png" alt="produto" draggable="false"/>
-                            <span>Xiaomi Mi mix Aupha 2020</span>
-                            </Link>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="top" title={"Adicionar ao Carrinho"}>
-                                <BotaoListagem>
-                                    <TiShoppingCart size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="topRight" title={"Remover dos favoristos"}>
-                                <BotaoListagem>
-                                    <MdClose size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                    </li>
-                </Col>
-
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <li>
-                        <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <Link to={`/product/1`} >
-                            <img src="/produto.png" alt="produto" draggable="false"/>
-                            <span>Xiaomi Mi mix Aupha 2020</span>
-                            </Link>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="top" title={"Adicionar ao Carrinho"}>
-                                <BotaoListagem>
-                                    <TiShoppingCart size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="topRight" title={"Remover dos favoristos"}>
-                                <BotaoListagem>
-                                    <MdClose size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                    </li>
-                </Col>
-
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <li>
-                        <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <Link to={`/product/1`} >
-                            <img src="/produto.png" alt="produto" draggable="false"/>
-                            <span>Xiaomi Mi mix Aupha 2020</span>
-                            </Link>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="top" title={"Adicionar ao Carrinho"}>
-                                <BotaoListagem>
-                                    <TiShoppingCart size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="topRight" title={"Remover dos favoristos"}>
-                                <BotaoListagem>
-                                    <MdClose size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                    </li>
-                </Col>
-
-                <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-                    <li>
-                        <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <Link to={`/product/1`} >
-                            <img src="/produto.png" alt="produto" draggable="false"/>
-                            <span>Xiaomi Mi mix Aupha 2020</span>
-                            </Link>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="top" title={"Adicionar ao Carrinho"}>
-                                <BotaoListagem>
-                                    <TiShoppingCart size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                        <Col xs={2} sm={2} md={2} lg={2} xl={2}>
-                            <Tooltip placement="topRight" title={"Remover dos favoristos"}>
-                                <BotaoListagem>
-                                    <MdClose size={22} color="#515151" cursor="pointer"/>
-                                </BotaoListagem>
-                            </Tooltip>
-                        </Col>
-                    </li>
-                </Col>
             </Row>
             </SessaoListaProdutos>
             <Footer/>
