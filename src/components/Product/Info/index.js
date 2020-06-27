@@ -86,6 +86,8 @@ export default function Index({produto}) {
                 
         carrinho = JSON.parse(localStorage.getItem("cart"));
 
+        produto.qtde = 1;
+        
         carrinho.push(produto);
                 
         localStorage.setItem("cart", JSON.stringify(carrinho));
@@ -98,7 +100,7 @@ export default function Index({produto}) {
         }, 10);
 
         window.setTimeout(() => {
-            window.location.replace('/cart');
+            window.location.replace('/request');
         }, 200);
 
         
