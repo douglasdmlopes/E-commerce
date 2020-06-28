@@ -8,7 +8,7 @@ import Card from '../../components/Card';
 import {Sessao, TitleHome} from './style';
 import { Row, Col, notification } from 'antd';
 
-import {todosOsProdutos, produtosRecentes, produtosMaisPesquisados, produtosOutrosMaisPesquisados, produtosMelhorDesempenho} from '../../services/dados';
+import {todosOsProdutos, produtosRecentes, produtosMaisPesquisados, produtosMelhorDesempenho} from '../../services/dados';
 
 import { Loader } from 'semantic-ui-react'
 
@@ -19,7 +19,6 @@ export default function Index() {
 
     const [produtosRec,setProdutosRec]= useState([]);
     const [produtosMaisBuscados, setProdutosMaisBuscados]= useState([]);
-    const [outrosProdutosMaisBuscados, setOutrosProdutosMaisBuscados]= useState([]);
     const [produtosMelhorDes, setProdutosMelhorDes]= useState([]);
 
     useEffect(() => {
@@ -35,9 +34,6 @@ export default function Index() {
         
         let produtos_mais_pesquisados = produtosMaisPesquisados();
         setProdutosMaisBuscados(produtos_mais_pesquisados);
-        
-        let outros_produtos_mais_buscados = produtosOutrosMaisPesquisados();
-        setOutrosProdutosMaisBuscados(outros_produtos_mais_buscados);
 
         let produtos_melhor_desempenho = produtosMelhorDesempenho();
         setProdutosMelhorDes(produtos_melhor_desempenho);
@@ -56,16 +52,6 @@ export default function Index() {
             <Loader active inline='centered' size='large' size='large' style={{marginTop: '65px', marginBottom: '85px'}}/>
             :
             <MiniSlideProducts produtos={produtosMaisBuscados}/>
-            
-            
-        }
-        <TitleHome>Outros Destaques</TitleHome>        
-        {
-            loading ? 
-            
-            <Loader active inline='centered' size='large' size='large' style={{marginTop: '65px', marginBottom: '85px'}}/>
-            :
-            <MiniSlideProducts produtos={outrosProdutosMaisBuscados}/>
             
             
         }
