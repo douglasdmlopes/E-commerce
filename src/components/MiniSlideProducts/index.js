@@ -14,10 +14,10 @@ export default function Index({produtos}) {
     const [ botoes, setBotoes] = useState(true);
 
     useEffect(() => {
-        if(screen <= 500){
+        if(screen <= 350){
             setColunas(1);
             setBotoes(false);
-        }else if(screen >= 501 && screen <= 600){
+        }else if(screen >= 351 && screen <= 600){
             setBotoes(false);
             setColunas(2);
         }else if(screen >= 601 && screen <= 700){
