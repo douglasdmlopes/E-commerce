@@ -1,20 +1,34 @@
 import React, {useState, useEffect } from 'react'
 import { Slider, ArrowLeft, ArrowRight } from './style';
+//import Slider from "react-slick";
+import { Loader } from 'semantic-ui-react'
+import Card from '../../components/Card';
+import { Row, Col, notification } from 'antd';
 import { FaChevronLeft, FaChevronRight } from  "react-icons/fa";
-import { Link } from 'react-router-dom';
 
-export default function Index() {
-
+export default function Index({produtos}) {
+    
+    const [loading, setLoading] = useState(false);
     const [colunas, setColunas] = useState(6);
     const [screen, setScreen] = useState(window.innerWidth);
     const [ botoes, setBotoes] = useState(true);
 
     useEffect(() => {
         if(screen <= 500){
-            setColunas(3);
+            setColunas(1);
             setBotoes(false);
-        }else if(screen >= 501 && screen <= 700){
+        }else if(screen >= 501 && screen <= 600){
+            setBotoes(false);
+            setColunas(2);
+        }else if(screen >= 601 && screen <= 700){
+            setBotoes(false);
+            setColunas(3);
+        }else if(screen >= 701 && screen <= 860){
             setColunas(4);
+        }else if(screen >= 861 && screen <= 960){
+            setColunas(5);
+        }else if(screen >= 961){
+            setColunas(6);
         }
     },[screen]);
     return (
@@ -29,33 +43,21 @@ export default function Index() {
             arrowRight={ botoes ? <ArrowRight name="angle-double-right"><FaChevronRight size="18"/></ArrowRight> : ""}
             arrowRightDisabled={ botoes ? <ArrowRight name="angle-double-right"><FaChevronRight size="18"/></ArrowRight> : ""}
             addArrowClickHandler
+
             infinite
              >
-                <div>
-                <Link to={`/search/marca=Samsung`} >
-                    <img src="./empresas/empresa_03.png" alt="Tech Store" draggable="false"/>
-                </Link>
-                </div>
-                <div>
-                <Link to={`/search/marca=Xiaomi`} >
-                <img src="./empresas/empresa_01.png" alt="Tech Store" draggable="false"/>
-                </Link>
-                </div>
-                <div>
-                <Link to={`/search/marca=Lenovo`} >
-                <img src="./empresas/empresa_04.png" alt="Tech Store" draggable="false"/>
-                </Link>
-                </div>
-                <div>
-                <Link to={`/search/marca=Apple`} >
-                    <img src="./empresas/empresa_02.png" alt="Tech Store" draggable="false"/>
-                </Link>
-                </div>
-                <div>
-                <Link to={`/search/marca=Huawei`} >
-                <img src="./empresas/empresa_05.png" alt="Tech Store" draggable="false"/>
-                </Link>
-                </div>
+                {
+                    loading ? 
+                    
+                    <Loader active inline='centered' size='large' style={{marginTop: '105px', marginBottom: '130px'}}/>
+                         :
+                    produtos.map(produto => (
+                        
+                        <Card produto={produto}/>
+                        
+                    ))
+
+                }
                 
             </Slider>
         </>

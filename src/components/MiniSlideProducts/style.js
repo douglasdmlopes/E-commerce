@@ -2,23 +2,12 @@ import styled from 'styled-components';
 //import { Carousel } from 'antd';
 import Carousel from '@brainhubeu/react-carousel';
 
+
 export const Slider = styled(Carousel)`
-        margin-top: 15px;
-        margin-bottom: 15px;
-        img{
-            width: 100%
-        }
-        span{
-            border-color: #676767 !important;
-        }
-        img:hover{
-            transition: 0.5s;
-            filter: brightness(1.15);
-        }
-        img:active{
-            transition: 0.25s;
-            filter: brightness(0.85);
-        }
+
+    li{
+        padding-top: 6px;
+    }
 `;
 
 export const ArrowLeft = styled.button`
