@@ -9,6 +9,7 @@ import Buy from './pages/Buy';
 import Request from './pages/Request';
 import Finished from './pages/Finished';
 import Search from './pages/Search';
+import RequestList from './pages/RequestList'
 
 export default function Routes(){
     return (
@@ -22,6 +23,7 @@ export default function Routes(){
                 <Route path="/request" component={Request}/>
                 <Route path="/finished" component={Finished}/>
                 <Route path="/search/:termo" component={Search}/>
+                <Route path="/requests" component={RequestList}/>
             </Switch>
         </BrowserRouter>
     );

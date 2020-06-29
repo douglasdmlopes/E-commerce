@@ -1084,7 +1084,7 @@ export function produtosMaisPesquisados(){
             "id_img_04": null,
             "id_img_05": null,
             "preco_formatado": "4.899,99"
-        },
+        }/*,
         {
             "id": 11,
             "nome": "Samsung Galaxy A10",
@@ -1116,7 +1116,7 @@ export function produtosMaisPesquisados(){
             "id_img_04": null,
             "id_img_05": null,
             "preco_formatado": "949,99"
-        },
+        },*/
 
     ];
     return produtos;
@@ -1388,7 +1388,7 @@ export function produtosMelhorDesempenho(){
             "id_img_04": null,
             "id_img_05": null,
             "preco_formatado": "4.700,00"
-        },
+        }/*,
         {
             "id": 18,
             "nome": "Samsung Galaxy Note 10",
@@ -1420,7 +1420,7 @@ export function produtosMelhorDesempenho(){
             "id_img_04": null,
             "id_img_05": null,
             "preco_formatado": "2.900,00"
-        },
+        },*/
 
     ];
     return produtos;

@@ -64,6 +64,44 @@ export default function Index() {
 
     }
 
+    function finalizarPedido() {
+        let requests = JSON.parse(localStorage.getItem("requests"));
+        if(requests == null){
+
+            localStorage.setItem("requests", JSON.stringify([]));
+
+            requests = JSON.parse(localStorage.getItem("requests"));
+
+        }
+        let data = new Date();
+        let data_dia     = data.getDate();
+        let data_mes     = data.getMonth() < 10 ? '0' + ( data.getMonth() + 1 ) : ( data.getMonth() + 1 );
+        let data_ano     = data.getFullYear();
+        let data_horas   = data.getHours() < 10 ? '0' + ( data.getHours() ) : ( data.getHours() ); 
+        let data_minutos = data.getMinutes() < 10 ? '0' + ( data.getMinutes() ) : ( data.getMinutes() );
+
+        data = data_dia + '/' + data_mes + '/' + data_ano + ' ' + data_horas + ':' + data_minutos;
+
+        let cart = JSON.parse(localStorage.getItem("cart"));
+
+        let pedido = {
+            'numero' : Math.floor(Math.random() * 100000 + 1),
+            'itens'  : cart,
+            'data'   : data,
+            'status' : 'Pedido recebido'
+        };
+
+        requests.push(pedido);
+
+        localStorage.setItem("requests", JSON.stringify(requests));
+        localStorage.setItem("cart", JSON.stringify([]));
+
+        //Colocar loading aqui
+        
+        window.setTimeout(() => {
+            window.location.replace('/finished');
+        }, 200);
+    }
     return (
         <div>
             <Header/>
@@ -192,9 +230,7 @@ export default function Index() {
                 </Row>
                 <Row>
                     <Direita>
-                    <Link to={`/finished`} >
-                        <BotaoPadraoVerde>Finalizar</BotaoPadraoVerde>
-                    </Link>
+                        <BotaoPadraoVerde onClick={() => {finalizarPedido()}}>Finalizar</BotaoPadraoVerde>
                     </Direita>
                 </Row>
             </SessaoPedido>

@@ -53,7 +53,7 @@ export default function Index({produtos}) {
                          :
                     produtos.map(produto => (
                         
-                        <Card produto={produto}/>
+                        <Card key={produto.id} produto={produto}/>
                         
                     ))
 

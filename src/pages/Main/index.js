@@ -6,7 +6,7 @@ import LogoSlide from '../../components/LogoSlide';
 import MiniSlideProducts from '../../components/MiniSlideProducts';
 import Card from '../../components/Card';
 import {Sessao, TitleHome} from './style';
-import { Row, Col, notification } from 'antd';
+import { Row, Col } from 'antd';
 
 import {todosOsProdutos, produtosRecentes, produtosMaisPesquisados, produtosMelhorDesempenho} from '../../services/dados';
 
@@ -14,9 +14,7 @@ import { Loader } from 'semantic-ui-react'
 
 export default function Index() {
     
-    const [produtos, setProdutos] = useState([]);
     const [loading, setLoading] = useState(false);
-
     const [produtosRec,setProdutosRec]= useState([]);
     const [produtosMaisBuscados, setProdutosMaisBuscados]= useState([]);
     const [produtosMelhorDes, setProdutosMelhorDes]= useState([]);
