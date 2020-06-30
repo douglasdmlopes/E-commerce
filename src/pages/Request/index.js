@@ -84,14 +84,15 @@ export default function Index() {
 
         let cart = JSON.parse(localStorage.getItem("cart"));
 
+        let total_carrinho = total.toLocaleString('pt-br', {minimumFractionDigits: 2});
+
         let pedido = {
             'numero' : Math.floor(Math.random() * 100000 + 1),
             'itens'  : cart,
             'data'   : data,
-            'status' : 'Pedido recebido'
+            'status' : 'Pedido recebido',
+            'total'  : total_carrinho
         };
-
-        requests.push(pedido);
 
         localStorage.setItem("requests", JSON.stringify(requests));
         localStorage.setItem("cart", JSON.stringify([]));
@@ -99,9 +100,10 @@ export default function Index() {
         //Colocar loading aqui
         
         window.setTimeout(() => {
-            window.location.replace('/finished');
-        }, 200);
+           window.location.replace('/finished');
+        }, 500);
     }
+    
     return (
         <div>
             <Header/>

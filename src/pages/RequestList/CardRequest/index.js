@@ -1,5 +1,5 @@
 import React, { Component }  from 'react'
-import { Container, Remover, Picture, Description, Valor } from './Style';
+import { Container, Remover, Picture, Description, Valor } from './style';
 import { Row, Col } from 'antd';
 import { message } from 'antd';
 
@@ -9,30 +9,10 @@ export default class Index extends Component {
     constructor(props){
         super(props);
     }
- 
-    removerItemFavoritos = () => {
-        
-        let favoritos =[];        
-        
-        favoritos = JSON.parse(localStorage.getItem("favorites"));
-
-        let favoritos_temp = [];
-        let that = this;
-        favoritos.forEach(function(item) {
-            if (that.props.produto.id !== item.id) {
-                favoritos_temp.push(item);
-            }
-        });
-
-        localStorage.setItem("favorites", JSON.stringify(favoritos_temp));
-
-        this.props.handleUpdate();
-
-        message.success('Item removido dos favoritos', 0.9);
-        
-    }
- 
+    
     render(){
+        console.log('pedido');
+        console.log(this.props);
         return (
             <>
                 <Container>
@@ -44,26 +24,31 @@ export default class Index extends Component {
                                 </a>
                             </Col>
                             <Col xs={{ span: 16 }} sm={{ span: 18 }} md={{ span: 20 }} lg={{ span: 18 }} xl={{ span: 18 }}>
-                                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
+                            <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
                                     <Description>
-                                        <a href={`/product/` + this.props.produto.id} >
-                                            <h2>{this.props.produto.nome}</h2>
-                                        </a>
+                                        <h2>Pedido: {this.props.produto.numero}</h2>
                                     </Description>
                                 </Col>
                                 <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
-                                    <Valor>
-                                        <h2>R$ {this.props.produto.preco_formatado}</h2>
-                                    </Valor>
+                                    <Description>
+                                        <h2>Data: {this.props.produto.data}</h2>
+                                    </Description>
+                                </Col>
+                                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
+                                    <Description>
+                                        <h2>Status: {this.props.produto.status}</h2>
+                                    </Description>
+                                </Col>
+                                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
+                                    <Description>
+                                        <h2>Valor: {this.props.produto.total}</h2>
+                                    </Description>
                                 </Col>
                                 
                             </Col>
                         </Col>
                         <Col xs={{ span: 1 }} sm={{ span: 1 }} md={{ span: 1 }} lg={{ span: 1 }} xl={{ span: 1 }}>
-                            <Remover size={22} onClick={(event) => {
-                                event.stopPropagation();
-                                this.removerItemFavoritos()
-                            } } />
+                            
                         </Col>
                     </Row>            
                 </Container>
