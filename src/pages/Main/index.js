@@ -57,7 +57,7 @@ export default function Index() {
         {
             loading ? 
             
-            <Loader active inline='centered' size='large' size='large' style={{marginTop: '65px', marginBottom: '85px'}}/>
+            <Loader active inline='centered' size='large'  size='large' style={{marginTop: '65px', marginBottom: '85px'}}/>
             :
             <MiniSlideProducts produtos={produtosMelhorDes}/>
             

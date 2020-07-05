@@ -7,8 +7,8 @@ import User from '../User';
 import Categorias from '../Categorias';
 import Headroom from 'react-headroom';
 import { IoIosMenu } from "react-icons/io";
-import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
-import { Link, Redirect } from 'react-router-dom';
+import { TiShoppingCart } from "react-icons/ti";
+import { Link } from 'react-router-dom';
 
 import { Drawer, Input, Row, Col, Menu, Icon } from 'antd';
 
@@ -19,7 +19,7 @@ export default function Index() {
     //const [prevScrollpos, setPrevScrollpos] = useState(window.pageYOffset);
     //const [visible, setVisible] = useState(true);
     const [visible, setVisible] = useState(false);
-    const [current, setCurrent] = useState(1);
+    //const [current, setCurrent] = useState(1);
     const [showSearch, setShowSearch] = useState(false);
     const [termoBusca, setTermoBusca] = useState('');
 
@@ -40,7 +40,7 @@ export default function Index() {
 
     function search(termo){
         
-        if(termoBusca != "" && termoBusca != null){
+        if(termoBusca !== "" && termoBusca !== null){
             var busca = '/search/termo=' + termoBusca;
             window.location.replace(busca);
         }
@@ -74,7 +74,7 @@ export default function Index() {
                                         search(termoBusca)
                                     }
                                   }}
-                            style={{ width: '90%'}}
+                            style={{ width: '95%'}}
                             icon="user"
                         />
                     </Col>
@@ -192,7 +192,7 @@ export default function Index() {
         <Menu
           theme={"light"}
           style={{ width: 300 }}
-          selectedKeys={[current]}
+          selectedKeys={[1]}
           mode="inline"
         >
           <SubMenu

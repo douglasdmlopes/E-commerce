@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 export default function Index() {
 
     const [colunas, setColunas] = useState(6);
-    const [screen, setScreen] = useState(window.innerWidth);
+    //const [screen, setScreen] = useState(window.innerWidth);
+    const screen = window.innerWidth;
     const [ botoes, setBotoes] = useState(true);
 
     useEffect(() => {

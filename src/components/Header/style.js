@@ -7,7 +7,7 @@ export const Cabecalho = styled.header`
     height: 55px;
     width: 100% auto;
     background: rgb(190, 15, 52);;
-    padding-top: 7px;
+    padding-top: 8px;
 
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -29,7 +29,7 @@ export const Cabecalho = styled.header`
         border-radius: 0px;
         transform: 0.5s;
         height: 39px;
-        
+        border-radius: 8px !important;
         
     }
     .ant-input-affix-wrapper .ant-input-suffix{

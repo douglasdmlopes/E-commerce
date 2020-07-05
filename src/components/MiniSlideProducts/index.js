@@ -2,8 +2,7 @@ import React, {useState, useEffect } from 'react'
 import { Slider, ArrowLeft, ArrowRight } from './style';
 //import Slider from "react-slick";
 import { Loader } from 'semantic-ui-react'
-import Card from '../../components/Card';
-import { Row, Col, notification } from 'antd';
+import Card from '../../components/Card/Optimized';
 import { FaChevronLeft, FaChevronRight } from  "react-icons/fa";
 
 export default function Index({produtos}) {
@@ -35,7 +34,7 @@ export default function Index({produtos}) {
         <>
             <Slider             
             autoPlay={5000}
-            animationSpeed={1000}
+            animationSpeed={1200}
             slidesPerPage={colunas}
             arrows={botoes}
             arrowLeft={ botoes ? <ArrowLeft name="angle-double-left"><FaChevronLeft size="18"/></ArrowLeft> : ""}
