@@ -4,7 +4,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import CardRequest from './CardRequest';
 import { CarrinhoVazio } from "./Style";
-import { FiHeart } from "react-icons/fi";
+import { FiBox } from "react-icons/fi";
 
 export default function Index() {
 
@@ -19,7 +19,8 @@ export default function Index() {
     function handleUpdate(){
 
         let pedidos_realizados = JSON.parse(localStorage.getItem("requests"));
-
+        console.log('pedidos');
+        console.log(pedidos_realizados);
         if(pedidos_realizados == null || pedidos_realizados == []){
             window.location.replace('/');
         }
@@ -31,11 +32,11 @@ export default function Index() {
     return (
         <>
             <Header/>
-            <Sessao>
+            <Sessao style={{'minHeight': 'calc(100vh - 200px)'}}>
                 {   
                     pedidos.length == 0 ?
                     <CarrinhoVazio>
-                    <FiHeart size={150}/>
+                    <FiBox size={150}/>
                     <h2>Não há pedidos realizados</h2>
                     </CarrinhoVazio>
                     

@@ -226,9 +226,10 @@ export default function Index() {
               </span>
             }
           >
-            <Menu.Item key="1">Ajustes</Menu.Item>
-            <Menu.Item key="2">Endereços</Menu.Item>
-            <Menu.Item key="3">Sair</Menu.Item>
+            <Menu.Item key="1"><Link to={`/`} >Ajustes</Link></Menu.Item>
+            <Menu.Item key="2"><Link to={`/requests`} >Pedidos</Link></Menu.Item>
+            <Menu.Item key="3"><Link to={`/`} >Endereços</Link></Menu.Item>
+            <Menu.Item key="4"><Link to={`/`} >Sair</Link></Menu.Item>
           </SubMenu>
         </Menu>
         </Drawer>

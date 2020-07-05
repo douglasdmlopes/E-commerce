@@ -1,7 +1,7 @@
 import React, { Component }  from 'react'
-import { Container, Remover, Picture, Description, Valor } from './style';
+import { Container, Description, Valor } from './style';
 import { Row, Col } from 'antd';
-import { message } from 'antd';
+import { FaCheckCircle } from "react-icons/fa";
 
 export default class Index extends Component {
 //export default function index() {
@@ -11,27 +11,25 @@ export default class Index extends Component {
     }
     
     render(){
-        console.log('pedido');
-        console.log(this.props);
         return (
             <>
                 <Container>
                     <Row>
                         <Col xs={{ span: 23 }} sm={{ span: 23 }} md={{ span: 23 }} lg={{ span: 23 }} xl={{ span: 23 }}>                        
-                            <Col xs={{ span: 8 }} sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 6 }} xl={{ span: 6 }}>
-                                <a href={`/product/` + this.props.produto.id} > 
-                                    <Picture src={`/produtos/${this.props.produto.id_img_01}.png`} />
-                                </a>
+                            <Col xs={{ span: 7 }} sm={{ span: 4 }} md={{ span: 3 }} lg={{ span: 3 }} xl={{ span: 3 }}>
+                                <div style={{'textAlign' : 'center'}}>
+                                    <FaCheckCircle color="#05b934" size="80" />
+                                </div>
                             </Col>
-                            <Col xs={{ span: 16 }} sm={{ span: 18 }} md={{ span: 20 }} lg={{ span: 18 }} xl={{ span: 18 }}>
-                            <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
+                            <Col xs={{ span: 17 }} sm={{ span: 20 }} md={{ span: 21 }} lg={{ span: 21 }} xl={{ span: 21 }}>
+                                <Col xs={{ span: 14 }} sm={{ span: 16 }} md={{ span: 18 }} lg={{ span: 19 }} xl={{ span: 19 }}>
                                     <Description>
                                         <h2>Pedido: {this.props.produto.numero}</h2>
                                     </Description>
                                 </Col>
-                                <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
-                                    <Description>
-                                        <h2>Data: {this.props.produto.data}</h2>
+                                <Col xs={{ span: 10 }} sm={{ span: 8 }} md={{ span: 6 }} lg={{ span: 5 }} xl={{ span: 5 }}>
+                                    <Description style={{'textAlign': 'right'}}>
+                                        <h2>{this.props.produto.data}</h2>
                                     </Description>
                                 </Col>
                                 <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
@@ -41,7 +39,7 @@ export default class Index extends Component {
                                 </Col>
                                 <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 24 }} xl={{ span: 24 }}>
                                     <Description>
-                                        <h2>Valor: {this.props.produto.total}</h2>
+                                        <h2>Valor: R$ {this.props.produto.total}</h2>
                                     </Description>
                                 </Col>
                                 

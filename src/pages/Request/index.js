@@ -74,7 +74,7 @@ export default function Index() {
 
         }
         let data = new Date();
-        let data_dia     = data.getDate();
+        let data_dia     = data.getDate() < 10 ? '0' + data.getDate() : data.getDate();
         let data_mes     = data.getMonth() < 10 ? '0' + ( data.getMonth() + 1 ) : ( data.getMonth() + 1 );
         let data_ano     = data.getFullYear();
         let data_horas   = data.getHours() < 10 ? '0' + ( data.getHours() ) : ( data.getHours() ); 
@@ -93,7 +93,7 @@ export default function Index() {
             'status' : 'Pedido recebido',
             'total'  : total_carrinho
         };
-
+        requests.push(pedido);
         localStorage.setItem("requests", JSON.stringify(requests));
         localStorage.setItem("cart", JSON.stringify([]));
 

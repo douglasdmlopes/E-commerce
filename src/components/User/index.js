@@ -2,12 +2,14 @@ import React from 'react'
 import { TiUser} from "react-icons/ti";
 import { Popover } from 'antd';
 import { ListaPopOver } from '../../styles/global';
+import { Link } from 'react-router-dom';
 
 const content = (
     <ListaPopOver style={{maxHeight: 200, overflowY: "auto", overflowX: "hidden", marginTop: -8, marginLeft: -16,marginButton: -8, marginRight: -16}}>
-      <li>Ajustes</li>
-      <li>Endereços</li>
-      <li>Sair</li>
+      <Link to={`/`} ><li>Ajustes</li></Link>
+      <Link to={`/requests`} ><li>Pedidos</li></Link>
+      <Link to={`/`} ><li>Endereços</li></Link>
+      <Link to={`/`} ><li>Sair</li></Link>
     </ListaPopOver>
   );
 
