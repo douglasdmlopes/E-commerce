@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
-import { SessaoPedido, Direita, FormControl, ListagemProdutos, HorizontalPadding, LinhaDivisoria, Divisoria, Titulo } from '../../styles/global';
-import { Row, Col, Tooltip, Select  } from 'antd';
-import { Button, Checkbox, Form, Input } from 'semantic-ui-react'
-import { Link } from 'react-router-dom';
+import { SessaoPedido, Direita, HorizontalPadding, LinhaDivisoria, Divisoria, Titulo } from '../../styles/global';
+import { Row, Col, Select  } from 'antd';
+import { Form, Input } from 'semantic-ui-react'
 import { BotaoPadraoVerde} from '../../styles/global';
 import CardMobile from '../../components/CardMobile';
 import {  TotalCarrinho} from "./Style";
@@ -111,7 +110,7 @@ export default function Index() {
             <Titulo>Confirme seu pedido</Titulo>
                 <Row style={{minHeight: 'calc(100vh - 280px)'}}>
                 <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
-                    <Divisoria>
+                    <Divisoria style={{'paddingRight': '10px'}}>
                         <h2>Produtos</h2>
                         
                         <Col xs={24} sm={24} md={24} lg={24} xl={24}>
@@ -127,65 +126,18 @@ export default function Index() {
                             
                         </Divisoria>
                     </Col>
+                    
                     <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
-                    <Divisoria>
-                        <h2>Entrega</h2>
-                        <Form size={"mini"}>
-                            <Col  xs={24} sm={24} md={8} lg={8} xl={8}>
-                                <HorizontalPadding>
-                                <Form.Field>
-                                    <label>CEP</label>
-                                    <input placeholder='First Name' value="00000-000" disabled/>
-                                </Form.Field>
-                                </HorizontalPadding>
-                            </Col>
-                            <Col  xs={24} sm={24} md={16} lg={16} xl={16}>
-                            <HorizontalPadding>
-                                <Form.Field>
-                                    <label>Estado</label>
-                                    <input placeholder='First Name' value="XXXXXX" disabled/>
-                                </Form.Field>
-                                </HorizontalPadding>
-                            </Col>
-                            <HorizontalPadding>
-                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
-                                <Form.Field>
-                                    <label>Cidade</label>
-                                    <input placeholder='Last Name' value="XXXXXX"  disabled/>
-                                </Form.Field>
-                            </Col>
-                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
-                                <Form.Field>
-                                    <label>Bairro</label>
-                                    <input placeholder='Last Name' value="XXXXXX" disabled/>
-                                </Form.Field>
-                            </Col>
-                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
-                                <Form.Field>
-                                    <label>Rua</label>
-                                    <input placeholder='Last Name' value="XXXXXX" disabled/>
-                                </Form.Field>
-                            </Col>
-                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
-                                <Form.Field>
-                                    <label>Número</label>
-                                    <input placeholder='First Name' value="XXXXXX" disabled/>
-                                </Form.Field>
-                            </Col>
-                            </HorizontalPadding>
-                        </Form>
-                        </Divisoria>
-                    </Col>
-                    <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
-                    <Divisoria>
+                    <Divisoria style={{'paddingRight': '7px'}}>
                         <h2>Pagamento</h2>
-                        <Form size={"mini"}>
+                        <Form size={"small"} >
                             <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
                                 <HorizontalPadding>
                                 <Form.Field>
                                     <label>Nome do Titular do cartão</label>
                                     <Input icon='user' 
                                     value="XXXXXXXXXXXXXX"
+                                    style={{'cursor' : 'not-allowed'}}
                                     iconPosition='left' disabled placeholder='Número do cartão...' />
                                 </Form.Field>
                                 </HorizontalPadding>
@@ -195,6 +147,7 @@ export default function Index() {
                                 <Form.Field>
                                     <label>Número do cartão</label>
                                     <Input icon='cc mastercard' 
+                                    style={{'cursor' : 'not-allowed'}}
                                     value="0000 0000 0000 0000"
                                     iconPosition='left' disabled placeholder='Número do cartão...' />
                                 </Form.Field>
@@ -211,18 +164,70 @@ export default function Index() {
                                     <Col  xs={12} sm={12} md={12} lg={12} xl={12}><HorizontalPadding>
                                     <Input icon='calendar check outline' 
                                     value="00"
-                                    iconPosition='left' disabled/></HorizontalPadding>
+                                    iconPosition='left' disabled
+                                    style={{'cursor' : 'not-allowed'}}/></HorizontalPadding>
                                     </Col>
                                 
                                 
                                 <Col  xs={12} sm={12} md={12} lg={12} xl={12}><HorizontalPadding>
                                 <Input icon='calendar alternate outline' 
                                 iconPosition='left'
+                                style={{'cursor' : 'not-allowed'}}
                                 value="0000" disabled/></HorizontalPadding>
                                 </Col>
                                 
                             </Form.Field>
 
+                        </Form>
+                        </Divisoria>
+                    </Col>
+
+                    <Col  xs={24} sm={24} md={24} lg={8} xl={8}>
+                    <Divisoria style={{'paddingRight': '7px'}}>
+                        <h2>Entrega</h2>
+                        <Form size={"small"}>
+                            <Col  xs={24} sm={24} md={8} lg={8} xl={8}>
+                                <HorizontalPadding>
+                                <Form.Field>
+                                    <label>CEP</label>
+                                    <Input style={{'cursor' : 'not-allowed'}} placeholder='First Name' value="00000-000" disabled/>
+                                </Form.Field>
+                                </HorizontalPadding>
+                            </Col>
+                            <Col  xs={24} sm={24} md={16} lg={16} xl={16}>
+                            <HorizontalPadding>
+                                <Form.Field>
+                                    <label>Estado</label>
+                                    <Input style={{'cursor' : 'not-allowed'}} placeholder='First Name' value="XXXXXX" disabled/>
+                                </Form.Field>
+                                </HorizontalPadding>
+                            </Col>
+                            <HorizontalPadding>
+                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
+                                <Form.Field>
+                                    <label>Cidade</label>
+                                    <Input style={{'cursor' : 'not-allowed'}} placeholder='Last Name' value="XXXXXX"  disabled/>
+                                </Form.Field>
+                            </Col>
+                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
+                                <Form.Field>
+                                    <label>Bairro</label>
+                                    <Input style={{'cursor' : 'not-allowed'}} placeholder='Last Name' value="XXXXXX" disabled/>
+                                </Form.Field>
+                            </Col>
+                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
+                                <Form.Field>
+                                    <label>Rua</label>
+                                    <Input style={{'cursor' : 'not-allowed'}} placeholder='Last Name' value="XXXXXX" disabled/>
+                                </Form.Field>
+                            </Col>
+                            <Col  xs={24} sm={24} md={24} lg={24} xl={24}>
+                                <Form.Field>
+                                    <label>Número</label>
+                                    <Input style={{'cursor' : 'not-allowed'}} placeholder='First Name' value="XXXXXX" disabled/>
+                                </Form.Field>
+                            </Col>
+                            </HorizontalPadding>
                         </Form>
                         </Divisoria>
                     </Col>
