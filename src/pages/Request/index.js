@@ -80,7 +80,7 @@ export default function Index() {
         let data_horas   = data.getHours() < 10 ? '0' + ( data.getHours() ) : ( data.getHours() ); 
         let data_minutos = data.getMinutes() < 10 ? '0' + ( data.getMinutes() ) : ( data.getMinutes() );
 
-        data = data_dia + '/' + data_mes + '/' + data_ano + ' ' + data_horas + ':' + data_minutos;
+        data = data_dia + '/' + data_mes + '/' + data_ano;// + ' ' + data_horas + ':' + data_minutos;
 
         let cart = JSON.parse(localStorage.getItem("cart"));
 
