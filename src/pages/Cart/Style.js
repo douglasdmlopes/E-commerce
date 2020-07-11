@@ -30,6 +30,7 @@ export const CarrinhoVazio = styled.div`
     h2{
         font-size: 40px;
         color: #3c3c3c;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;
 

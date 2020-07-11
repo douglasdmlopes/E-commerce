@@ -36,5 +36,6 @@ export const NotFound = styled.div`
     h1{
         font-size: 40px;
         color: #929292;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;

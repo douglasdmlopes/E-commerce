@@ -21,6 +21,7 @@ export const CarrinhoVazio = styled.div`
     }
     h2{
         font-size: 40px;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
         color: #3c3c3c;
     }
 `;
