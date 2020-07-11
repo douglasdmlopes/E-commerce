@@ -234,6 +234,7 @@ export const BuscaMobile = styled.input`
     color: black;
     font-size: 18px;
     font-family: 'PT Sans', arial, sans-serif;
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     padding: 10px;
     
     border-color: #f1f1f1 !important;

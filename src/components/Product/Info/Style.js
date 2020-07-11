@@ -7,8 +7,7 @@ export const NomeProduto = styled.h1`
     color: #353535;
     font-size: 25px;
     margin: 0px;
-    font-family: Montserrat, Roboto,'PT Sans', arial, sans-serif;
-    
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     
 `;
 
