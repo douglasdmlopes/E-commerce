@@ -740,6 +740,7 @@ export const DefaultSelect = styled.select`
     font-size: 14px;
     -webkit-font-smoothing: antialiased !important;
     font-family: 'PT Sans', arial, sans-serif;
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     padding-left: 5px;
     transition: 0.2s;
     &:hover{
@@ -763,7 +764,8 @@ export const DefaultInput = styled.input`
     color: #191919;
     font-size: 14px;
     -webkit-font-smoothing: antialiased !important;
-    font-family: 'PT Sans', arial, sans-serif;
+   
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     padding-left: 10px;
     transition: 0.2s;
     &:hover{
