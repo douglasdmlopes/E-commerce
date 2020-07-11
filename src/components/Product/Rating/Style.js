@@ -22,4 +22,5 @@ export const Avaliacao = styled.h1`
 export const Texto = styled.h1`
     text-align: center;
     font-size: 25px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;
 `;

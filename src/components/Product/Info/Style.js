@@ -7,7 +7,7 @@ export const NomeProduto = styled.h1`
     color: #353535;
     font-size: 25px;
     margin: 0px;
-    font-family: 'PT Sans', arial, sans-serif;
+    font-family: Montserrat, Roboto,'PT Sans', arial, sans-serif;
     
     
 `;
@@ -16,6 +16,7 @@ export const NomeEmpresa = styled.h2`
 
     color: #4c4c4c;
     font-size: 14px;
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     span {
         font-weight: bold;
     }

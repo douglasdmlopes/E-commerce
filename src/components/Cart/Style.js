@@ -41,5 +41,6 @@ export const TotalCarrinho = styled.div`
         float: right;
         margin-right: 10px;
         margin-top: 25px;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;

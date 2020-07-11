@@ -22,7 +22,7 @@ export default createGlobalStyle`
     body, input, button {
         color: #222;
         font-size: 14px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif;
     }
 
     button{
@@ -137,6 +137,7 @@ export const SubSessao = styled.section`
 export const Titulo = styled.h1`
     
     cursor: default;
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
 
     @media (min-width: 501px) {
         font-size: 32px;
@@ -155,8 +156,7 @@ export const TituloStessao = styled.h2`
 
     color: #353535;
     font-size: 20px;
-    font-family: 'PT Sans', arial, sans-serif;
-
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif;
 
     &:after {
         background-color: #777777;
@@ -298,6 +298,7 @@ export const BotaoPadraoVerde = styled(Button)`
     box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
     border: 1px solid #7d0a22 !important;
     transition: 0.15s;
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
 
     &:hover{
         transition: 0.2s;
@@ -323,6 +324,7 @@ export const BotaoPadraoCinza = styled(Button)`
     box-shadow: 0px 3px 4px -3px #6f6f6fba !important;
     border: 1px solid #bdbdbd !important;
     transition: 0.15s;
+    font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
 
     &:hover{
         transition: 0.2s;
@@ -686,6 +688,9 @@ export const LinhaDivisoria = styled.h2`
 export const Divisoria = styled.div`
     margin-top: 15px;
     margin-bottom: 15px;
+    h2 {
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
+    }
 `;
 
 export const Centralizar = styled.div`

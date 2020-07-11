@@ -32,8 +32,9 @@ export const Description = styled.div`
     font-weight: bold;
 
     h2{
-        font-size: 14px;
+        font-size: 16px;
         margin-bottom: 4px;
+        font-family:  Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;
 
@@ -44,9 +45,10 @@ export const Valor = styled.div`
 
     h2{
         width: 242px;
-        font-size: 12px;
+        font-size: 14px;
         float: left;
         font-weight: bold;
+        font-family:  Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;
 
@@ -65,9 +67,10 @@ export const Quantidade = styled.div`
 
     h2{
         width: 95px;
-        font-size: 17px;
+        font-size: 15px;
         float: left;
         font-weight: bold;
+        font-family:  Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 
     span {

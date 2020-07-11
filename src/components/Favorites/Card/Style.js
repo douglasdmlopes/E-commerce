@@ -29,9 +29,10 @@ export const Description = styled.div`
     font-weight: bold;
     h2{
         width: 242px;
-        font-size: 14px;
+        font-size: 16px;
         float: left;
         margin-bottom: 1px;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;
 
@@ -53,6 +54,7 @@ export const Valor = styled.div`
         font-size: 12px;
         float: left;
         font-weight: bold;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
     }
 `;
 

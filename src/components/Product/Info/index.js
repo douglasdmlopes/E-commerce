@@ -92,16 +92,14 @@ export default function Index({produto}) {
                 
         localStorage.setItem("cart", JSON.stringify(carrinho));
         
-        setBotao('carregando');
+        /*setBotao('carregando');
 
         window.setTimeout(() => {
             setBotao('remover');
             message.success('Item adicionado ao carrinho', 0.9);
-        }, 10);
+        }, 10);*/
 
-        window.setTimeout(() => {
-            window.location.replace('/request');
-        }, 200);
+        window.location.replace('/request');
 
         
     }
