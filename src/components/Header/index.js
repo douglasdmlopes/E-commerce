@@ -76,6 +76,9 @@ export default function Index() {
                                   }}
                             style={{ width: '95%'}}
                             icon="user"
+                            onSearch={event => {
+                                search(termoBusca)
+                              }}
                         />
                     </Col>
                     <Col xs={6} sm={6} md={5} lg={4} xl={3} style={{textAlign: 'right'}}>
