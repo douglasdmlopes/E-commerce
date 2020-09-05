@@ -9,6 +9,10 @@ import Footer from '../../components/Footer';
 import CardFavoriteMobile from '../../components/CardFavoriteMobile';
 import { CarrinhoVazio } from "./Style";
 import { FiHeart } from "react-icons/fi";
+import { Modal } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+
+const { confirm } = Modal;
 
 export default function Index() {
 
@@ -36,6 +40,23 @@ export default function Index() {
         
         setFavoritos(favorites);
 
+    }
+
+    function alertaLimparFavoritos() {
+        confirm({
+            title: 'Atenção!',
+            icon: <ExclamationCircleOutlined />,
+            content: 'Deseja limpar a lista de favoritos?',
+            okText: 'Sim',
+            okType: 'danger',
+            cancelText: 'Cancelar',
+            onOk() {
+                cleanFavorites()
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
     }
 
     function cleanFavorites(){
@@ -79,7 +100,7 @@ export default function Index() {
                     :
                     
                     <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px', marginLeft : '5px' }}
-                    onClick={ () => {cleanFavorites()}}
+                    onClick={ () => {alertaLimparFavoritos()}}
                     >Limpar Favoritos</BotaoPadraoVerde>
                     
                 }

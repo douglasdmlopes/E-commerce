@@ -3,6 +3,10 @@ import {Cartao, FavCard, FavoritadoCard, CarrinhoCard} from './Style';
 import { Link } from 'react-router-dom';
 import { Icon } from 'semantic-ui-react';
 import { Rate, Tooltip, message} from 'antd';
+import { Modal } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
+
+const { confirm } = Modal;
 
 export default function Index({produto}) {
     
@@ -59,6 +63,23 @@ export default function Index({produto}) {
 
     }
 
+    function alertaRemocaoItemFavoritos() {
+        confirm({
+          title: 'Atenção!',
+          icon: <ExclamationCircleOutlined />,
+          content: 'Deseja remover o item da lista de favoritos?',
+          okText: 'Sim',
+          okType: 'danger',
+          cancelText: 'Cancelar',
+          onOk() {
+            desfavoritarItem()
+          },
+          onCancel() {
+            console.log('Cancel');
+          },
+        });
+      }
+
     function desfavoritarItem(){
 
         let favoritos =[];        
@@ -100,6 +121,23 @@ export default function Index({produto}) {
             message.success('Item adicionado ao carrinho', 0.9);
         }, 950);
                 
+    }
+
+    function alertaRemocaoItemCarrinho() {
+        confirm({
+            title: 'Atenção!',
+            icon: <ExclamationCircleOutlined />,
+            content: 'Deseja remover o item do carrinho?',
+            okText: 'Sim',
+            okType: 'danger',
+            cancelText: 'Cancelar',
+            onOk() {
+                removerItemCarrinho()
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
     }
 
     function removerItemCarrinho(){
@@ -155,7 +193,7 @@ export default function Index({produto}) {
                             <Tooltip placement="top" title={"Remover dos favoritos"}>
                                 <FavoritadoCard size="26" title="Favoritar" onClick={(event) => {
                                             event.stopPropagation();
-                                            desfavoritarItem()
+                                            alertaRemocaoItemFavoritos()
                                         } }/>
                             </Tooltip>
                         
@@ -199,7 +237,7 @@ export default function Index({produto}) {
                         <Tooltip placement="top" title={"Remover do carrinho"}>
                             <CarrinhoCard size='mini' icon labelPosition='left' onClick={(event) => {
                                 event.stopPropagation();
-                                removerItemCarrinho()
+                                alertaRemocaoItemCarrinho()
                             } }>
                                 <Icon name='close'  style={{fontSize: 12}}/><span style={{fontSize: 12}}>Remover</span>
                             </CarrinhoCard>

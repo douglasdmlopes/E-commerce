@@ -5,7 +5,10 @@ import { FaTruck } from "react-icons/fa";
 import { TiHeartOutline, TiShoppingCart } from "react-icons/ti";
 import { Icon } from 'semantic-ui-react';
 import { Row, Col, Input, message } from 'antd';
+import { Modal } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
+const { confirm } = Modal;
 
 export default function Index({produto}) {
     
@@ -60,6 +63,23 @@ export default function Index({produto}) {
         message.success('Item adicionado aos favoritos', 0.9);
     }
 
+    function alertaRemocaoItemFavoritos() {
+        confirm({
+            title: 'Atenção!',
+            icon: <ExclamationCircleOutlined />,
+            content: 'Deseja remover o item da lista de favoritos?',
+            okText: 'Sim',
+            okType: 'danger',
+            cancelText: 'Cancelar',
+            onOk() {
+                desfavoritarItem()
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
+    }
+
     function desfavoritarItem(){
 
         let favoritos =[];        
@@ -102,6 +122,23 @@ export default function Index({produto}) {
         window.location.replace('/request');
 
         
+    }
+
+    function alertaRemocaoItemCarrinho() {
+        confirm({
+            title: 'Atenção!',
+            icon: <ExclamationCircleOutlined />,
+            content: 'Deseja remover o item do carrinho?',
+            okText: 'Sim',
+            okType: 'danger',
+            cancelText: 'Cancelar',
+            onOk() {
+                removerItemCarrinho()
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
     }
 
     function removerItemCarrinho(){
@@ -165,7 +202,7 @@ export default function Index({produto}) {
                                 <BotaoPadraoVerde size='medium' className="ui active button" style={{width: '100%'}}
                                 onClick={(event) => {
                                     event.stopPropagation();
-                                    removerItemCarrinho()
+                                    alertaRemocaoItemCarrinho()
                                 }}>
                                     <Icon name='cart'  style={{fontSize: 16}}/>
                                     <span style={{fontSize: 12}}>REMOVER DO CARRINHO</span>
@@ -199,7 +236,7 @@ export default function Index({produto}) {
                                         <BotaoPadraoCinza size='medium' className="ui  button" style={{width : '100%'}}
                                         onClick={(event) => {
                                             event.stopPropagation();
-                                            desfavoritarItem()
+                                            alertaRemocaoItemFavoritos()
                                         } }>
                                             <Icon name={'heart'}  style={{fontSize: 16}}/>
                                             <span style={{fontSize: 12}}>REMOVER DOS FAVORITOS</span>

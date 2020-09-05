@@ -2,61 +2,82 @@ import React, { Component } from 'react';
 import { Cartao, Picture, Content, Description, Remover, Valor, Quantidade, InputNumber } from './Style';
 import { MdRemove, MdAdd} from "react-icons/md";
 import { Tooltip, message } from 'antd';
+import { Modal } from 'antd';
+import { ExclamationCircleOutlined } from '@ant-design/icons';
 
-export default class Index extends Component {
-//export default function Index({produto}) {
+const { confirm } = Modal;
 
-   constructor(props){
+//export default class Index extends Component {
+export default function Index(props) {
+
+   /*constructor(props){
        super(props);
-   }
+   }*/
 
-    removerItemFavoritos = () => {
+    function alertaRemocaoItemFavoritos() {
+        confirm({
+            title: 'Atenção!',
+            icon: <ExclamationCircleOutlined />,
+            content: 'Deseja remover o item da lista de favoritos?',
+            okText: 'Sim',
+            okType: 'danger',
+            cancelText: 'Cancelar',
+            onOk() {
+                removerItemFavoritos()
+            },
+            onCancel() {
+                console.log('Cancel');
+            },
+        });
+    }
+
+    function removerItemFavoritos() {
         
         let favoritos =[];        
         
         favoritos = JSON.parse(localStorage.getItem("favorites"));
 
         let favoritos_temp = [];
-        let that = this;
+        
         favoritos.forEach(function(item) {
-            if (that.props.produto.id != item.id) {
+            if (props.produto.id != item.id) {
                 favoritos_temp.push(item);
             }
         });
 
         localStorage.setItem("favorites", JSON.stringify(favoritos_temp));
 
-        this.props.handleUpdate();
+        props.handleUpdate();
 
         message.success('Item removido dos favoritos', 0.9);
         
     }
 
-    render(){
+    //render(){
         return (
             <>
             <Cartao>
-                <a href={`/product/` + this.props.produto.id} > 
-                    <Picture src={`/produtos/${this.props.produto.id_img_01}.png`} />
+                <a href={`/product/` + props.produto.id} > 
+                    <Picture src={`/produtos/${props.produto.id_img_01}.png`} />
                 </a>
                 <Content>
                     <Description>
-                        <a href={`/product/` + this.props.produto.id} >
-                            <h2>{this.props.produto.nome}</h2>
+                        <a href={`/product/` + props.produto.id} >
+                            <h2>{props.produto.nome}</h2>
                         </a>
                         <Tooltip placement="topRight" title={"Remover item dos favoritos"}>
                             <Remover size={22} onClick={(event) => {
                                     event.stopPropagation();
-                                    this.removerItemFavoritos()
+                                    alertaRemocaoItemFavoritos()
                                 } }/>
                         </Tooltip>
                     </Description>
                     <Valor>
-                        <h2>R$ {this.props.produto.preco_formatado}</h2>
+                        <h2>R$ {props.produto.preco_formatado}</h2>
                     </Valor>
                 </Content>
             </Cartao>
             </>
         )
-    }
+    //}
 }
