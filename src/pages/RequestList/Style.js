@@ -13,15 +13,15 @@ export const Total = styled.div`
 `;
 
 export const CarrinhoVazio = styled.div`
-    margin-top: 100px;
+    margin-top: 65px;
     text-align: center;
     svg{
         margin-left: -8px;
         color: #3c3c3c;
     }
     h2{
-        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
         font-size: 40px;
+        font-family: Montserrat, Roboto, Arial, Helvetica, sans-serif !important;
         color: #3c3c3c;
     }
 `;

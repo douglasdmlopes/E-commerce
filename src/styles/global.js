@@ -99,39 +99,13 @@ export const SessaoListaProdutos = styled.section`
 
     @media (min-width: 1020px) {
         min-height: calc(100vh - 200px);
-    }/*
-        
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    
-    li{
-        list-style-type: none;
-        padding: 0px 0px 30px 0px;
-        margin-right: 5px;
-        
     }
-
-    li:hover{
-        transition: 0.15s;
-        background: #f3f3f3;
-    }
-
-    li:active{
-        background: #e2e2e2;
-    }
-
-    span{
-        margin-left: 8px;
-        font-size: 15px;
-    }*/
 `;
 
 export const SubSessao = styled.section`
     
     padding: 15px;
-
+    
 `;
 
 export const Titulo = styled.h1`

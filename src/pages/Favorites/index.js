@@ -90,7 +90,7 @@ export default function Index() {
                         
                         :
                         favoritos.map(produto => (
-                            <CardFavoriteMobile key={produto.id} produto={produto} handleUpdate={ () => {handleUpdate()}}/>
+                            <CardFavoriteMobile key={produto.id} produto={produto} remover={true} handleUpdate={ () => {handleUpdate()}}/>
                         ))
                     }
                 </div>
@@ -99,7 +99,7 @@ export default function Index() {
                     ""
                     :
                     
-                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px', marginLeft : '5px' }}
+                    <BotaoPadraoVerde style={{width : '97.5%', marginTop : '15px', marginBottom : '8px', marginLeft : '5px', }}
                     onClick={ () => {alertaLimparFavoritos()}}
                     >Limpar Favoritos</BotaoPadraoVerde>
                     

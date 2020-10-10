@@ -367,7 +367,7 @@ export default function Index() {
                                     }
                                 }/>
                                 <BotaoPadraoVerde onClick={filtrarDados} style={{width: '98%'}}>
-                                    <span style={{fontSize: 16}}>Buscar</span>
+                                <Icon name={'search'}  style={{fontSize: 16}}/><span style={{fontSize: 16}}>Buscar</span>
                                 </BotaoPadraoVerde>
                             </div>
                         </Drawer>
@@ -442,7 +442,7 @@ export default function Index() {
                                 }    
                             />
                             <BotaoPadraoVerde onClick={filtrarDados} style={{width: '98%'}}>
-                                <span style={{fontSize: 16}}>Buscar</span>
+                                <Icon name={'search'}  style={{fontSize: 16}}/><span style={{fontSize: 16}}>Buscar</span>
                             </BotaoPadraoVerde>
                         </FormFiltros>
                     </Col>

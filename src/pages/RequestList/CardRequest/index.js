@@ -2,6 +2,7 @@ import React, { Component }  from 'react'
 import { Container, Description, Valor } from './style';
 import { Row, Col } from 'antd';
 import { FaCheckCircle } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 export default class Index extends Component {
 //export default function index() {
@@ -13,6 +14,7 @@ export default class Index extends Component {
     render(){
         return (
             <>
+            <Link to={`/requests/` + this.props.produto.numero} > 
                 <Container>
                     <Row>
                         <Col xs={{ span: 23 }} sm={{ span: 23 }} md={{ span: 23 }} lg={{ span: 23 }} xl={{ span: 23 }}>                        
@@ -50,6 +52,7 @@ export default class Index extends Component {
                         </Col>
                     </Row>            
                 </Container>
+            </Link>
                 
             </>
         )

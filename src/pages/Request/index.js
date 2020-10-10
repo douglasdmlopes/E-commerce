@@ -6,6 +6,7 @@ import { Form, Input } from 'semantic-ui-react'
 import { BotaoPadraoVerde} from '../../styles/global';
 import CardMobile from '../../components/CardMobile';
 import {  TotalCarrinho} from "./Style";
+import { Icon } from 'semantic-ui-react';
 
 function handleChange(value) {
     console.log(`Selected: ${value}`);
@@ -74,7 +75,7 @@ export default function Index() {
         }
         let data = new Date();
         let data_dia     = data.getDate() < 10 ? '0' + data.getDate() : data.getDate();
-        let data_mes     = data.getMonth() < 10 ? '0' + ( data.getMonth() + 1 ) : ( data.getMonth() + 1 );
+        let data_mes     = data.getMonth() < 10 ? '' + ( data.getMonth() + 1 ) : ( data.getMonth() + 1 );
         let data_ano     = data.getFullYear();
         let data_horas   = data.getHours() < 10 ? '0' + ( data.getHours() ) : ( data.getHours() ); 
         let data_minutos = data.getMinutes() < 10 ? '0' + ( data.getMinutes() ) : ( data.getMinutes() );
@@ -237,7 +238,10 @@ export default function Index() {
                 </Row>
                 <Row>
                     <Direita>
-                        <BotaoPadraoVerde onClick={() => {finalizarPedido()}}>Finalizar</BotaoPadraoVerde>
+                        <BotaoPadraoVerde onClick={() => {finalizarPedido()}}>
+                        <Icon name={'checkmark'}  style={{fontSize: 16}}/>
+                        Finalizar
+                        </BotaoPadraoVerde>
                     </Direita>
                 </Row>
             </SessaoPedido>

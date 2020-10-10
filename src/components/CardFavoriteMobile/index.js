@@ -80,10 +80,18 @@ export default function index(props) {
                             </Col>
                         </Col>
                         <Col xs={{ span: 1 }} sm={{ span: 1 }} md={{ span: 1 }} lg={{ span: 1 }} xl={{ span: 1 }}>
-                            <Remover size={22} onClick={(event) => {
-                                event.stopPropagation();
-                                alertaRemocaoItemFavoritos()
-                            } } />
+                            {
+                                (
+                                    props.remover ? 
+                                    <Remover size={22} onClick={(event) => {
+                                        event.stopPropagation();
+                                        alertaRemocaoItemFavoritos()
+                                    } } />
+                                    :
+                                    ''
+                                )
+                            }
+                            
                         </Col>
                     </Row>            
                 </Container>
