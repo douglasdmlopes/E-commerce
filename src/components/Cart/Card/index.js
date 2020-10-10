@@ -86,7 +86,6 @@ export default class Index extends Component {
                 <Quantidade>
                     <h2>Quantidade: </h2>
                     <span>
-                        <Tooltip placement="topRight" title={"Adicionar"}>
                             <MdAdd size={25} style={{'cursor': 'pointer'}}
                                 onClick={
                                     () => {
@@ -94,7 +93,6 @@ export default class Index extends Component {
                                     }
                                 }
                             />
-                        </Tooltip>
                     </span>
                     <span>
                         <InputNumber disabled min="1" max="8"
@@ -102,7 +100,6 @@ export default class Index extends Component {
                         />
                     </span>
                     <span>
-                        <Tooltip placement="top" title={"Remover"}>
                             <MdRemove size={25} style={{'cursor': 'pointer'}}
                                 onClick={
                                     () => {
@@ -110,7 +107,6 @@ export default class Index extends Component {
                                     }
                                 }
                             />
-                        </Tooltip>
                     </span>
                 </Quantidade>
             </Content>

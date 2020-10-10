@@ -108,14 +108,12 @@ export default function index(props) {
                                     <Quantidade>
                                         <h2>Quantidade: </h2>
                                         <span>
-                                            <Tooltip placement="topRight" title={"Adicionar"}>
                                                 <MdAdd size={25} style={{'cursor': 'pointer'}}
                                                     onClick={
                                                         () => {
                                                             addSubItem('add');
                                                         }
                                                     }/>
-                                            </Tooltip>
                                         </span>
                                         <span>
                                             <InputNumber disabled min="1" max="8"
@@ -123,14 +121,12 @@ export default function index(props) {
                                             />
                                         </span>
                                         <span>
-                                            <Tooltip placement="top" title={"Remover"}>
                                                 <MdRemove size={25} style={{'cursor': 'pointer'}}
                                                     onClick={
                                                         () => {
                                                             addSubItem('sub');
                                                         }
                                                     }/>
-                                            </Tooltip>
                                         </span>
                                     </Quantidade>
                                 </Col>

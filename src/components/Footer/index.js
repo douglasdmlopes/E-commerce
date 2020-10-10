@@ -1,5 +1,5 @@
 import React from 'react'
-import {Rodape, LogoFooter} from './Style';
+import {Rodape, LogoFooter, MiniRodape} from './Style';
 
 export default function index() {
     return (
@@ -7,6 +7,7 @@ export default function index() {
             <Rodape>
                 <LogoFooter src="/logo.png" alt="Tech Store" draggable="false"/>
             </Rodape>
+            <MiniRodape/>
         </>
     )
 }

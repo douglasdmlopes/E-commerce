@@ -176,7 +176,7 @@ export default function Index({produto}) {
                 {
                     fav == "favoritar"  ?
                         <Tooltip placement="top" title={"Adicionar aos favoritos"}>
-                            <FavCard size="26" title="Favoritar" onClick={(event) => {
+                            <FavCard size="26" onClick={(event) => {
                                         event.stopPropagation();
                                         favoritarItem()
                                     } }/>
@@ -186,12 +186,12 @@ export default function Index({produto}) {
                     (
 
                         fav == "favoritando"  ?
-                            <FavCard size="26" title="Favoritar" onClick={(event) => {
+                            <FavCard size="26" onClick={(event) => {
                                 event.stopPropagation();
                             } }/>
                         :
                             <Tooltip placement="top" title={"Remover dos favoritos"}>
-                                <FavoritadoCard size="26" title="Favoritar" onClick={(event) => {
+                                <FavoritadoCard size="26" onClick={(event) => {
                                             event.stopPropagation();
                                             alertaRemocaoItemFavoritos()
                                         } }/>
@@ -216,14 +216,15 @@ export default function Index({produto}) {
                     <a href="#!">
                     {
                         botao == 'adicionar' ? 
-                        <Tooltip placement="top" title={"Adicionar ao carrinho"}>
-                            <CarrinhoCard size='mini' icon labelPosition='left' onClick={(event) => {
+                            <CarrinhoCard size='mini' 
+                            data-tooltip="Adicionar ao Carrinho"
+                            position="top" data-inverted=""                            
+                            icon labelPosition='left' onClick={(event) => {
                                 event.stopPropagation();
                                 adicionarItemCarrinho()
                             } }>
                                 <Icon name='cart'  style={{fontSize: 12}}/><span style={{fontSize: 12}}>Adicionar</span>
                             </CarrinhoCard>
-                        </Tooltip>
                     :
                     (
                         botao == 'carregando' ? 
@@ -234,14 +235,16 @@ export default function Index({produto}) {
                                 
                             </CarrinhoCard>
                         :
-                        <Tooltip placement="top" title={"Remover do carrinho"}>
-                            <CarrinhoCard size='mini' icon labelPosition='left' onClick={(event) => {
+                        
+                            <CarrinhoCard 
+                            data-tooltip="Remover do carrinho"
+                            position="top" data-inverted=""  
+                            size='mini' icon labelPosition='left' onClick={(event) => {
                                 event.stopPropagation();
                                 alertaRemocaoItemCarrinho()
                             } }>
                                 <Icon name='close'  style={{fontSize: 12}}/><span style={{fontSize: 12}}>Remover</span>
                             </CarrinhoCard>
-                        </Tooltip>
                     )
                     }
                     </a>
