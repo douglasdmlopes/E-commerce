@@ -11,6 +11,7 @@ import Finished from './pages/Finished';
 import Search from './pages/Search';
 import RequestList from './pages/RequestList';
 import RequestDetails from './pages/RequestDetails';
+import Account from './pages/Account';
 
 export default function Routes(){
     return (
@@ -26,7 +27,7 @@ export default function Routes(){
                 <Route path="/search/:termo" component={Search}/>
                 <Route path="/requests/:pedido" component={RequestDetails}/>
                 <Route path="/requests" component={RequestList}/>
-                
+                <Route path="/Account" component={Account}/>                
             </Switch>
         </BrowserRouter>
     );

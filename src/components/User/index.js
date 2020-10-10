@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const content = (
     <ListaPopOver style={{maxHeight: 200, overflowY: "auto", overflowX: "hidden", marginTop: -8, marginLeft: -16,marginButton: -8, marginRight: -16}}>
-      <Link to={`/`} ><li>Conta</li></Link>
+      <Link to={`/Account`} ><li>Conta</li></Link>
       <Link to={`/requests`} ><li>Pedidos</li></Link>
     </ListaPopOver>
   );

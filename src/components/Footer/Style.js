@@ -7,9 +7,20 @@ export const Rodape = styled.footer`
 `;
 
 export const MiniRodape = styled.footer`
-    height: 10px;
+    height: 25px;
     background: #9e112f;
-    padding-top: 20px;
+    padding-top: 3px;
+    text-align: center;
+    span{
+        font-size: 14px;
+        color: #efefef;
+    }
+    a{
+        color: #efefef;
+    }
+    a:hover{
+        color: #ffcccc;
+    }
 `;
 
 export const LogoFooter = styled.img`
