@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useCallback } from 'react'
 import { Slider, ArrowLeft, ArrowRight } from './style';
 import { FaChevronLeft, FaChevronRight } from  "react-icons/fa";
 import { Link } from 'react-router-dom';
@@ -6,9 +6,24 @@ import { Link } from 'react-router-dom';
 export default function Index() {
 
     const [colunas, setColunas] = useState(6);
-    //const [screen, setScreen] = useState(window.innerWidth);
-    const screen = window.innerWidth;
+    const [screen, setScreen] = useState(window.innerWidth);
+    //const screen = window.innerWidth;
     const [ botoes, setBotoes] = useState(true);
+
+    const handleWindowResize = useCallback(event => {
+
+        setScreen(window.innerWidth);
+  
+    }, []); 
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowResize);
+        
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+            
+        };
+    }, [handleWindowResize]);
 
     useEffect(() => {
         if(screen <= 500){
@@ -16,8 +31,13 @@ export default function Index() {
             setBotoes(false);
         }else if(screen >= 501 && screen <= 700){
             setColunas(4);
+            setBotoes(false);
+        }else if(screen >= 701){
+            setColunas(6);
+            setBotoes(true);
         }
-    },[screen]);
+    }, [screen]);
+    
     return (
         <>
             <Slider             

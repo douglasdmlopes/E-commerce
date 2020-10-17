@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react'
+import React, {useState, useEffect, useCallback } from 'react'
 import { Slider, ArrowLeft, ArrowRight } from './style';
 //import Slider from "react-slick";
 import { Loader } from 'semantic-ui-react'
@@ -11,6 +11,21 @@ export default function Index({produtos}) {
     const [colunas, setColunas] = useState(6);
     const [screen, setScreen] = useState(window.innerWidth);
     const [ botoes, setBotoes] = useState(true);
+
+    const handleWindowResize = useCallback(event => {
+
+        setScreen(window.innerWidth);
+  
+    }, []); 
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowResize);
+        
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+            
+        };
+    }, [handleWindowResize]);
 
     useEffect(() => {
         if(screen <= 350){
@@ -29,7 +44,7 @@ export default function Index({produtos}) {
         }else if(screen >= 961){
             setColunas(6);
         }
-    },[screen]);
+    }, [screen]);
     return (
         <>
             <Slider             
