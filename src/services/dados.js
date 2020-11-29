@@ -935,21 +935,21 @@ export function produtosRecentes(){
             "preco_formatado": "300,00"
         },
         {
-            "id": 41,
-            "nome": "SSD Kingston A400 - 960GB",
-            "marca": "Kingston",
-            "tipo": "Hardware",
-            "preco": "900.00",
-            "avaliacao": "4.2",
-            "descricao": "SSD A400 da Kingston é o upgrade que você precisa! Esta unidade de estado sólido, comparada a discos rígidos mecânicos, aumenta de forma drástica a resposta do seu PC com tempos maravilhosos de inicialização, carregamento e transferência. É reforçado com uma controladora de última geração para velocidades de leitura e gravação de até 500MBs e 450MBs, este SSD é 10x mais rápido do que um disco rígido tradicional para melhor desempenho, resposta ultrarrápida em multitarefas e um computador mais rápido de modo geral. O seu desktop merece esse grande upgrade de velocidade! Este SSD também conta com a tecnologia 3D NAND (também chamada de V-NAND). Uma estrutura de circuitos integrados capazes de guardar dados que preveem a criação de módulos com várias camadas de chips de silício empilhadas. Esse empilhamento de camadas dá o aspecto tridimensional que foi usado para batizar esse recurso. Além dessa performance incrível, este SSD também é mais confiável e durável do que um disco rígido comum. Este A400 foi produzido com 960GB de capacidade. Para que você não se preocupe com espaço e fique no que importa em sua utilização.",
+            "id": 44,
+            "nome": "Notebook Asus Vivobook X510UA",
+            "marca": "Asus",
+            "tipo": "Notebook",
+            "preco": "2599.99",
+            "avaliacao": "4.1",
+            "descricao": "O ASUS VivoBook é a combinação perfeita de beleza e desempenho. A tecnologia ASUS SonicMaster é uma otimização de hardware e software para entregar o melhor sistema de som em um notebook. Um codec profissional garante precisão e desempenho de áudio, um amplificador otimizado para notebook proporciona ainda mais volume, enquanto caixas de som e câmaras de ressonância aprimoram os graves, provocando uma experiência mais imersiva.",
             "frete": "24.99",
-            "id_img_01": "kingston-1",
-            "id_img_02": "kingston-2",
+            "id_img_01": "asus-vivobook-x510ua-1",
+            "id_img_02": "asus-vivobook-x510ua-2",
             "id_img_03": null,
             "id_img_04": null,
             "id_img_05": null,
-            "preco_formatado": "900,00"
-        }
+            "preco_formatado": "2.599,99"
+        },
     ];
     return produtos;
 };

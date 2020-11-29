@@ -232,9 +232,6 @@ export default function Index() {
             <Menu.Item key="1"><Link to={`/Account`} >Conta</Link></Menu.Item>
             <Menu.Item key="2"><Link to={`/requests`} >Pedidos</Link></Menu.Item>
           </SubMenu>
-          <Menu.Item>
-            <a href="https://forms.gle/4im2JMTaYuD674Hn6"><Icon type="File" /><span>Responder o Questionário</span></a>
-            </Menu.Item>
         </Menu>
         </Drawer>
         </>

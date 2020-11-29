@@ -7,9 +7,6 @@ export default function index() {
             <Rodape>
                 <LogoFooter src="/logo.png" alt="Tech Store" draggable="false"/>
             </Rodape>
-            <MiniRodape>
-                <span><a href="https://forms.gle/4im2JMTaYuD674Hn6">Responder o Questionário</a></span>
-            </MiniRodape>
         </>
     )
 }
